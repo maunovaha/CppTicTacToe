@@ -13,7 +13,7 @@ class Gameboard {
 public:
     Gameboard(const int size);
     void render() const;
-    bool try_place(const int selected_slot, const std::string& chip);
+    bool try_place(const int selected_slot, const Chip& chip);
 
     constexpr static int get_starting_slot()
     {

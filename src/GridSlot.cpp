@@ -1,18 +1,23 @@
 #include "GridSlot.h"
 
-#include <iostream>
-
-GridSlot::GridSlot(const int chip) : chip_{std::to_string(chip)}
+GridSlot::GridSlot(const int slot) : chip_{slot}
 {
 }
 
-bool GridSlot::try_place(const std::string& chip)
+bool GridSlot::try_place(const Chip& chip)
 {
-    // Check if is free..
+    const bool free_slot = is_free();
 
-    chip_ = chip;
+    if (free_slot) {
+        chip_ = chip;
+    }
 
-    return true;
+    return free_slot;
+}
+
+bool GridSlot::is_free() const
+{
+    return chip_.is_number();
 }
 
 std::ostream& operator <<(std::ostream& os, const GridSlot& other)

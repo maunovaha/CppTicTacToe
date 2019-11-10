@@ -1,10 +1,10 @@
-#include <string>
-#include <iostream>
 #include "Game.h"
+#include "Chip.h"
+#include <iostream>
 
 Game::Game(const DifficultyLevel difficulty_level) 
     : gameboard_{static_cast<int>(difficulty_level)}
-    , players_{{"Player (X)", 'X'}, {"Player (O)", 'O'}}
+    , players_{{"Player (X)", Chip::x()}, {"Player (O)", Chip::o()}}
 {
     display_welcome_msg();
     loop();

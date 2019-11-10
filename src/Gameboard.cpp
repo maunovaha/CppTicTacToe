@@ -13,7 +13,7 @@ void Gameboard::render() const
     std::cout << to_ascii();
 }
 
-bool Gameboard::try_place(const int selected_slot, const std::string& chip)
+bool Gameboard::try_place(const int selected_slot, const Chip& chip)
 {
     assert(selected_slot >= get_starting_slot() && selected_slot <= get_ending_slot());
 

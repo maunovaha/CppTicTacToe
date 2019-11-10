@@ -1,16 +1,18 @@
 #ifndef GRID_SLOT_H
 #define GRID_SLOT_H
 
+#include "Chip.h"
 #include <ostream>
-#include <string>
 
 class GridSlot {
 public:
-    GridSlot(const int chip);
-    bool try_place(const std::string& chip);
+    GridSlot(const int slot);
+    bool try_place(const Chip& chip);
     friend std::ostream& operator <<(std::ostream& os, const GridSlot& other);
 private:
-    std::string chip_;
+    bool is_free() const;
+
+    Chip chip_;
 };
 
 #endif

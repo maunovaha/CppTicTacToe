@@ -3,7 +3,7 @@
 #include <utility>
 #include <iostream>
 
-Player::Player(const std::string name, const char chip) : name_{std::move(name)}, chip_{chip}
+Player::Player(const std::string name, const Chip& chip) : name_{std::move(name)}, chip_{chip}
 {
 }
 
@@ -19,7 +19,7 @@ void Player::update(Gameboard& gameboard) const
         "*** Invalid input. Try again.\n");
 
     if (!gameboard.try_place(selected_slot, chip_)) {
-        std::cerr << "Slot is already taken! Try again." << std::endl;
+        std::cerr << "*** Slot is already taken! Try again." << std::endl;
         return update(gameboard);
     }
 }
