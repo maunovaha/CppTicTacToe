@@ -1,24 +1,28 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "Gameboard.h"
+#include "Grid.h"
 #include "DifficultyLevel.h"
 #include "Player.h"
 #include <vector>
+
+namespace game {
 
 class Game {
 public:
     Game(const DifficultyLevel difficulty_level = DifficultyLevel::easy);
 private:
-    void display_welcome_msg() const;
     void loop();
-    void render() const;
     void update();
     void change_turn();
+    void display_welcome_msg() const;
+    void render() const;
 
-    Gameboard gameboard_;
+    Grid grid_;
     std::vector<Player> players_;
     int current_player_index_ = 0;
 };
+
+}
 
 #endif

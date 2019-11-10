@@ -1,8 +1,8 @@
-#include "Game.h"
+#include "game/Game.h"
 
 int main()
 {
-    const Game game;
+    const game::Game game;
 
     return 0;
 }

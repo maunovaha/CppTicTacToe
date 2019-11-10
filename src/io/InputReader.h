@@ -5,6 +5,8 @@
 #include <limits>
 #include <string>
 
+namespace io {
+
 class InputReader {
 public:
     InputReader() = delete;
@@ -41,5 +43,7 @@ private:
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 };
+
+}
 
 #endif

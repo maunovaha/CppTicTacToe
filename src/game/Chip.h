@@ -4,6 +4,8 @@
 #include <string>
 #include <ostream>
 
+namespace game {
+
 class Chip {
 public:
     Chip(const std::string value);
@@ -13,6 +15,11 @@ public:
     inline bool is_number() const
     {
         return (value_ != x_ && value_ != o_);
+    }
+
+    inline std::string get_value() const
+    {
+        return value_;
     }
 
     inline static Chip x()
@@ -30,5 +37,7 @@ private:
 
     std::string value_;
 };
+
+}
 
 #endif

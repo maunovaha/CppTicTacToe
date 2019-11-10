@@ -4,6 +4,8 @@
 #include "Chip.h"
 #include <ostream>
 
+namespace game {
+
 class GridSlot {
 public:
     GridSlot(const int slot);
@@ -14,5 +16,7 @@ private:
 
     Chip chip_;
 };
+
+}
 
 #endif

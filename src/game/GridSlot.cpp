@@ -1,5 +1,7 @@
 #include "GridSlot.h"
 
+namespace game {
+
 GridSlot::GridSlot(const int slot) : chip_{slot}
 {
 }
@@ -24,4 +26,6 @@ std::ostream& operator <<(std::ostream& os, const GridSlot& other)
 {
     os << other.chip_;
     return os;
+}
+
 }

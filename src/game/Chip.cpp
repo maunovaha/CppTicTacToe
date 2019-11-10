@@ -1,6 +1,8 @@
 #include "Chip.h"
 #include <utility>
 
+namespace game {
+
 Chip::Chip(const std::string value) : value_{std::move(value)}
 {
 }
@@ -13,4 +15,6 @@ std::ostream& operator <<(std::ostream& os, const Chip& other)
 {
     os << other.value_;
     return os;
+}
+
 }

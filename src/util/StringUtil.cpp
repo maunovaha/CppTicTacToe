@@ -1,6 +1,8 @@
-#include "StringFormatter.h"
+#include "StringUtil.h"
 
-std::string StringFormatter::repeat(const std::string& pattern, const int times)
+namespace util {
+
+std::string StringUtil::repeat(const std::string& pattern, const int times)
 {
     std::string repeated_pattern = pattern;
 
@@ -9,4 +11,6 @@ std::string StringFormatter::repeat(const std::string& pattern, const int times)
     }
 
     return repeated_pattern;
+}
+
 }

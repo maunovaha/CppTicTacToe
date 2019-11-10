@@ -1,20 +1,16 @@
 #include "Game.h"
 #include "Chip.h"
 #include <iostream>
+#include <memory>
+
+namespace game {
 
 Game::Game(const DifficultyLevel difficulty_level) 
-    : gameboard_{static_cast<int>(difficulty_level)}
+    : grid_{static_cast<int>(difficulty_level)}
     , players_{{"Player (X)", Chip::x()}, {"Player (O)", Chip::o()}}
 {
     display_welcome_msg();
     loop();
-}
-
-void Game::display_welcome_msg() const
-{
-    std::cout << "\n============================"
-              << "\nWelcome to play Tic Tac Toe!" 
-              << "\n============================" << std::endl;
 }
 
 void Game::loop()
@@ -25,14 +21,9 @@ void Game::loop()
     loop();
 }
 
-void Game::render() const
-{
-    gameboard_.render();
-}
-
 void Game::update()
 {
-    players_.at(current_player_index_).update(gameboard_);
+    players_.at(current_player_index_).update(grid_);
 }
 
 void Game::change_turn()
@@ -44,3 +35,16 @@ void Game::change_turn()
     }
 }
 
+void Game::display_welcome_msg() const
+{
+    std::cout << "\n============================"
+              << "\nWelcome to play Tic-tac-toe!" 
+              << "\n============================" << std::endl;
+}
+
+void Game::render() const
+{
+    grid_.render();
+}
+
+}

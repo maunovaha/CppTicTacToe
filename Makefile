@@ -1,4 +1,4 @@
-OBJS = src/Main.cpp src/Game.cpp src/Gameboard.cpp src/GridSlot.cpp src/Chip.cpp src/Player.cpp src/StringFormatter.cpp
+OBJS = src/Main.cpp src/game/Game.cpp src/game/Grid.cpp src/game/GridSlot.cpp src/game/Chip.cpp src/game/Player.cpp src/util/StringUtil.cpp
 
 CC = g++
 
