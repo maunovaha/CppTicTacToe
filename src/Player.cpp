@@ -3,7 +3,7 @@
 #include <utility>
 #include <iostream>
 
-Player::Player(const char chip) : chip_{chip}
+Player::Player(const std::string name, const char chip) : name_{std::move(name)}, chip_{chip}
 {
 }
 
@@ -12,7 +12,8 @@ void Player::update(Gameboard& gameboard) const
     const int starting_slot = gameboard.get_starting_slot();
     const int ending_slot = gameboard.get_ending_slot();
 
-    std::cout << "\nChoose a slot number between " << starting_slot << " - " << ending_slot << ":\n";
+    std::cout << "\n" << name_ << " -> Choose a slot number between " 
+              << starting_slot << " - " << ending_slot << ":\n";
 
     const int selected_slot = InputReader::read_between<int>(starting_slot, ending_slot, 
         "*** Invalid input. Try again.\n");

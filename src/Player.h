@@ -6,9 +6,10 @@
 
 class Player {
 public:
-    Player(const char chip);
+    Player(const std::string name, const char chip);
     void update(Gameboard& gameboard) const;
 private:
+    std::string name_;
     std::string chip_;
 };
 

@@ -14,6 +14,7 @@ private:
     void loop();
     void render() const;
     void update();
+    void change_turn();
 
     Gameboard gameboard_;
     std::vector<Player> players_;
