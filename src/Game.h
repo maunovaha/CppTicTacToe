@@ -3,16 +3,21 @@
 
 #include "Gameboard.h"
 #include "DifficultyLevel.h"
+#include "Player.h"
+#include <vector>
 
 class Game {
 public:
     Game(const DifficultyLevel difficulty_level = DifficultyLevel::easy);
 private:
     void display_welcome_msg() const;
-    void loop() const;
+    void loop();
     void render() const;
+    void update();
 
     Gameboard gameboard_;
+    std::vector<Player> players_;
+    int current_player_index_ = 0;
 };
 
 #endif

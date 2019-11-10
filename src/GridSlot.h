@@ -7,6 +7,7 @@
 class GridSlot {
 public:
     GridSlot(const int chip);
+    bool try_place(const std::string& chip);
     friend std::ostream& operator <<(std::ostream& os, const GridSlot& other);
 private:
     std::string chip_;
