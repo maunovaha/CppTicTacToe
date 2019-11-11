@@ -20,18 +20,18 @@ Welcome to play Tic-tac-toe!
 Player (X) -> Choose a slot number between 1 - 9:
 ```
 
-# How to compile and run
+## How to compile and run
 
 ```
 make all
 ./bin/tic_tac_toe
 ```
 
-# License
+## License
 
-This project is released under the [MIT License](LISENCE).
+This project is released under the [MIT License](LICENCE).
 
-# Contact
+## Contact
 
 If you have any questions regarding this repository, start by reaching me using contact information below.
 
