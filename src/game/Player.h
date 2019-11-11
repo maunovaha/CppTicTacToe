@@ -13,10 +13,10 @@ public:
     Player(const std::string name, const Chip& chip);
     void update(Grid& grid) const;
 
-    // inline std::string chip() const
-    // {
-    //     return chip_.value();
-    // }
+    inline const Chip& get_chip() const
+    {
+        return chip_;
+    }
 
     friend std::ostream& operator <<(std::ostream& os, const Player& other);
 private:

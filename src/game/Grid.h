@@ -16,7 +16,14 @@ public:
     Grid(const int size);
     void render() const;
     bool try_place(const int slot, const Chip& chip);
-    
+    bool is_full() const;
+    const GridSlot& get_slot(const int row, const int column) const;
+
+    inline int size() const
+    {
+        return size_;
+    }
+
     inline int ending_slot() const
     {
         return size_ * size_;

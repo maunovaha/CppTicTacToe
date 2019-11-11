@@ -12,6 +12,11 @@ public:
     Chip(const int value);
     friend std::ostream& operator <<(std::ostream& os, const Chip& other);
 
+    /* explicit */ inline operator std::string() const
+    {
+        return value_;
+    }
+
     inline bool is_number() const
     {
         return (value_ != x_ && value_ != o_);

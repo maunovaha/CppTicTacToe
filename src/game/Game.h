@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "Grid.h"
+#include "GameStatus.h"
 #include "DifficultyLevel.h"
 #include "Player.h"
 #include <vector>
@@ -16,7 +17,9 @@ private:
     void update();
     void change_turn();
     void display_welcome_msg() const;
+    void display_game_over(const GameStatus& game_status) const;
     void render() const;
+    GameStatus check_game_status() const;
 
     Grid grid_;
     std::vector<Player> players_;

@@ -26,6 +26,26 @@ bool Grid::try_place(const int slot, const Chip& chip)
     return grid_.at(row).at(column).try_place(chip);
 }
 
+bool Grid::is_full() const
+{
+    int free_slots = size_ * size_;
+
+    for (int row = 0; row < size_; ++row) {
+        for (int column = 0; column < size_; ++column) {
+            if (!grid_.at(row).at(column).is_free()) {
+                --free_slots;
+            }
+        }
+    }
+
+    return free_slots == 0;
+}
+
+const GridSlot& Grid::get_slot(const int row, const int column) const
+{
+    return grid_.at(row).at(column);
+}
+
 Grid2d Grid::setup_grid(const int size) const
 {
     int current_slot = starting_slot_;

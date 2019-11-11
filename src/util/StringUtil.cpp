@@ -2,15 +2,15 @@
 
 namespace util {
 
-std::string StringUtil::repeat(const std::string& pattern, const int times)
+std::string StringUtil::repeat(const std::string& value, const int times)
 {
-    std::string repeated_pattern = pattern;
+    std::string repeated_value = value;
 
     for (int i = 0; i < (times - 1); ++i) {
-        repeated_pattern += pattern;
+        repeated_value += value;
     }
 
-    return repeated_pattern;
+    return repeated_value;
 }
 
 }
