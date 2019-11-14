@@ -1,5 +1,6 @@
 #include "Renderer.h"
 #include <stdexcept>
+#include <string>
 
 namespace sdlx {
 
@@ -38,6 +39,11 @@ void Renderer::clear() const
 void Renderer::present() const
 {
     SDL_RenderPresent(renderer_);
+}
+
+SDL_Renderer* Renderer::get() const
+{
+    return renderer_;
 }
 
 }

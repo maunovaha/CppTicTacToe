@@ -13,9 +13,10 @@ public:
     void set_draw_color(const SDL_Color& color) const;
     void clear() const;
     void present() const;
+    SDL_Renderer* get() const;
 private:
-    SDL_Renderer* renderer_ = nullptr;
     SDL_Color clear_color_;
+    SDL_Renderer* renderer_ = nullptr;
 };
 
 }
