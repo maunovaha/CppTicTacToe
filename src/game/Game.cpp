@@ -5,7 +5,7 @@ namespace game {
 Game::Game(const std::string& title, const int width, const int height)
     : sdlx_{SDL_INIT_VIDEO}
     , window_{title, {SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height}}
-    , renderer_{window_, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC}
+    , renderer_{window_, {0xFF, 0xFF, 0xFF, 0xFF}, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC}
 {
     loop();
 }
