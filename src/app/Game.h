@@ -1,12 +1,12 @@
-#ifndef GAME_GAME_H
-#define GAME_GAME_H
+#ifndef APP_GAME_H
+#define APP_GAME_H
 
 #include "../sdlx/Sdlx.h"
 #include "../sdlx/Window.h"
 #include "../sdlx/Renderer.h"
 #include <string>
 
-namespace game {
+namespace app {
 
 class Game {
 public:
