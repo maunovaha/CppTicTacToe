@@ -1,5 +1,5 @@
-#ifndef CHIP_H
-#define CHIP_H
+#ifndef GAME_CHIP_H
+#define GAME_CHIP_H
 
 #include <string>
 #include <ostream>

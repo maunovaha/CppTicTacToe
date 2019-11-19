@@ -1,5 +1,5 @@
-#ifndef GRID_H
-#define GRID_H
+#ifndef GAME_GRID_H
+#define GAME_GRID_H
 
 #include "GridSlot.h"
 #include <vector>

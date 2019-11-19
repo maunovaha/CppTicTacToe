@@ -1,5 +1,5 @@
-#ifndef DIFFICULTY_LEVEL_H
-#define DIFFICULTY_LEVEL_H
+#ifndef GAME_DIFFICULTY_LEVEL_H
+#define GAME_DIFFICULTY_LEVEL_H
 
 namespace game {
 

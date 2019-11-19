@@ -1,5 +1,5 @@
-#ifndef GRID_SLOT_H
-#define GRID_SLOT_H
+#ifndef GAME_GRID_SLOT_H
+#define GAME_GRID_SLOT_H
 
 #include "Chip.h"
 #include <ostream>

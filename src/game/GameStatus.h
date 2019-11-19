@@ -1,5 +1,5 @@
-#ifndef GAME_STATUS_H
-#define GAME_STATUS_H
+#ifndef GAME_GAME_STATUS_H
+#define GAME_GAME_STATUS_H
 
 #include "Grid.h"
 #include "Player.h"

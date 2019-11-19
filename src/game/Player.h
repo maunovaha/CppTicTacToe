@@ -1,5 +1,5 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef GAME_PLAYER_H
+#define GAME_PLAYER_H
 
 #include "Grid.h"
 #include "Chip.h"
