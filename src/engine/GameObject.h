@@ -1,9 +1,6 @@
 #ifndef ENGINE_GAME_OBJECT_H
 #define ENGINE_GAME_OBJECT_H
 
-#include <vector>
-#include <memory>
-
 namespace engine {
 
 class GameObject {
