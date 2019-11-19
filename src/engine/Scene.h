@@ -10,6 +10,7 @@ namespace engine {
 class Scene {
 public:
     virtual ~Scene() = default;
+    virtual void create() {}
     virtual void update() {}
     void draw() const;
 protected:
