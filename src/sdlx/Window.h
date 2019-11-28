@@ -3,16 +3,16 @@
 
 #include <SDL2/SDL.h>
 #include <string>
+#include <memory>
 
 namespace sdlx {
 
 class Window {
 public:
     Window(const std::string& title, const SDL_Rect& rect);
-    ~Window();
     SDL_Window* get() const;
 private:
-    SDL_Window* window_ = nullptr;
+    std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window_;
 };
 
 }
