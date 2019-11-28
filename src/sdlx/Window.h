@@ -12,7 +12,16 @@ public:
     Window(const std::string& title, const SDL_Rect& rect);
     SDL_Window* get() const;
 private:
-    std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window_;
+    struct DestroyWindow {
+        void operator()(SDL_Window* window) const
+        {
+            SDL_DestroyWindow(window);
+        }
+    };
+
+    using UniqueWindowPtr = std::unique_ptr<SDL_Window, DestroyWindow>;
+
+    UniqueWindowPtr window_;
 };
 
 }
