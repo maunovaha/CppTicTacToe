@@ -14,6 +14,9 @@ public:
     void clear() const;
     void present() const;
     SDL_Renderer* get() const;
+
+    static constexpr Uint32 accelerated  = SDL_RENDERER_ACCELERATED;
+    static constexpr Uint32 presentvsync = SDL_RENDERER_PRESENTVSYNC;
 private:
     struct DestroyRenderer {
         void operator()(SDL_Renderer* renderer) const

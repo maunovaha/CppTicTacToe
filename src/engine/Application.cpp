@@ -3,9 +3,10 @@
 namespace engine {
 
 Application::Application(const std::string& title, const int width, const int height)
-    : sdlx_{SDL_INIT_VIDEO}
-    , window_{title, {SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height}}
-    , renderer_{window_, {0xFF, 0xFF, 0xFF, 0xFF}, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC}
+    : init_{sdl2::Init::video}
+    , init_image_{sdl2::InitImage::png}
+    , window_{title, {sdl2::Window::centered, sdl2::Window::centered, width, height}}
+    , renderer_{window_, {0xFF, 0xFF, 0xFF, 0xFF}, sdl2::Renderer::accelerated | sdl2::Renderer::presentvsync}
 {
     loop();
 }

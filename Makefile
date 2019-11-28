@@ -1,4 +1,4 @@
-OBJS = src/Main.cpp src/app/Game.cpp src/engine/Application.cpp src/engine/Director.cpp src/engine/Scene.cpp src/sdl2/Sdlx.cpp src/sdl2/Window.cpp src/sdl2/Renderer.cpp src/sdl2/Surface.cpp src/sdl2/Texture.cpp
+OBJS = src/Main.cpp src/app/Game.cpp src/engine/Application.cpp src/engine/Director.cpp src/engine/Scene.cpp src/sdl2/Init.cpp src/sdl2/InitImage.cpp src/sdl2/Window.cpp src/sdl2/Renderer.cpp src/sdl2/Surface.cpp src/sdl2/Texture.cpp
 
 CC = g++
 

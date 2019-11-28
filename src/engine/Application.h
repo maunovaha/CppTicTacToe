@@ -1,7 +1,8 @@
 #ifndef ENGINE_APPLICATION_H
 #define ENGINE_APPLICATION_H
 
-#include "../sdl2/Sdlx.h"
+#include "../sdl2/Init.h"
+#include "../sdl2/InitImage.h"
 #include "../sdl2/Window.h"
 #include "../sdl2/Renderer.h"
 #include <string>
@@ -14,7 +15,8 @@ public:
 private:
     void loop() const;
 
-    sdl2::Sdlx sdlx_;
+    sdl2::Init init_;
+    sdl2::InitImage init_image_;
     sdl2::Window window_;
     sdl2::Renderer renderer_;
 };
