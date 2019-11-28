@@ -6,7 +6,7 @@ namespace sdlx {
 
 Renderer::Renderer(const Window& window, const SDL_Color& clear_color, const Uint32 flags) 
     : clear_color_{clear_color}
-    , renderer_{SDL_CreateRenderer(window.get(), -1, flags), &SDL_DestroyRenderer}
+    , renderer_{SDL_CreateRenderer(window.get(), -1, flags)}
 {
     if (!renderer_) {
         throw std::runtime_error("Could not create renderer, " + std::string{SDL_GetError()});

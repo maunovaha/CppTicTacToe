@@ -15,8 +15,17 @@ public:
     void present() const;
     SDL_Renderer* get() const;
 private:
+    struct DestroyRenderer {
+        void operator()(SDL_Renderer* renderer) const
+        {
+            SDL_DestroyRenderer(renderer);
+        }
+    };
+
+    using UniqueRendererPtr = std::unique_ptr<SDL_Renderer, DestroyRenderer>;
+
     SDL_Color clear_color_;
-    std::unique_ptr<SDL_Renderer, decltype(&SDL_DestroyRenderer)> renderer_;
+    UniqueRendererPtr renderer_;
 };
 
 }
