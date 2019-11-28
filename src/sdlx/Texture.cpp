@@ -8,7 +8,7 @@ Texture::Texture(const Renderer& renderer, const std::string& image_path)
 {
     const Surface surface{image_path};
 
-    texture_ = SDL_CreateTextureFromSurface(renderer.get(), surface.get());
+    texture_ = UniqueTexturePtr{SDL_CreateTextureFromSurface(renderer.get(), surface.get())};
 
     if (!texture_) {
          throw std::runtime_error("Could not create texture, " + std::string{SDL_GetError()});
@@ -16,12 +16,6 @@ Texture::Texture(const Renderer& renderer, const std::string& image_path)
 
     width_ = surface.width();
     height_ = surface.height();
-}
-
-Texture::~Texture()
-{
-    SDL_DestroyTexture(texture_);
-    texture_ = nullptr;
 }
 
 void Texture::render(const Renderer& renderer, const SDL_Point& position, SDL_Rect* clip) const
@@ -34,7 +28,7 @@ void Texture::render(const Renderer& renderer, const SDL_Point& position, SDL_Re
         render_quad.h = clip->h;
     }
 
-    if (SDL_RenderCopy(renderer.get(), texture_, clip, &render_quad) != 0) {
+    if (SDL_RenderCopy(renderer.get(), texture_.get(), clip, &render_quad) != 0) {
         throw std::runtime_error("Could not render a texture, " + std::string{SDL_GetError()});
     }
 }
@@ -51,7 +45,7 @@ int Texture::height() const
 
 SDL_Texture* Texture::get() const
 {
-    return texture_;
+    return texture_.get();
 }
 
 }
