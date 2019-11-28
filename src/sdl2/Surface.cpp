@@ -2,7 +2,7 @@
 #include <SDL2/SDL_image.h>
 #include <stdexcept>
 
-namespace sdlx {
+namespace sdl2 {
 
 Surface::Surface(const std::string& image_path) : surface_{IMG_Load(image_path.c_str())}
 {

@@ -1,12 +1,12 @@
-#ifndef SDLX_TEXTURE_H
-#define SDLX_TEXTURE_H
+#ifndef SDL2_TEXTURE_H
+#define SDL2_TEXTURE_H
 
 #include "Renderer.h"
 #include <SDL2/SDL.h>
 #include <string>
 #include <memory>
 
-namespace sdlx {
+namespace sdl2 {
 
 class Texture {
 public:

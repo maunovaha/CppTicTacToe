@@ -1,11 +1,11 @@
-#ifndef SDLX_RENDERER_H
-#define SDLX_RENDERER_H
+#ifndef SDL2_RENDERER_H
+#define SDL2_RENDERER_H
 
 #include "Window.h"
 #include <SDL2/SDL.h>
 #include <memory>
 
-namespace sdlx {
+namespace sdl2 {
 
 class Renderer {
 public:

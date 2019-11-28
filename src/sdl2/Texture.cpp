@@ -2,7 +2,7 @@
 #include "Surface.h"
 #include <stdexcept>
 
-namespace sdlx {
+namespace sdl2 {
 
 Texture::Texture(const Renderer& renderer, const std::string& image_path)
 {

@@ -1,11 +1,11 @@
-#ifndef SDLX_WINDOW_H
-#define SDLX_WINDOW_H
+#ifndef SDL2_WINDOW_H
+#define SDL2_WINDOW_H
 
 #include <SDL2/SDL.h>
 #include <string>
 #include <memory>
 
-namespace sdlx {
+namespace sdl2 {
 
 class Window {
 public:

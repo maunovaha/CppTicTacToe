@@ -1,11 +1,11 @@
-#ifndef SDLX_SURFACE_H
-#define SDLX_SURFACE_H
+#ifndef SDL2_SURFACE_H
+#define SDL2_SURFACE_H
 
 #include <SDL2/SDL.h>
 #include <string>
 #include <memory>
 
-namespace sdlx {
+namespace sdl2 {
 
 class Surface {
 public:

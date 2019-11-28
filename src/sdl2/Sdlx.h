@@ -1,9 +1,9 @@
-#ifndef SDLX_SDLX_H
-#define SDLX_SDLX_H
+#ifndef SDL2_SDLX_H
+#define SDL2_SDLX_H
 
 #include <SDL2/SDL.h>
 
-namespace sdlx {
+namespace sdl2 {
 
 class Sdlx {
 public:

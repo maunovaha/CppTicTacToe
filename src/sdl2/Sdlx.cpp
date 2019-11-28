@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include <string>
 
-namespace sdlx {
+namespace sdl2 {
 
 Sdlx::Sdlx(const Uint32 flags)
 {

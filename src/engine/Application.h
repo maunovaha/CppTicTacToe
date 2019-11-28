@@ -1,9 +1,9 @@
 #ifndef ENGINE_APPLICATION_H
 #define ENGINE_APPLICATION_H
 
-#include "../sdlx/Sdlx.h"
-#include "../sdlx/Window.h"
-#include "../sdlx/Renderer.h"
+#include "../sdl2/Sdlx.h"
+#include "../sdl2/Window.h"
+#include "../sdl2/Renderer.h"
 #include <string>
 
 namespace engine {
@@ -14,9 +14,9 @@ public:
 private:
     void loop() const;
 
-    sdlx::Sdlx sdlx_;
-    sdlx::Window window_;
-    sdlx::Renderer renderer_;
+    sdl2::Sdlx sdlx_;
+    sdl2::Window window_;
+    sdl2::Renderer renderer_;
 };
 
 }
