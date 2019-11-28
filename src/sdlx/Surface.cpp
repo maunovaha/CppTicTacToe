@@ -4,19 +4,11 @@
 
 namespace sdlx {
 
-Surface::Surface(const std::string& image_path)
+Surface::Surface(const std::string& image_path) : surface_{IMG_Load(image_path.c_str())}
 {
-    surface_ = IMG_Load(image_path.c_str());
-
     if (!surface_) {
         throw std::runtime_error("Could not create surface, " + std::string{IMG_GetError()});
     }
-}
-
-Surface::~Surface()
-{
-    SDL_FreeSurface(surface_);
-    surface_ = nullptr;
 }
 
 int Surface::width() const
@@ -31,7 +23,7 @@ int Surface::height() const
 
 SDL_Surface* Surface::get() const
 {
-    return surface_;
+    return surface_.get();
 }
 
 }
