@@ -1,5 +1,5 @@
-#ifndef SDL2_INIT_H
-#define SDL2_INIT_H
+#ifndef SDL2WRAP_INIT_H
+#define SDL2WRAP_INIT_H
 
 #if defined(_WIN32)
 #include <SDL.h>
@@ -7,7 +7,7 @@
 #include <SDL2/SDL.h>
 #endif
 
-namespace sdl2 {
+namespace SDL2wrap {
 
 class Init {
 public:

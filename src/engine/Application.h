@@ -1,10 +1,10 @@
 #ifndef ENGINE_APPLICATION_H
 #define ENGINE_APPLICATION_H
 
-#include "../sdl2/Init.h"
-#include "../sdl2/InitImage.h"
-#include "../sdl2/Window.h"
-#include "../sdl2/Renderer.h"
+#include "../SDL2wrap/Init.h"
+#include "../SDL2wrap/InitImage.h"
+#include "../SDL2wrap/Window.h"
+#include "../SDL2wrap/Renderer.h"
 #include <string>
 
 namespace engine {
@@ -15,10 +15,10 @@ public:
 private:
     void loop() const;
 
-    sdl2::Init init_;
-    sdl2::InitImage init_image_;
-    sdl2::Window window_;
-    sdl2::Renderer renderer_;
+    SDL2wrap::Init init_;
+    SDL2wrap::InitImage init_image_;
+    SDL2wrap::Window window_;
+    SDL2wrap::Renderer renderer_;
 };
 
 }

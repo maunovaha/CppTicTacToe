@@ -3,10 +3,10 @@
 namespace engine {
 
 Application::Application(const std::string& title, const int width, const int height)
-    : init_{sdl2::Init::video}
-    , init_image_{sdl2::InitImage::png}
-    , window_{title, {sdl2::Window::centered, sdl2::Window::centered, width, height}}
-    , renderer_{window_, {0xFF, 0xFF, 0xFF, 0xFF}, sdl2::Renderer::accelerated | sdl2::Renderer::presentvsync}
+    : init_{SDL2wrap::Init::video}
+    , init_image_{SDL2wrap::InitImage::png}
+    , window_{title, {SDL2wrap::Window::centered, SDL2wrap::Window::centered, width, height}}
+    , renderer_{window_, {0xFF, 0xFF, 0xFF, 0xFF}, SDL2wrap::Renderer::accelerated | SDL2wrap::Renderer::presentvsync}
 {
     loop();
 }

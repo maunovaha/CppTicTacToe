@@ -1,5 +1,5 @@
-#ifndef SDL2_TEXTURE_H
-#define SDL2_TEXTURE_H
+#ifndef SDL2WRAP_TEXTURE_H
+#define SDL2WRAP_TEXTURE_H
 
 #include "Renderer.h"
 
@@ -12,7 +12,7 @@
 #include <string>
 #include <memory>
 
-namespace sdl2 {
+namespace SDL2wrap {
 
 class Texture {
 public:

@@ -14,7 +14,7 @@ public:
 private:
     Director() = default;
 
-    inline static std::unique_ptr<Scene> current_scene_;
+    static inline std::unique_ptr<Scene> current_scene_;
 };
 
 }

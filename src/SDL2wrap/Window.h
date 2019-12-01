@@ -1,5 +1,5 @@
-#ifndef SDL2_WINDOW_H
-#define SDL2_WINDOW_H
+#ifndef SDL2WRAP_WINDOW_H
+#define SDL2WRAP_WINDOW_H
 
 #if defined(_WIN32)
 #include <SDL.h>
@@ -10,7 +10,7 @@
 #include <string>
 #include <memory>
 
-namespace sdl2 {
+namespace SDL2wrap {
 
 class Window {
 public:

@@ -258,22 +258,22 @@
     <ClInclude Include="src\engine\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2\Init.h">
+    <ClInclude Include="src\SDL2wrap\Init.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2\InitImage.h">
+    <ClInclude Include="src\SDL2wrap\InitImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2\Renderer.h">
+    <ClInclude Include="src\SDL2wrap\Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2\Surface.h">
+    <ClInclude Include="src\SDL2wrap\Surface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2\Texture.h">
+    <ClInclude Include="src\SDL2wrap\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2\Window.h">
+    <ClInclude Include="src\SDL2wrap\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -302,25 +302,25 @@
     <ClCompile Include="src\engine\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sdl2\Init.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\sdl2\InitImage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\sdl2\Renderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\sdl2\Surface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\sdl2\Texture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\sdl2\Window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDL2wrap\Init.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDL2wrap\InitImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDL2wrap\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDL2wrap\Surface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDL2wrap\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDL2wrap\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

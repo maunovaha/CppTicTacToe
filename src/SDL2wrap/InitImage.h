@@ -1,5 +1,5 @@
-#ifndef SDL2_INIT_IMAGE_H
-#define SDL2_INIT_IMAGE_H
+#ifndef SDL2WRAP_INIT_IMAGE_H
+#define SDL2WRAP_INIT_IMAGE_H
 
 #if defined(_WIN32)
 #include <SDL.h>
@@ -9,7 +9,7 @@
 #include <SDL2/SDL_image.h>
 #endif
 
-namespace sdl2 {
+namespace SDL2wrap {
 
 class InitImage {
 public:
