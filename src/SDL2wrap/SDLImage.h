@@ -1,5 +1,5 @@
-#ifndef SDL2WRAP_INIT_IMAGE_H
-#define SDL2WRAP_INIT_IMAGE_H
+#ifndef SDL2WRAP_SDL_IMAGE_H
+#define SDL2WRAP_SDL_IMAGE_H
 
 #if defined(_WIN32)
 #include <SDL.h>
@@ -11,10 +11,10 @@
 
 namespace SDL2wrap {
 
-class InitImage {
+class SDLImage {
 public:
-    InitImage(const int flags);
-    ~InitImage();
+    SDLImage(const int flags);
+    ~SDLImage();
 
     static constexpr int png = IMG_INIT_PNG;
 };

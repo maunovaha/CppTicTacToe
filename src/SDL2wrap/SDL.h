@@ -1,5 +1,5 @@
-#ifndef SDL2WRAP_INIT_H
-#define SDL2WRAP_INIT_H
+#ifndef SDL2WRAP_SDL_H
+#define SDL2WRAP_SDL_H
 
 #if defined(_WIN32)
 #include <SDL.h>
@@ -9,10 +9,10 @@
 
 namespace SDL2wrap {
 
-class Init {
+class SDL {
 public:
-    Init(const Uint32 flags);
-    ~Init();
+    SDL(const Uint32 flags);
+    ~SDL();
 
     static constexpr Uint32 video = SDL_INIT_VIDEO;
 };

@@ -258,12 +258,6 @@
     <ClInclude Include="src\engine\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\SDL2wrap\Init.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SDL2wrap\InitImage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\SDL2wrap\Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -274,6 +268,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\SDL2wrap\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SDL2wrap\SDL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SDL2wrap\SDLImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -305,12 +305,6 @@
     <ClCompile Include="src\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\SDL2wrap\Init.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SDL2wrap\InitImage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\SDL2wrap\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -321,6 +315,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\SDL2wrap\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDL2wrap\SDL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDL2wrap\SDLImage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
