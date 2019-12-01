@@ -2,7 +2,7 @@
 #include <stdexcept>
 #include <string>
 
-namespace sdl2 {
+namespace SDL2wrap {
 
 Renderer::Renderer(const Window& window, const SDL_Color& clear_color, const Uint32 flags) 
     : clear_color_{clear_color}

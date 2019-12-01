@@ -235,12 +235,12 @@
     <ClInclude Include="src\engine\Director.h" />
     <ClInclude Include="src\engine\GameObject.h" />
     <ClInclude Include="src\engine\Scene.h" />
-    <ClInclude Include="src\sdl2\Init.h" />
-    <ClInclude Include="src\sdl2\InitImage.h" />
-    <ClInclude Include="src\sdl2\Renderer.h" />
-    <ClInclude Include="src\sdl2\Surface.h" />
-    <ClInclude Include="src\sdl2\Texture.h" />
-    <ClInclude Include="src\sdl2\Window.h" />
+    <ClInclude Include="src\SDL2wrap\Init.h" />
+    <ClInclude Include="src\SDL2wrap\InitImage.h" />
+    <ClInclude Include="src\SDL2wrap\Renderer.h" />
+    <ClInclude Include="src\SDL2wrap\Surface.h" />
+    <ClInclude Include="src\SDL2wrap\Texture.h" />
+    <ClInclude Include="src\SDL2wrap\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="libjpeg-9.dll" />
@@ -260,12 +260,12 @@
     <ClCompile Include="src\engine\Director.cpp" />
     <ClCompile Include="src\engine\Scene.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\sdl2\Init.cpp" />
-    <ClCompile Include="src\sdl2\InitImage.cpp" />
-    <ClCompile Include="src\sdl2\Renderer.cpp" />
-    <ClCompile Include="src\sdl2\Surface.cpp" />
-    <ClCompile Include="src\sdl2\Texture.cpp" />
-    <ClCompile Include="src\sdl2\Window.cpp" />
+    <ClCompile Include="src\SDL2wrap\Init.cpp" />
+    <ClCompile Include="src\SDL2wrap\InitImage.cpp" />
+    <ClCompile Include="src\SDL2wrap\Renderer.cpp" />
+    <ClCompile Include="src\SDL2wrap\Surface.cpp" />
+    <ClCompile Include="src\SDL2wrap\Texture.cpp" />
+    <ClCompile Include="src\SDL2wrap\Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

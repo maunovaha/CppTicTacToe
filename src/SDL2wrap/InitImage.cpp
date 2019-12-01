@@ -2,7 +2,7 @@
 #include <stdexcept>
 #include <string>
 
-namespace sdl2 {
+namespace SDL2wrap {
 
 InitImage::InitImage(const int flags)
 {

@@ -1,5 +1,5 @@
-#ifndef SDL2_RENDERER_H
-#define SDL2_RENDERER_H
+#ifndef SDL2WRAP_RENDERER_H
+#define SDL2WRAP_RENDERER_H
 
 #include "Window.h"
 
@@ -11,7 +11,7 @@
 
 #include <memory>
 
-namespace sdl2 {
+namespace SDL2wrap {
 
 class Renderer {
 public:

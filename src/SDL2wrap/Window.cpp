@@ -1,7 +1,7 @@
 #include "Window.h"
 #include <stdexcept>
 
-namespace sdl2 {
+namespace SDL2wrap {
 
 Window::Window(const std::string& title, const SDL_Rect& rect)
     : window_{SDL_CreateWindow(title.c_str(), rect.x, rect.y, rect.w, rect.h, SDL_WINDOW_SHOWN)}
