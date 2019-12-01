@@ -1,7 +1,12 @@
 #ifndef SDL2_WINDOW_H
 #define SDL2_WINDOW_H
 
+#if defined(_WIN32)
+#include <SDL.h>
+#else
 #include <SDL2/SDL.h>
+#endif
+
 #include <string>
 #include <memory>
 

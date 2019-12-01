@@ -2,7 +2,13 @@
 #define SDL2_TEXTURE_H
 
 #include "Renderer.h"
+
+#if defined(_WIN32)
+#include <SDL.h>
+#else
 #include <SDL2/SDL.h>
+#endif
+
 #include <string>
 #include <memory>
 
