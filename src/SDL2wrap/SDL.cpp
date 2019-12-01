@@ -1,17 +1,17 @@
-#include "Init.h"
+#include "SDL.h"
 #include <stdexcept>
 #include <string>
 
 namespace SDL2wrap {
 
-Init::Init(const Uint32 flags)
+SDL::SDL(const Uint32 flags)
 {
     if (SDL_Init(flags) != 0) {
         throw std::runtime_error("Could not init SDL, " + std::string{SDL_GetError()});
     }
 }
 
-Init::~Init()
+SDL::~SDL()
 {
     SDL_Quit();
 }

@@ -1,17 +1,17 @@
-#include "InitImage.h"
+#include "SDLImage.h"
 #include <stdexcept>
 #include <string>
 
 namespace SDL2wrap {
 
-InitImage::InitImage(const int flags)
+SDLImage::SDLImage(const int flags)
 {
     if (!(IMG_Init(flags) & flags)) {
         throw std::runtime_error("Could not init SDL_image, " + std::string{IMG_GetError()});
     }
 }
 
-InitImage::~InitImage()
+SDLImage::~SDLImage()
 {
     IMG_Quit();
 }

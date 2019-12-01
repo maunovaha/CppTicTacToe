@@ -235,8 +235,8 @@
     <ClInclude Include="src\engine\Director.h" />
     <ClInclude Include="src\engine\GameObject.h" />
     <ClInclude Include="src\engine\Scene.h" />
-    <ClInclude Include="src\SDL2wrap\Init.h" />
-    <ClInclude Include="src\SDL2wrap\InitImage.h" />
+    <ClInclude Include="src\SDL2wrap\SDL.h" />
+    <ClInclude Include="src\SDL2wrap\SDLImage.h" />
     <ClInclude Include="src\SDL2wrap\Renderer.h" />
     <ClInclude Include="src\SDL2wrap\Surface.h" />
     <ClInclude Include="src\SDL2wrap\Texture.h" />
@@ -260,8 +260,8 @@
     <ClCompile Include="src\engine\Director.cpp" />
     <ClCompile Include="src\engine\Scene.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\SDL2wrap\Init.cpp" />
-    <ClCompile Include="src\SDL2wrap\InitImage.cpp" />
+    <ClCompile Include="src\SDL2wrap\SDL.cpp" />
+    <ClCompile Include="src\SDL2wrap\SDLImage.cpp" />
     <ClCompile Include="src\SDL2wrap\Renderer.cpp" />
     <ClCompile Include="src\SDL2wrap\Surface.cpp" />
     <ClCompile Include="src\SDL2wrap\Texture.cpp" />
