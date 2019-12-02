@@ -10,8 +10,8 @@ namespace engine {
 class Scene {
 public:
     virtual ~Scene() = default;
-    virtual void create() {}
-    virtual void update() {}
+    virtual void create() = 0;
+    virtual void update() = 0;
     void render() const;
 protected:
     void add_child(std::shared_ptr<GameObject> game_object);
