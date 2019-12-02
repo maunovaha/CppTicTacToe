@@ -12,7 +12,7 @@ public:
     virtual ~Scene() = default;
     virtual void create() {}
     virtual void update() {}
-    void draw() const;
+    void render() const;
 protected:
     void add_child(std::shared_ptr<GameObject> game_object);
 private:

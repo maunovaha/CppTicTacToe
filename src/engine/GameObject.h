@@ -9,7 +9,7 @@ public:
     GameObject(const int x, const int y) : x_{x}, y_{y} {}
     virtual ~GameObject() = default;
     virtual void update() {}
-    virtual void draw() const {}
+    virtual void render() const {}
 protected:
     int x_ = 0;
     int y_ = 0;
