@@ -1,7 +1,7 @@
 #ifndef ENGINE_APPLICATION_H
 #define ENGINE_APPLICATION_H
 
-#include "Director.h"
+#include "Scene.h"
 #include "../SDL2wrap/SDL.h"
 #include "../SDL2wrap/SDLImage.h"
 #include "../SDL2wrap/Window.h"
