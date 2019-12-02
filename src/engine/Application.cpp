@@ -33,10 +33,9 @@ void Application::loop() const
 
 bool Application::process_input() const
 {
-    SDL_Event event;
-
-    while (SDL_PollEvent(&event)) {
-        if (event.type == SDL_QUIT) {
+    SDL_Event event;                  // REFACTOR: Implement SDL2wrap::Event (?)
+    while (SDL_PollEvent(&event)) {   // REFACTOR: Implement SDL2wrap::Event::poll(...) (?)
+        if (event.type == SDL_QUIT) { // REFACTOR: Implement SDL2wrap::SDL::quit (?)
             return true;
         }
         // TODO: Add later logic for processing keyboard/mouse input
