@@ -1,10 +1,10 @@
-#ifndef APP_GAME_H
-#define APP_GAME_H
+#ifndef GAME_GAME_H
+#define GAME_GAME_H
 
 #include "../engine/Application.h"
 #include <string>
 
-namespace app {
+namespace game {
 
 class Game : public engine::Application {
 public:

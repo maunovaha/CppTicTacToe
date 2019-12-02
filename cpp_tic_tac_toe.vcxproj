@@ -230,7 +230,7 @@
     <ClInclude Include="include\SDL2\SDL_version.h" />
     <ClInclude Include="include\SDL2\SDL_video.h" />
     <ClInclude Include="include\SDL2\SDL_vulkan.h" />
-    <ClInclude Include="src\app\Game.h" />
+    <ClInclude Include="src\game\Game.h" />
     <ClInclude Include="src\engine\Application.h" />
     <ClInclude Include="src\engine\Director.h" />
     <ClInclude Include="src\engine\GameObject.h" />
@@ -255,7 +255,7 @@
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\app\Game.cpp" />
+    <ClCompile Include="src\game\Game.cpp" />
     <ClCompile Include="src\engine\Application.cpp" />
     <ClCompile Include="src\engine\Director.cpp" />
     <ClCompile Include="src\engine\Scene.cpp" />
