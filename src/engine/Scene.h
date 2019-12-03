@@ -1,5 +1,4 @@
-#ifndef ENGINE_SCENE_H
-#define ENGINE_SCENE_H
+#pragma once
 
 #include "GameObject.h"
 #include <vector>
@@ -14,11 +13,9 @@ public:
     virtual void update() = 0;
     void render() const;
 protected:
-    void add_child(std::shared_ptr<GameObject> game_object);
+    void addChild(std::shared_ptr<GameObject> gameObject);
 private:
-    std::vector<std::shared_ptr<GameObject>> game_objects_;
+    std::vector<std::shared_ptr<GameObject>> gameObjects_;
 };
 
 }
-
-#endif

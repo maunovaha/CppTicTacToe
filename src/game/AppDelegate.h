@@ -1,5 +1,4 @@
-#ifndef GAME_APP_DELEGATE_H
-#define GAME_APP_DELEGATE_H
+#pragma once
 
 #include "../engine/Application.h"
 #include <string>
@@ -12,5 +11,3 @@ public:
 };
 
 }
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef GAME_MAINMENU_MAIN_MENU_SCENE_H
-#define GAME_MAINMENU_MAIN_MENU_SCENE_H
+#pragma once
 
 #include "../../engine/Scene.h"
 
@@ -12,5 +11,3 @@ public:
 };
 
 }
-
-#endif

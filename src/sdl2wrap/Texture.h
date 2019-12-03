@@ -1,25 +1,22 @@
-#ifndef SDL2WRAP_TEXTURE_H
-#define SDL2WRAP_TEXTURE_H
+#pragma once
 
 #include "Renderer.h"
-
 #if defined(_WIN32)
-#include <SDL.h>
+    #include <SDL.h>
 #else
-#include <SDL2/SDL.h>
+    #include <SDL2/SDL.h>
 #endif
-
 #include <string>
 #include <memory>
 
-namespace SDL2wrap {
+namespace sdl2wrap {
 
 class Texture {
 public:
-    Texture(const Renderer& renderer, const std::string& image_path);
+    Texture(const Renderer& renderer, const std::string& imagePath);
     void render(const Renderer& renderer, const SDL_Point& position, SDL_Rect* clip = nullptr) const;
-    int width() const;
-    int height() const;
+    int getWidth() const;
+    int getHeight() const;
     SDL_Texture* get() const;
 private:
     struct DestroyTexture {
@@ -37,5 +34,3 @@ private:
 };
 
 }
-
-#endif

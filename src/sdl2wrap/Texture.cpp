@@ -2,11 +2,11 @@
 #include "Surface.h"
 #include <stdexcept>
 
-namespace SDL2wrap {
+namespace sdl2wrap {
 
-Texture::Texture(const Renderer& renderer, const std::string& image_path)
+Texture::Texture(const Renderer& renderer, const std::string& imagePath)
 {
-    const Surface surface{image_path};
+    const Surface surface{imagePath};
 
     texture_ = UniqueTexturePtr{SDL_CreateTextureFromSurface(renderer.get(), surface.get())};
 
@@ -14,31 +14,31 @@ Texture::Texture(const Renderer& renderer, const std::string& image_path)
          throw std::runtime_error("Could not create texture, " + std::string{SDL_GetError()});
     }
 
-    width_ = surface.width();
-    height_ = surface.height();
+    width_ = surface.getWidth();
+    height_ = surface.getHeight();
 }
 
 void Texture::render(const Renderer& renderer, const SDL_Point& position, SDL_Rect* clip) const
 {
-    SDL_Rect render_quad{position.x, position.y, width_, height_};
+    SDL_Rect renderQuad{position.x, position.y, width_, height_};
 
     // Used for rendering only a smaller part of a larger texture, such as Texture atlas.
     if (clip) {
-        render_quad.w = clip->w;
-        render_quad.h = clip->h;
+        renderQuad.w = clip->w;
+        renderQuad.h = clip->h;
     }
 
-    if (SDL_RenderCopy(renderer.get(), texture_.get(), clip, &render_quad) != 0) {
+    if (SDL_RenderCopy(renderer.get(), texture_.get(), clip, &renderQuad) != 0) {
         throw std::runtime_error("Could not render a texture, " + std::string{SDL_GetError()});
     }
 }
 
-int Texture::width() const
+int Texture::getWidth() const
 {
     return width_;
 }
 
-int Texture::height() const
+int Texture::getHeight() const
 {
     return height_;
 }

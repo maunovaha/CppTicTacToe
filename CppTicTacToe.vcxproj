@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{64002593-083E-4894-A408-34C870DF4E35}</ProjectGuid>
-    <RootNamespace>cpptictactoe</RootNamespace>
+    <RootNamespace>CppTicTacToe</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -236,12 +236,12 @@
     <ClInclude Include="src\engine\GameObject.h" />
     <ClInclude Include="src\engine\Scene.h" />
     <ClInclude Include="src\game\mainmenu\MainMenuScene.h" />
-    <ClInclude Include="src\SDL2wrap\SDL.h" />
-    <ClInclude Include="src\SDL2wrap\SDLImage.h" />
-    <ClInclude Include="src\SDL2wrap\Renderer.h" />
-    <ClInclude Include="src\SDL2wrap\Surface.h" />
-    <ClInclude Include="src\SDL2wrap\Texture.h" />
-    <ClInclude Include="src\SDL2wrap\Window.h" />
+    <ClInclude Include="src\sdl2wrap\SDL.h" />
+    <ClInclude Include="src\sdl2wrap\SDLImage.h" />
+    <ClInclude Include="src\sdl2wrap\Renderer.h" />
+    <ClInclude Include="src\sdl2wrap\Surface.h" />
+    <ClInclude Include="src\sdl2wrap\Texture.h" />
+    <ClInclude Include="src\sdl2wrap\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="libjpeg-9.dll" />
@@ -262,12 +262,12 @@
     <ClCompile Include="src\engine\Scene.cpp" />
     <ClCompile Include="src\game\mainmenu\MainMenuScene.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\SDL2wrap\SDL.cpp" />
-    <ClCompile Include="src\SDL2wrap\SDLImage.cpp" />
-    <ClCompile Include="src\SDL2wrap\Renderer.cpp" />
-    <ClCompile Include="src\SDL2wrap\Surface.cpp" />
-    <ClCompile Include="src\SDL2wrap\Texture.cpp" />
-    <ClCompile Include="src\SDL2wrap\Window.cpp" />
+    <ClCompile Include="src\sdl2wrap\SDL.cpp" />
+    <ClCompile Include="src\sdl2wrap\SDLImage.cpp" />
+    <ClCompile Include="src\sdl2wrap\Renderer.cpp" />
+    <ClCompile Include="src\sdl2wrap\Surface.cpp" />
+    <ClCompile Include="src\sdl2wrap\Texture.cpp" />
+    <ClCompile Include="src\sdl2wrap\Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

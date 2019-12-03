@@ -1,5 +1,4 @@
-#ifndef ENGINE_DIRECTOR_H
-#define ENGINE_DIRECTOR_H
+#pragma once
 
 #include "Scene.h"
 #include <memory>
@@ -11,14 +10,12 @@ public:
     static void play(std::unique_ptr<Scene> scene);
     static void update();
     static void render();
-    static bool is_playing();
+    static bool isPlaying();
     static const Director* const get();
 private:
     Director() = default;
 
-    static inline std::unique_ptr<Scene> current_scene_;
+    static inline std::unique_ptr<Scene> currentScene_;
 };
 
 }
-
-#endif

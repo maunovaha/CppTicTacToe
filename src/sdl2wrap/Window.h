@@ -1,23 +1,21 @@
-#ifndef SDL2WRAP_WINDOW_H
-#define SDL2WRAP_WINDOW_H
+#pragma once
 
 #if defined(_WIN32)
-#include <SDL.h>
+    #include <SDL.h>
 #else
-#include <SDL2/SDL.h>
+    #include <SDL2/SDL.h>
 #endif
-
 #include <string>
 #include <memory>
 
-namespace SDL2wrap {
+namespace sdl2wrap {
 
 class Window {
 public:
     Window(const std::string& title, const SDL_Rect& rect);
     SDL_Window* get() const;
 
-    static constexpr Uint32 centered = SDL_WINDOWPOS_CENTERED;
+    static constexpr Uint32 CENTERED = SDL_WINDOWPOS_CENTERED;
 private:
     struct DestroyWindow {
         void operator()(SDL_Window* window) const
@@ -32,5 +30,3 @@ private:
 };
 
 }
-
-#endif

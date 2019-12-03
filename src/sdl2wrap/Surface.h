@@ -1,22 +1,20 @@
-#ifndef SDL2WRAP_SURFACE_H
-#define SDL2WRAP_SURFACE_H
+#pragma once
 
 #if defined(_WIN32)
-#include <SDL.h>
+    #include <SDL.h>
 #else
-#include <SDL2/SDL.h>
+    #include <SDL2/SDL.h>
 #endif
-
 #include <string>
 #include <memory>
 
-namespace SDL2wrap {
+namespace sdl2wrap {
 
 class Surface {
 public:
-    Surface(const std::string& image_path);
-    int width() const;
-    int height() const;
+    Surface(const std::string& imagePath);
+    int getWidth() const;
+    int getHeight() const;
     SDL_Surface* get() const;
 private:
     struct DestroySurface {
@@ -32,5 +30,3 @@ private:
 };
 
 }
-
-#endif

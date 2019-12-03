@@ -10,31 +10,31 @@ void Director::play(std::unique_ptr<Scene> scene)
     //
     // This should be fixed either here by checking if the Application is ready (via assert?)
     // or using some other approach for warning the developers.
-    current_scene_ = std::move(scene);
-    current_scene_->create();
+    currentScene_ = std::move(scene);
+    currentScene_->create();
 }
 
 void Director::update()
 {
-    if (!is_playing()) {
+    if (!isPlaying()) {
         return;
     }
 
-    current_scene_->update();
+    currentScene_->update();
 }
 
 void Director::render()
 {
-    if (!is_playing()) {
+    if (!isPlaying()) {
         return;
     }
 
-    current_scene_->render();
+    currentScene_->render();
 }
 
-bool Director::is_playing()
+bool Director::isPlaying()
 {
-    return static_cast<bool>(current_scene_);
+    return static_cast<bool>(currentScene_);
 }
 
 const Director* const Director::get()
