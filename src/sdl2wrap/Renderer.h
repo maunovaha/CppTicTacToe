@@ -1,13 +1,11 @@
 #pragma once
 
 #include "Window.h"
-
 #if defined(_WIN32)
-#include <SDL.h>
+    #include <SDL.h>
 #else
-#include <SDL2/SDL.h>
+    #include <SDL2/SDL.h>
 #endif
-
 #include <memory>
 
 namespace sdl2wrap {

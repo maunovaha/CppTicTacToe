@@ -1,9 +1,9 @@
 #pragma once
 
 #if defined(_WIN32)
-#include <SDL.h>
+    #include <SDL.h>
 #else
-#include <SDL2/SDL.h>
+    #include <SDL2/SDL.h>
 #endif
 
 namespace sdl2wrap {
