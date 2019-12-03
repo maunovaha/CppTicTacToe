@@ -1,9 +1,9 @@
-#ifndef GAME_MAIN_MENU_MAIN_MENU_SCENE_H
-#define GAME_MAIN_MENU_MAIN_MENU_SCENE_H
+#ifndef GAME_MAINMENU_MAIN_MENU_SCENE_H
+#define GAME_MAINMENU_MAIN_MENU_SCENE_H
 
 #include "../../engine/Scene.h"
 
-namespace game::main_menu {
+namespace game::mainmenu {
 
 class MainMenuScene: public engine::Scene {
 public:

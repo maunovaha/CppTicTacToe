@@ -1,6 +1,6 @@
 #include "MainMenuScene.h"
 
-namespace game::main_menu {
+namespace game::mainmenu {
 
 void MainMenuScene::create()
 {

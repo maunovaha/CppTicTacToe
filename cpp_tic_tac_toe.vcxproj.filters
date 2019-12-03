@@ -276,7 +276,7 @@
     <ClInclude Include="src\game\AppDelegate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\main_menu\MainMenuScene.h">
+    <ClInclude Include="src\game\mainmenu\MainMenuScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -326,7 +326,7 @@
     <ClCompile Include="src\game\AppDelegate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\main_menu\MainMenuScene.cpp">
+    <ClCompile Include="src\game\mainmenu\MainMenuScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
