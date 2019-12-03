@@ -51,7 +51,9 @@ void Application::update() const
 
 void Application::render() const
 {
+    renderer_.clear();
     Director::get()->render();
+    renderer_.present();
 }
 
 }
