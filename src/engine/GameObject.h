@@ -1,5 +1,4 @@
-#ifndef ENGINE_GAME_OBJECT_H
-#define ENGINE_GAME_OBJECT_H
+#pragma once
 
 namespace engine {
 
@@ -16,5 +15,3 @@ protected:
 };
 
 }
-
-#endif

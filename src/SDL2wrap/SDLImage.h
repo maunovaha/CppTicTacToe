@@ -1,5 +1,4 @@
-#ifndef SDL2WRAP_SDL_IMAGE_H
-#define SDL2WRAP_SDL_IMAGE_H
+#pragma once
 
 #if defined(_WIN32)
 #include <SDL.h>
@@ -20,5 +19,3 @@ public:
 };
 
 }
-
-#endif

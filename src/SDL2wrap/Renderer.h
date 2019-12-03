@@ -1,5 +1,4 @@
-#ifndef SDL2WRAP_RENDERER_H
-#define SDL2WRAP_RENDERER_H
+#pragma once
 
 #include "Window.h"
 
@@ -38,5 +37,3 @@ private:
 };
 
 }
-
-#endif

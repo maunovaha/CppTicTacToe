@@ -1,5 +1,4 @@
-#ifndef SDL2WRAP_WINDOW_H
-#define SDL2WRAP_WINDOW_H
+#pragma once
 
 #if defined(_WIN32)
 #include <SDL.h>
@@ -32,5 +31,3 @@ private:
 };
 
 }
-
-#endif

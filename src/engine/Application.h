@@ -1,5 +1,4 @@
-#ifndef ENGINE_APPLICATION_H
-#define ENGINE_APPLICATION_H
+#pragma once
 
 #include "Scene.h"
 #include "../sdl2wrap/SDL.h"
@@ -28,5 +27,3 @@ private:
 };
 
 }
-
-#endif

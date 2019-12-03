@@ -1,5 +1,4 @@
-#ifndef ENGINE_DIRECTOR_H
-#define ENGINE_DIRECTOR_H
+#pragma once
 
 #include "Scene.h"
 #include <memory>
@@ -20,5 +19,3 @@ private:
 };
 
 }
-
-#endif

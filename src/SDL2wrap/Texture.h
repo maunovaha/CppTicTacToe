@@ -1,5 +1,4 @@
-#ifndef SDL2WRAP_TEXTURE_H
-#define SDL2WRAP_TEXTURE_H
+#pragma once
 
 #include "Renderer.h"
 
@@ -37,5 +36,3 @@ private:
 };
 
 }
-
-#endif
