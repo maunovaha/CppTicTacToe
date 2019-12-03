@@ -13,7 +13,7 @@ public:
     SDL(const Uint32 flags);
     ~SDL();
 
-    static constexpr Uint32 video = SDL_INIT_VIDEO;
+    static constexpr Uint32 VIDEO = SDL_INIT_VIDEO;
 };
 
 }

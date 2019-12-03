@@ -15,7 +15,7 @@ public:
     SDLImage(const int flags);
     ~SDLImage();
 
-    static constexpr int png = IMG_INIT_PNG;
+    static constexpr int PNG = IMG_INIT_PNG;
 };
 
 }
