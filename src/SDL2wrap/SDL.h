@@ -7,7 +7,7 @@
 #include <SDL2/SDL.h>
 #endif
 
-namespace SDL2wrap {
+namespace sdl2wrap {
 
 class SDL {
 public:

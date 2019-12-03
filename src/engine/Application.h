@@ -2,10 +2,10 @@
 #define ENGINE_APPLICATION_H
 
 #include "Scene.h"
-#include "../SDL2wrap/SDL.h"
-#include "../SDL2wrap/SDLImage.h"
-#include "../SDL2wrap/Window.h"
-#include "../SDL2wrap/Renderer.h"
+#include "../sdl2wrap/SDL.h"
+#include "../sdl2wrap/SDLImage.h"
+#include "../sdl2wrap/Window.h"
+#include "../sdl2wrap/Renderer.h"
 #include <string>
 
 namespace engine {
@@ -21,10 +21,10 @@ private:
     void update() const;
     void render() const;
 
-    SDL2wrap::SDL sdl_;
-    SDL2wrap::SDLImage sdl_image_;
-    SDL2wrap::Window window_;
-    SDL2wrap::Renderer renderer_;
+    sdl2wrap::SDL sdl_;
+    sdl2wrap::SDLImage sdl_image_;
+    sdl2wrap::Window window_;
+    sdl2wrap::Renderer renderer_;
 };
 
 }

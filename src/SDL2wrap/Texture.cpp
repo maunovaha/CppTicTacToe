@@ -2,7 +2,7 @@
 #include "Surface.h"
 #include <stdexcept>
 
-namespace SDL2wrap {
+namespace sdl2wrap {
 
 Texture::Texture(const Renderer& renderer, const std::string& image_path)
 {

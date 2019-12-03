@@ -11,7 +11,7 @@
 
 #include <memory>
 
-namespace SDL2wrap {
+namespace sdl2wrap {
 
 class Renderer {
 public:

@@ -10,7 +10,7 @@
 #include <string>
 #include <memory>
 
-namespace SDL2wrap {
+namespace sdl2wrap {
 
 class Window {
 public:

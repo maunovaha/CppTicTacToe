@@ -8,7 +8,7 @@
 
 #include <stdexcept>
 
-namespace SDL2wrap {
+namespace sdl2wrap {
 
 Surface::Surface(const std::string& image_path) : surface_{IMG_Load(image_path.c_str())}
 {

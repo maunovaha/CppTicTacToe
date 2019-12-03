@@ -9,7 +9,7 @@
 #include <SDL2/SDL_image.h>
 #endif
 
-namespace SDL2wrap {
+namespace sdl2wrap {
 
 class SDLImage {
 public:
