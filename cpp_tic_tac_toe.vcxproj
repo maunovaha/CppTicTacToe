@@ -230,11 +230,12 @@
     <ClInclude Include="include\SDL2\SDL_version.h" />
     <ClInclude Include="include\SDL2\SDL_video.h" />
     <ClInclude Include="include\SDL2\SDL_vulkan.h" />
-    <ClInclude Include="src\app\Game.h" />
+    <ClInclude Include="src\game\AppDelegate.h" />
     <ClInclude Include="src\engine\Application.h" />
     <ClInclude Include="src\engine\Director.h" />
     <ClInclude Include="src\engine\GameObject.h" />
     <ClInclude Include="src\engine\Scene.h" />
+    <ClInclude Include="src\game\mainmenu\MainMenuScene.h" />
     <ClInclude Include="src\SDL2wrap\SDL.h" />
     <ClInclude Include="src\SDL2wrap\SDLImage.h" />
     <ClInclude Include="src\SDL2wrap\Renderer.h" />
@@ -255,10 +256,11 @@
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\app\Game.cpp" />
+    <ClCompile Include="src\game\AppDelegate.cpp" />
     <ClCompile Include="src\engine\Application.cpp" />
     <ClCompile Include="src\engine\Director.cpp" />
     <ClCompile Include="src\engine\Scene.cpp" />
+    <ClCompile Include="src\game\mainmenu\MainMenuScene.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\SDL2wrap\SDL.cpp" />
     <ClCompile Include="src\SDL2wrap\SDLImage.cpp" />

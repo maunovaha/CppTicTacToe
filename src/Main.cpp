@@ -1,8 +1,8 @@
-#include "app/Game.h"
+#include "game/AppDelegate.h"
 
 int main(int argc, char* args[])
 {
-    const app::Game game{"Tic-tac-toe (C++ / SDL2)", 380, 380};
+    const game::AppDelegate app{"Tic-tac-toe (C++ / SDL2)", 380, 380};
 
     return 0;
 }

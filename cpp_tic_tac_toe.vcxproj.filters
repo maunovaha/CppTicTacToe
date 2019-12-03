@@ -243,9 +243,6 @@
     <ClInclude Include="include\SDL2\SDL_vulkan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\app\Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\engine\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -276,6 +273,12 @@
     <ClInclude Include="src\SDL2wrap\SDLImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\AppDelegate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\mainmenu\MainMenuScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="LICENSE" />
@@ -290,9 +293,6 @@
     <None Include="libjpeg-9.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\app\Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\engine\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -321,6 +321,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\SDL2wrap\SDLImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\AppDelegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\mainmenu\MainMenuScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
