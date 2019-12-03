@@ -13,15 +13,15 @@ class Application {
 public:
     Application(const std::string& title, const int width, const int height);
 protected:
-    void start(std::unique_ptr<Scene> starting_scene) const;
+    void start(std::unique_ptr<Scene> startingScene) const;
 private:
     void loop() const;
-    bool process_input() const;
+    bool processInput() const;
     void update() const;
     void render() const;
 
     sdl2wrap::SDL sdl_;
-    sdl2wrap::SDLImage sdl_image_;
+    sdl2wrap::SDLImage sdlImage_;
     sdl2wrap::Window window_;
     sdl2wrap::Renderer renderer_;
 };

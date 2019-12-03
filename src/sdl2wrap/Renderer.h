@@ -12,8 +12,8 @@ namespace sdl2wrap {
 
 class Renderer {
 public:
-    Renderer(const Window& window, const SDL_Color& clear_color, const Uint32 flags);
-    void set_draw_color(const SDL_Color& color) const;
+    Renderer(const Window& window, const SDL_Color& clearColor, const Uint32 flags);
+    void setDrawColor(const SDL_Color& color) const;
     void clear() const;
     void present() const;
     SDL_Renderer* get() const;
@@ -30,7 +30,7 @@ private:
 
     using UniqueRendererPtr = std::unique_ptr<SDL_Renderer, DestroyRenderer>;
 
-    SDL_Color clear_color_;
+    SDL_Color clearColor_;
     UniqueRendererPtr renderer_;
 };
 

@@ -4,8 +4,8 @@
 
 namespace sdl2wrap {
 
-Renderer::Renderer(const Window& window, const SDL_Color& clear_color, const Uint32 flags) 
-    : clear_color_{clear_color}
+Renderer::Renderer(const Window& window, const SDL_Color& clearColor, const Uint32 flags) 
+    : clearColor_{clearColor}
     , renderer_{SDL_CreateRenderer(window.get(), -1, flags)}
 {
     if (!renderer_) {
@@ -13,7 +13,7 @@ Renderer::Renderer(const Window& window, const SDL_Color& clear_color, const Uin
     }
 }
 
-void Renderer::set_draw_color(const SDL_Color& color) const
+void Renderer::setDrawColor(const SDL_Color& color) const
 {
     if (SDL_SetRenderDrawColor(renderer_.get(), color.r, color.g, color.b, color.a) != 0) {
         throw std::runtime_error("Could not set renderer draw color, " + std::string{SDL_GetError()});
@@ -22,7 +22,7 @@ void Renderer::set_draw_color(const SDL_Color& color) const
 
 void Renderer::clear() const
 {
-    set_draw_color(clear_color_);
+    setDrawColor(clearColor_);
 
     if (SDL_RenderClear(renderer_.get()) != 0) {
         throw std::runtime_error("Could not clear renderer, " + std::string{SDL_GetError()});

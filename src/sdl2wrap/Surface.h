@@ -12,9 +12,9 @@ namespace sdl2wrap {
 
 class Surface {
 public:
-    Surface(const std::string& image_path);
-    int width() const;
-    int height() const;
+    Surface(const std::string& imagePath);
+    int getWidth() const;
+    int getHeight() const;
     SDL_Surface* get() const;
 private:
     struct DestroySurface {

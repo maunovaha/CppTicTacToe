@@ -13,10 +13,10 @@ namespace sdl2wrap {
 
 class Texture {
 public:
-    Texture(const Renderer& renderer, const std::string& image_path);
+    Texture(const Renderer& renderer, const std::string& imagePath);
     void render(const Renderer& renderer, const SDL_Point& position, SDL_Rect* clip = nullptr) const;
-    int width() const;
-    int height() const;
+    int getWidth() const;
+    int getHeight() const;
     SDL_Texture* get() const;
 private:
     struct DestroyTexture {

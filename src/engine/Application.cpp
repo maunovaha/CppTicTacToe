@@ -5,24 +5,24 @@ namespace engine {
 
 Application::Application(const std::string& title, const int width, const int height)
     : sdl_{sdl2wrap::SDL::VIDEO}
-    , sdl_image_{sdl2wrap::SDLImage::PNG}
+    , sdlImage_{sdl2wrap::SDLImage::PNG}
     , window_{title, {sdl2wrap::Window::CENTERED, sdl2wrap::Window::CENTERED, width, height}}
     , renderer_{window_, {0xFF, 0xFF, 0xFF, 0xFF}, sdl2wrap::Renderer::ACCELERATED | sdl2wrap::Renderer::PRESENTVSYNC}
 {
 }
 
-void Application::start(std::unique_ptr<Scene> starting_scene) const
+void Application::start(std::unique_ptr<Scene> startingScene) const
 {
-    engine::Director::get()->play(std::move(starting_scene));
+    engine::Director::get()->play(std::move(startingScene));
     loop();
 }
 
 void Application::loop() const
 {
     for (;;) {
-        const bool exit_request = process_input();
+        const bool exitRequest = processInput();
 
-        if (exit_request) {
+        if (exitRequest) {
             break;
         }
 
@@ -31,7 +31,7 @@ void Application::loop() const
     }
 }
 
-bool Application::process_input() const
+bool Application::processInput() const
 {
     SDL_Event event;                  // REFACTOR: Implement sdl2wrap::Event (?)
     while (SDL_PollEvent(&event)) {   // REFACTOR: Implement sdl2wrap::Event::poll(...) (?)
