@@ -1,21 +1,22 @@
 #pragma once
 
 #include "Scene.h"
+#include "Window.h"
 #include <memory>
 
 namespace engine {
 
 class Director {
 public:
-    static void play(std::unique_ptr<Scene> scene);
-    static void update();
-    static void render();
-    static bool isPlaying();
-    static const Director* const get();
-private:
-    Director() = default;
+    void play(std::unique_ptr<Scene> scene, const Window& window);
+    void update();
+    void render(const Window& window) const;
+    bool isPlaying() const;
 
-    static inline std::unique_ptr<Scene> currentScene_;
+    // TODO: Access to window/renderer/app settings(?)
+
+private:
+    std::unique_ptr<Scene> currentScene_;
 };
 
 }
