@@ -4,7 +4,7 @@ namespace engine {
 
 void Application::run(std::unique_ptr<Scene> startingScene)
 {
-    director_.play(std::move(startingScene));
+    director_.play(std::move(startingScene), window_);
     loop();
 }
 
@@ -43,7 +43,7 @@ void Application::update()
 void Application::render() const
 {
     window_.clear();
-    director_.render();
+    director_.render(window_);
     window_.present();
 }
 

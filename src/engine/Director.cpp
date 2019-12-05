@@ -3,10 +3,10 @@
 
 namespace engine {
 
-void Director::play(std::unique_ptr<Scene> scene)
+void Director::play(std::unique_ptr<Scene> scene, const Window& window)
 {
     currentScene_ = std::move(scene);
-    currentScene_->create();
+    currentScene_->create(window);
 }
 
 void Director::update()
@@ -18,13 +18,13 @@ void Director::update()
     currentScene_->update();
 }
 
-void Director::render() const
+void Director::render(const Window& window) const
 {
     if (!isPlaying()) {
         return;
     }
 
-    currentScene_->render();
+    currentScene_->render(window);
 }
 
 bool Director::isPlaying() const

@@ -234,6 +234,7 @@
     <ClInclude Include="include\SDL2\SDL_version.h" />
     <ClInclude Include="include\SDL2\SDL_video.h" />
     <ClInclude Include="include\SDL2\SDL_vulkan.h" />
+    <ClInclude Include="src\engine\Sprite.h" />
     <ClInclude Include="src\engine\Window.h" />
     <ClInclude Include="src\game\AppDelegate.h" />
     <ClInclude Include="src\engine\Application.h" />
@@ -261,6 +262,7 @@
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\engine\Sprite.cpp" />
     <ClCompile Include="src\engine\Window.cpp" />
     <ClCompile Include="src\game\AppDelegate.cpp" />
     <ClCompile Include="src\engine\Application.cpp" />

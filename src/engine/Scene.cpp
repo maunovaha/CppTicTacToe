@@ -3,10 +3,10 @@
 
 namespace engine {
 
-void Scene::render() const
+void Scene::render(const Window& window) const
 {
     for (const auto& gameObject : gameObjects_) {
-        gameObject->render();
+        gameObject->render(window.getRenderer());
     }
 }
 
