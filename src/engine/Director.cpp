@@ -5,11 +5,6 @@ namespace engine {
 
 void Director::play(std::unique_ptr<Scene> scene)
 {
-    // POSSIBLE BUG: Atm. nothing stops us calling this method before the Application::start(), 
-    // which would cause a bug, because we would never enter to the actual Application::loop :(
-    //
-    // This should be fixed either here by checking if the Application is ready (via assert?)
-    // or using some other approach for warning the developers.
     currentScene_ = std::move(scene);
     currentScene_->create();
 }
@@ -23,7 +18,7 @@ void Director::update()
     currentScene_->update();
 }
 
-void Director::render()
+void Director::render() const
 {
     if (!isPlaying()) {
         return;
@@ -32,15 +27,9 @@ void Director::render()
     currentScene_->render();
 }
 
-bool Director::isPlaying()
+bool Director::isPlaying() const
 {
     return static_cast<bool>(currentScene_);
-}
-
-const Director* const Director::get()
-{
-    static Director instance;
-    return &instance;
 }
 
 }

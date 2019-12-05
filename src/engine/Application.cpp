@@ -1,23 +1,14 @@
 #include "Application.h"
-#include "Director.h"
 
 namespace engine {
 
-Application::Application(const std::string& title, const int width, const int height)
-    : sdl_{sdl2wrap::SDL::VIDEO}
-    , sdlImage_{sdl2wrap::SDLImage::PNG}
-    , window_{title, {sdl2wrap::Window::CENTERED, sdl2wrap::Window::CENTERED, width, height}}
-    , renderer_{window_, {0xFF, 0xFF, 0xFF, 0xFF}, sdl2wrap::Renderer::ACCELERATED | sdl2wrap::Renderer::PRESENTVSYNC}
+void Application::run(std::unique_ptr<Scene> startingScene)
 {
-}
-
-void Application::start(std::unique_ptr<Scene> startingScene) const
-{
-    engine::Director::get()->play(std::move(startingScene));
+    director_.play(std::move(startingScene));
     loop();
 }
 
-void Application::loop() const
+void Application::loop()
 {
     for (;;) {
         const bool exitRequest = processInput();
@@ -33,9 +24,9 @@ void Application::loop() const
 
 bool Application::processInput() const
 {
-    SDL_Event event;                  // REFACTOR: Implement sdl2wrap::Event (?)
-    while (SDL_PollEvent(&event)) {   // REFACTOR: Implement sdl2wrap::Event::poll(...) (?)
-        if (event.type == SDL_QUIT) { // REFACTOR: Implement sdl2wrap::SDL::quit (?)
+    SDL_Event event;                  // REFACTOR: Implement sdl2wrap::Event?
+    while (SDL_PollEvent(&event)) {   // REFACTOR: Implement sdl2wrap::Event::poll()?
+        if (event.type == SDL_QUIT) { // REFACTOR: Implement sdl2wrap::SDL::quit?
             return true;
         }
         // TODO: Add later logic for processing keyboard/mouse input
@@ -44,16 +35,16 @@ bool Application::processInput() const
     return false;
 }
 
-void Application::update() const
+void Application::update()
 {
-    Director::get()->update();
+    director_.update();
 }
 
 void Application::render() const
 {
-    renderer_.clear();
-    Director::get()->render();
-    renderer_.present();
+    window_.clear();
+    director_.render();
+    window_.present();
 }
 
 }
