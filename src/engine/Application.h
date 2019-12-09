@@ -2,6 +2,7 @@
 
 #include "Window.h"
 #include "Director.h"
+#include "TextureCache.h"
 #include "../sdl2wrap/SDL.h"
 #include "../sdl2wrap/SDLImage.h"
 #include <string>
@@ -18,7 +19,8 @@ protected:
         : sdl_{sdl2wrap::SDL::VIDEO}
         , sdlImage_{sdl2wrap::SDLImage::PNG}
         , window_{title, {x, y, width, height}}
-        , director_{} {}
+        , director_{}
+        , textureCache_{} {}
     void run(std::unique_ptr<Scene> startingScene);
 private:
     void loop();
@@ -31,6 +33,7 @@ private:
 
     Window window_;
     Director director_;
+    TextureCache textureCache_;
 };
 
 }
