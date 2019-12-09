@@ -14,7 +14,7 @@ public:
     const sdl2wrap::Texture& load(const sdl2wrap::Renderer& renderer, 
                                   const TexturePath& texturePath);
 private:
-    bool is_cached(const TexturePath& texturePath) const;
+    bool isCached(const TexturePath& texturePath) const;
 
     using UniqueTexture = std::unique_ptr<sdl2wrap::Texture>;
     using TextureMap = std::unordered_map<TexturePath, UniqueTexture>;

@@ -6,7 +6,7 @@ namespace engine {
 const sdl2wrap::Texture& TextureCache::load(const sdl2wrap::Renderer& renderer,
                                             const TexturePath& texturePath)
 {
-    if (is_cached(texturePath)) {
+    if (isCached(texturePath)) {
         return *(textureMap_.at(texturePath));
     }
 
@@ -14,7 +14,7 @@ const sdl2wrap::Texture& TextureCache::load(const sdl2wrap::Renderer& renderer,
     return *(textureMap_.emplace(texturePath, std::move(texture)).first->second);
 }
 
-bool TextureCache::is_cached(const TexturePath& texturePath) const
+bool TextureCache::isCached(const TexturePath& texturePath) const
 {
     return textureMap_.find(texturePath) != textureMap_.end();
 }
