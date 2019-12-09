@@ -235,6 +235,7 @@
     <ClInclude Include="include\SDL2\SDL_video.h" />
     <ClInclude Include="include\SDL2\SDL_vulkan.h" />
     <ClInclude Include="src\engine\Sprite.h" />
+    <ClInclude Include="src\engine\SpriteSheet.h" />
     <ClInclude Include="src\engine\TextureCache.h" />
     <ClInclude Include="src\engine\Window.h" />
     <ClInclude Include="src\game\AppDelegate.h" />
@@ -243,6 +244,7 @@
     <ClInclude Include="src\engine\GameObject.h" />
     <ClInclude Include="src\engine\Scene.h" />
     <ClInclude Include="src\game\mainmenu\MainMenuScene.h" />
+    <ClInclude Include="src\sdl2wrap\Rect.h" />
     <ClInclude Include="src\sdl2wrap\SDL.h" />
     <ClInclude Include="src\sdl2wrap\SDLImage.h" />
     <ClInclude Include="src\sdl2wrap\Renderer.h" />
@@ -264,6 +266,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\engine\Sprite.cpp" />
+    <ClCompile Include="src\engine\SpriteSheet.cpp" />
     <ClCompile Include="src\engine\TextureCache.cpp" />
     <ClCompile Include="src\engine\Window.cpp" />
     <ClCompile Include="src\game\AppDelegate.cpp" />
