@@ -3,10 +3,10 @@
 
 namespace engine {
 
-void Director::play(std::unique_ptr<Scene> scene, const Window& window)
+void Director::play(std::unique_ptr<Scene> scene, const Window& window, TextureCache& textureCache)
 {
     currentScene_ = std::move(scene);
-    currentScene_->create(window);
+    currentScene_->create(window, textureCache);
 }
 
 void Director::update()
