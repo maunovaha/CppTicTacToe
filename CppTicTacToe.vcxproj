@@ -248,6 +248,7 @@
     <ClInclude Include="src\sdl2wrap\SDL.h" />
     <ClInclude Include="src\sdl2wrap\SDLImage.h" />
     <ClInclude Include="src\sdl2wrap\Renderer.h" />
+    <ClInclude Include="src\sdl2wrap\SDLTTF.h" />
     <ClInclude Include="src\sdl2wrap\Surface.h" />
     <ClInclude Include="src\sdl2wrap\Texture.h" />
     <ClInclude Include="src\sdl2wrap\Window.h" />
@@ -278,6 +279,7 @@
     <ClCompile Include="src\sdl2wrap\SDL.cpp" />
     <ClCompile Include="src\sdl2wrap\SDLImage.cpp" />
     <ClCompile Include="src\sdl2wrap\Renderer.cpp" />
+    <ClCompile Include="src\sdl2wrap\SDLTTF.cpp" />
     <ClCompile Include="src\sdl2wrap\Surface.cpp" />
     <ClCompile Include="src\sdl2wrap\Texture.cpp" />
     <ClCompile Include="src\sdl2wrap\Window.cpp" />
