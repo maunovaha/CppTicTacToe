@@ -5,6 +5,7 @@
 #include "TextureCache.h"
 #include "../sdl2wrap/SDL.h"
 #include "../sdl2wrap/SDLImage.h"
+#include "../sdl2wrap/SDLTTF.h"
 #include <string>
 
 namespace engine {
@@ -18,6 +19,7 @@ protected:
                 const int y = Window::CENTERED)
         : sdl_{sdl2wrap::SDL::VIDEO}
         , sdlImage_{sdl2wrap::SDLImage::PNG}
+        , sdlTTF_{}
         , window_{title, {x, y, width, height}}
         , director_{}
         , textureCache_{} {}
@@ -30,6 +32,7 @@ private:
 
     sdl2wrap::SDL sdl_;
     sdl2wrap::SDLImage sdlImage_;
+    sdl2wrap::SDLTTF sdlTTF_;
 
     Window window_;
     Director director_;
