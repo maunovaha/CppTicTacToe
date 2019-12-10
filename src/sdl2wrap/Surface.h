@@ -27,6 +27,9 @@ private:
     using UniqueSurfacePtr = std::unique_ptr<SDL_Surface, DestroySurface>;
 
     UniqueSurfacePtr surface_;
+
+    static constexpr SDL_Color CYAN = {0x00, 0xFF, 0xFF, 0xFF};
+    static constexpr SDL_Color COLOR_KEY = CYAN;
 };
 
 }
