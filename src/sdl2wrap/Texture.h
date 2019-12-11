@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Renderer.h"
+#include "Surface.h"
 #if defined(_WIN32)
     #include <SDL.h>
 #else
@@ -13,7 +14,9 @@ namespace sdl2wrap {
 
 class Texture {
 public:
-    Texture(const Renderer& renderer, const std::string& imagePath);
+    Texture(const Renderer& renderer, const Surface& surface);
+    Texture(const Renderer& renderer, const std::string& imagePath)
+        : Texture{renderer, Surface{imagePath}} {}
     void render(const Renderer& renderer, const SDL_Point& position, SDL_Rect* clip = nullptr) const;
     int getWidth() const;
     int getHeight() const;
@@ -26,11 +29,11 @@ private:
         }
     };
 
-    using UniqueTexturePtr = std::unique_ptr<SDL_Texture, DestroyTexture>;
+    using UniqueTexture = std::unique_ptr<SDL_Texture, DestroyTexture>;
 
     int width_ = 0;
     int height_ = 0;
-    UniqueTexturePtr texture_;
+    UniqueTexture texture_;
 };
 
 }

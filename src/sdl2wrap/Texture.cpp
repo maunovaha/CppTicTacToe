@@ -1,17 +1,14 @@
 #include "Texture.h"
-#include "Surface.h"
 #include <stdexcept>
 
 namespace sdl2wrap {
 
-Texture::Texture(const Renderer& renderer, const std::string& imagePath)
+Texture::Texture(const Renderer& renderer, const Surface& surface)
 {
-    const Surface surface{imagePath};
-
-    texture_ = UniqueTexturePtr{SDL_CreateTextureFromSurface(renderer.get(), surface.get())};
+    texture_ = UniqueTexture{SDL_CreateTextureFromSurface(renderer.get(), surface.get())};
 
     if (!texture_) {
-         throw std::runtime_error("Could not create texture, " + std::string{SDL_GetError()});
+        throw std::runtime_error("Could not create texture, " + std::string{SDL_GetError()});
     }
 
     width_ = surface.getWidth();

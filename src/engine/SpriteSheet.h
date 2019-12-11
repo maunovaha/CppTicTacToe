@@ -17,28 +17,10 @@ public:
     SpriteSheet(const sdl2wrap::Renderer& renderer,
                 TextureCache& textureCache,
                 const TexturePath& texturePath, 
-                const SpriteSheetConfig& spriteSheetConfig)
-    {
-        for (const auto& spriteConfig : spriteSheetConfig) {
-            SharedSprite sprite = std::make_shared<Sprite>(renderer, textureCache, texturePath, 
-                0, 0, std::move(spriteConfig.second));
-            spriteSheetData_.emplace(spriteConfig.first, std::move(sprite));
-        }
-    }
-
-    std::shared_ptr<Sprite> getSprite(const SpriteName& spriteName) const
-    {
-        if (!isLoaded(spriteName)) {
-            throw std::runtime_error("Could not get sprite with name: " + spriteName);
-        }
-
-        return spriteSheetData_.at(spriteName);
-    }
+                const SpriteSheetConfig& spriteSheetConfig);
+    std::shared_ptr<Sprite> getSprite(const SpriteName& spriteName) const;
 private:
-    bool isLoaded(const SpriteName& spriteName) const
-    {
-        return spriteSheetData_.find(spriteName) != spriteSheetData_.end();
-    }
+    bool isLoaded(const SpriteName& spriteName) const;
 
     using SharedSprite = std::shared_ptr<Sprite>;
     using SpriteSheetData = std::unordered_map<SpriteName, SharedSprite>;

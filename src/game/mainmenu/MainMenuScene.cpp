@@ -1,5 +1,6 @@
 #include "MainMenuScene.h"
 #include "../../engine/SpriteSheet.h"
+#include "../../engine/Label.h"
 
 namespace game::mainmenu {
 
@@ -27,6 +28,14 @@ void MainMenuScene::create(const engine::Window& window, engine::TextureCache& t
     const std::shared_ptr<engine::Sprite> o = spriteSheet.getSprite("o");
     o->setPosition(170, 170);
     addChild(o);
+
+    const std::shared_ptr<engine::Font> font = std::make_shared<engine::Font>(
+        "assets/fonts/PermanentMarker-Regular.ttf", 44);
+
+    const std::shared_ptr<engine::Label> text = std::make_shared<engine::Label>(
+        window.getRenderer(), font, "Hello World", SDL_Color{0x00, 0x00, 0x00, 0xFF});
+
+    addChild(text);
 }
 
 void MainMenuScene::update()
