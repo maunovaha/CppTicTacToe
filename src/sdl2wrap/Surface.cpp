@@ -5,6 +5,7 @@
     #include <SDL2/SDL_image.h>
 #endif
 #include <stdexcept>
+#include <cassert>
 
 namespace sdl2wrap {
 
@@ -22,6 +23,11 @@ Surface::Surface(const std::string& imagePath) : surface_{IMG_Load(imagePath.c_s
     // Makes all pixels in image transparent which matches the COLOR_KEY.
     // SDL_SetColorKey(surface_.get(), SDL_TRUE, SDL_MapRGB(surface_->format, COLOR_KEY.r, 
     //     COLOR_KEY.g, COLOR_KEY.b));
+}
+
+Surface::Surface(SDL_Surface* surface) : surface_{surface}
+{
+    assert(surface_);
 }
 
 int Surface::getWidth() const
