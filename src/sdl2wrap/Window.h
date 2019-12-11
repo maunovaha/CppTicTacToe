@@ -24,9 +24,9 @@ private:
         }
     };
 
-    using UniqueWindowPtr = std::unique_ptr<SDL_Window, DestroyWindow>;
+    using UniqueWindow = std::unique_ptr<SDL_Window, DestroyWindow>;
 
-    UniqueWindowPtr window_;
+    UniqueWindow window_;
 };
 
 }

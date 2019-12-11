@@ -28,10 +28,10 @@ private:
         }
     };
 
-    using UniqueRendererPtr = std::unique_ptr<SDL_Renderer, DestroyRenderer>;
+    using UniqueRenderer = std::unique_ptr<SDL_Renderer, DestroyRenderer>;
 
     SDL_Color clearColor_;
-    UniqueRendererPtr renderer_;
+    UniqueRenderer renderer_;
 };
 
 }
