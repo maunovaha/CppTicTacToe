@@ -21,7 +21,7 @@ public:
     {
         for (const auto& spriteConfig : spriteSheetConfig) {
             SharedSprite sprite = std::make_shared<Sprite>(renderer, textureCache, texturePath, 
-                0, 0, std::move(spriteConfig.second));
+                0, 0, spriteConfig.second);
             spriteSheetData_.emplace(spriteConfig.first, std::move(sprite));
         }
     }
