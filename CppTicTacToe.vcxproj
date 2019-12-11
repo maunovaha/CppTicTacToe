@@ -234,6 +234,8 @@
     <ClInclude Include="include\SDL2\SDL_version.h" />
     <ClInclude Include="include\SDL2\SDL_video.h" />
     <ClInclude Include="include\SDL2\SDL_vulkan.h" />
+    <ClInclude Include="src\engine\Font.h" />
+    <ClInclude Include="src\engine\Label.h" />
     <ClInclude Include="src\engine\Sprite.h" />
     <ClInclude Include="src\engine\SpriteSheet.h" />
     <ClInclude Include="src\engine\TextureCache.h" />
@@ -255,18 +257,8 @@
     <ClInclude Include="src\sdl2wrap\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="libjpeg-9.dll" />
-    <None Include="libpng16-16.dll" />
-    <None Include="libtiff-5.dll" />
-    <None Include="libwebp-7.dll" />
-    <None Include="LICENSE" />
-    <None Include="Makefile" />
-    <None Include="README.md" />
-    <None Include="SDL2.dll" />
-    <None Include="SDL2_image.dll" />
-    <None Include="zlib1.dll" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClCompile Include="src\engine\Font.cpp" />
+    <ClCompile Include="src\engine\Label.cpp" />
     <ClCompile Include="src\engine\Sprite.cpp" />
     <ClCompile Include="src\engine\SpriteSheet.cpp" />
     <ClCompile Include="src\engine\TextureCache.cpp" />
