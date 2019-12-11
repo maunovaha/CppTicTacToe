@@ -244,6 +244,7 @@
     <ClInclude Include="src\engine\GameObject.h" />
     <ClInclude Include="src\engine\Scene.h" />
     <ClInclude Include="src\game\mainmenu\MainMenuScene.h" />
+    <ClInclude Include="src\sdl2wrap\Font.h" />
     <ClInclude Include="src\sdl2wrap\Rect.h" />
     <ClInclude Include="src\sdl2wrap\SDL.h" />
     <ClInclude Include="src\sdl2wrap\SDLImage.h" />
@@ -276,6 +277,7 @@
     <ClCompile Include="src\engine\Scene.cpp" />
     <ClCompile Include="src\game\mainmenu\MainMenuScene.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\sdl2wrap\Font.cpp" />
     <ClCompile Include="src\sdl2wrap\SDL.cpp" />
     <ClCompile Include="src\sdl2wrap\SDLImage.cpp" />
     <ClCompile Include="src\sdl2wrap\Renderer.cpp" />
