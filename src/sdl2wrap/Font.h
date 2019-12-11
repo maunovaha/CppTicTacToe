@@ -16,7 +16,7 @@ namespace sdl2wrap {
 class Font {
 public:
     Font(const std::string& filePath, const int size);
-    Surface renderSolid(const std::string& text, const SDL_Color& color) const;
+    Surface renderBlended(const std::string& text, const SDL_Color& color) const;
     TTF_Font* get() const;
 private:
     struct DestroyFont {

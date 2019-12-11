@@ -12,9 +12,9 @@ Font::Font(const std::string& filePath, const int size)
     }
 }
 
-Surface Font::renderSolid(const std::string& text, const SDL_Color& color) const
+Surface Font::renderBlended(const std::string& text, const SDL_Color& color) const
 {
-    SDL_Surface* surface = TTF_RenderText_Solid(font_.get(), text.c_str(), color);
+    SDL_Surface* surface = TTF_RenderText_Blended(font_.get(), text.c_str(), color);
 
     if (!surface) {
         throw std::runtime_error("Could not render solid text, " + std::string{TTF_GetError()});
