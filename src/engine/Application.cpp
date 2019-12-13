@@ -1,4 +1,5 @@
 #include "Application.h"
+#include "io/Input.h"
 
 namespace engine {
 
@@ -24,12 +25,15 @@ void Application::loop()
 
 bool Application::processInput() const
 {
-    SDL_Event event;                  // REFACTOR: Implement sdl2wrap::Event?
-    while (SDL_PollEvent(&event)) {   // REFACTOR: Implement sdl2wrap::Event::poll()?
-        if (event.type == SDL_QUIT) { // REFACTOR: Implement sdl2wrap::SDL::quit?
+    io::Input::get().resetInputDevices();
+
+    SDL_Event event;
+
+    while (SDL_PollEvent(&event)) {
+        if (event.type == SDL_QUIT) {
             return true;
         }
-        // TODO: Add later logic for processing keyboard/mouse input
+        io::Input::get().updateInputDevices(event);
     }
 
     return false;
