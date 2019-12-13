@@ -20,6 +20,8 @@ public:
         , clip_{std::move(clip)}
         , texture_{textureCache.load(renderer, texturePath)} {}
     void render(const sdl2wrap::Renderer& renderer) const override;
+    int getWidth() const;
+    int getHeight() const;
 private:
     std::shared_ptr<sdl2wrap::Rect> clip_;
     const sdl2wrap::Texture& texture_;
