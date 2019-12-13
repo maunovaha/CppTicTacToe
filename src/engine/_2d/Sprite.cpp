@@ -1,6 +1,6 @@
 #include "Sprite.h"
 
-namespace engine {
+namespace engine::_2d {
 
 void Sprite::render(const sdl2wrap::Renderer& renderer) const
 {

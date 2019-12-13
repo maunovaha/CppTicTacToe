@@ -240,8 +240,8 @@
     <ClInclude Include="src\engine\io\KeyCode.h" />
     <ClInclude Include="src\engine\io\Mouse.h" />
     <ClInclude Include="src\engine\ui\Text.h" />
-    <ClInclude Include="src\engine\Sprite.h" />
-    <ClInclude Include="src\engine\SpriteSheet.h" />
+    <ClInclude Include="src\engine\_2d\Sprite.h" />
+    <ClInclude Include="src\engine\_2d\SpriteSheet.h" />
     <ClInclude Include="src\engine\TextureCache.h" />
     <ClInclude Include="src\engine\Window.h" />
     <ClInclude Include="src\game\AppDelegate.h" />
@@ -265,8 +265,8 @@
     <ClCompile Include="src\engine\io\Input.cpp" />
     <ClCompile Include="src\engine\io\Mouse.cpp" />
     <ClCompile Include="src\engine\ui\Text.cpp" />
-    <ClCompile Include="src\engine\Sprite.cpp" />
-    <ClCompile Include="src\engine\SpriteSheet.cpp" />
+    <ClCompile Include="src\engine\_2d\Sprite.cpp" />
+    <ClCompile Include="src\engine\_2d\SpriteSheet.cpp" />
     <ClCompile Include="src\engine\TextureCache.cpp" />
     <ClCompile Include="src\engine\Window.cpp" />
     <ClCompile Include="src\game\AppDelegate.cpp" />

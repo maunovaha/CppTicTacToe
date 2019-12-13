@@ -1,12 +1,12 @@
 #pragma once
 
-#include "GameObject.h"
-#include "TextureCache.h"
-#include "../sdl2wrap/Texture.h"
-#include "../sdl2wrap/Rect.h"
+#include "../GameObject.h"
+#include "../TextureCache.h"
+#include "../../sdl2wrap/Texture.h"
+#include "../../sdl2wrap/Rect.h"
 #include <string>
 
-namespace engine {
+namespace engine::_2d {
 
 class Sprite : public GameObject {
 public:

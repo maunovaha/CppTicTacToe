@@ -1,6 +1,6 @@
 #include "SpriteSheet.h"
 
-namespace engine {
+namespace engine::_2d {
 
 SpriteSheet::SpriteSheet(const sdl2wrap::Renderer& renderer,
                          TextureCache& textureCache,

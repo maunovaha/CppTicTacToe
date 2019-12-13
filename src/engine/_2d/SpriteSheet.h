@@ -1,11 +1,11 @@
 #pragma once
 
 #include "Sprite.h"
-#include "../sdl2wrap/Rect.h"
+#include "../../sdl2wrap/Rect.h"
 #include <memory>
 #include <stdexcept>
 
-namespace engine {
+namespace engine::_2d {
 
 using SpriteName = std::string;
 using SpriteClip = sdl2wrap::Rect;
