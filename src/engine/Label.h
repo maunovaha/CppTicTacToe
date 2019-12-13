@@ -19,6 +19,8 @@ public:
         , font_{std::move(font)}
         , texture_{renderer, font_->renderBlended(text, color)} {}
     void render(const sdl2wrap::Renderer& renderer) const override;
+    int getWidth() const;
+    int getHeight() const;
 private:
     std::shared_ptr<Font> font_;
     sdl2wrap::Texture texture_;
