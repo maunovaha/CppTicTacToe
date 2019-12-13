@@ -312,10 +312,10 @@
     <ClInclude Include="src\engine\io\InputDevice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\ui\Label.h">
+    <ClInclude Include="src\engine\ui\Font.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\ui\Font.h">
+    <ClInclude Include="src\engine\ui\Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -380,10 +380,10 @@
     <ClCompile Include="src\engine\io\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\ui\Label.cpp">
+    <ClCompile Include="src\engine\ui\Font.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\ui\Font.cpp">
+    <ClCompile Include="src\engine\ui\Text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

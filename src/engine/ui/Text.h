@@ -7,9 +7,9 @@
 
 namespace engine::ui {
 
-class Label : public GameObject {
+class Text : public GameObject {
 public:
-    Label(const sdl2wrap::Renderer& renderer,
+    Text(const sdl2wrap::Renderer& renderer,
           std::shared_ptr<Font> font,
           const std::string& text, 
           const SDL_Color& color,
