@@ -1,7 +1,7 @@
 #include "Director.h"
 #include <utility>
 
-namespace engine {
+namespace engine::scene {
 
 void Director::play(std::unique_ptr<Scene> scene, const Window& window, TextureCache& textureCache)
 {

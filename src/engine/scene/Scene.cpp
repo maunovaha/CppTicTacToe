@@ -1,7 +1,7 @@
 #include "Scene.h"
 #include <utility>
 
-namespace engine {
+namespace engine::scene {
 
 void Scene::render(const Window& window) const
 {

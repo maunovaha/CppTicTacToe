@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../GameObject.h"
+#include "../scene/GameObject.h"
 #include "../TextureCache.h"
 #include "../../sdl2wrap/Texture.h"
 #include "../../sdl2wrap/Rect.h"
@@ -8,7 +8,7 @@
 
 namespace engine::_2d {
 
-class Sprite : public GameObject {
+class Sprite : public scene::GameObject {
 public:
     Sprite(const sdl2wrap::Renderer& renderer,
            TextureCache& textureCache,
@@ -16,7 +16,7 @@ public:
            const int x = 0,
            const int y = 0,
            std::shared_ptr<sdl2wrap::Rect> clip = nullptr)
-        : GameObject{x, y}
+        : scene::GameObject{x, y}
         , clip_{std::move(clip)}
         , texture_{textureCache.load(renderer, texturePath)} {}
     void render(const sdl2wrap::Renderer& renderer) const override;

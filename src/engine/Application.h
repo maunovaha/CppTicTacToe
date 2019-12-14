@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Window.h"
-#include "Director.h"
+#include "scene/Director.h"
 #include "TextureCache.h"
 #include "../sdl2wrap/SDL.h"
 #include "../sdl2wrap/SDLImage.h"
@@ -23,7 +23,7 @@ protected:
         , window_{title, {x, y, width, height}}
         , director_{}
         , textureCache_{} {}
-    void run(std::unique_ptr<Scene> startingScene);
+    void run(std::unique_ptr<scene::Scene> startingScene);
 private:
     void loop();
     bool processInput() const;
@@ -35,7 +35,7 @@ private:
     sdl2wrap::SDLTTF sdlTTF_;
 
     Window window_;
-    Director director_;
+    scene::Director director_;
     TextureCache textureCache_;
 };
 

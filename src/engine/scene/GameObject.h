@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../sdl2wrap/Renderer.h"
+#include "../../sdl2wrap/Renderer.h"
 
-namespace engine {
+namespace engine::scene {
 
 class GameObject {
 public:

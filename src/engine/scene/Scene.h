@@ -1,12 +1,12 @@
 #pragma once
 
 #include "GameObject.h"
-#include "Window.h"
-#include "TextureCache.h"
+#include "../Window.h"
+#include "../TextureCache.h"
 #include <vector>
 #include <memory>
 
-namespace engine {
+namespace engine::scene {
 
 class Scene {
 public:

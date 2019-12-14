@@ -3,7 +3,7 @@
 
 namespace engine {
 
-void Application::run(std::unique_ptr<Scene> startingScene)
+void Application::run(std::unique_ptr<scene::Scene> startingScene)
 {
     director_.play(std::move(startingScene), window_, textureCache_);
     loop();

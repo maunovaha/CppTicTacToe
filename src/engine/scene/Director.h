@@ -1,11 +1,11 @@
 #pragma once
 
 #include "Scene.h"
-#include "Window.h"
-#include "TextureCache.h"
+#include "../Window.h"
+#include "../TextureCache.h"
 #include <memory>
 
-namespace engine {
+namespace engine::scene {
 
 class Director {
 public:
