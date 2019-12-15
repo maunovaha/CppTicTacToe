@@ -5,7 +5,7 @@
 
 namespace engine::gfx {
 
-Renderer::Renderer(const Window& window, const SDL_Color& clearColor, const Uint32 flags) 
+Renderer::Renderer(const Window& window, const ui::Color& clearColor, const Uint32 flags) 
     : clearColor_{clearColor}
     , renderer_{SDL_CreateRenderer(window.get(), -1, flags)}
 {
@@ -14,9 +14,9 @@ Renderer::Renderer(const Window& window, const SDL_Color& clearColor, const Uint
     }
 }
 
-void Renderer::setDrawColor(const SDL_Color& color) const
+void Renderer::setDrawColor(const ui::Color& color) const
 {
-    if (SDL_SetRenderDrawColor(renderer_.get(), color.r, color.g, color.b, color.a) != 0) {
+    if (SDL_SetRenderDrawColor(renderer_.get(), color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha()) != 0) {
         throw std::runtime_error("Could not set renderer draw color, " + std::string{SDL_GetError()});
     }
 }

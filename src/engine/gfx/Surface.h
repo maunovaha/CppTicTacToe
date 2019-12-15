@@ -1,5 +1,6 @@
 #pragma once
 
+// #include "../ui/Color.h"
 #if defined(_WIN32)
     #include <SDL.h>
 #else
@@ -29,8 +30,8 @@ private:
 
     UniqueSurface surface_;
 
-    static constexpr SDL_Color CYAN = {0x00, 0xFF, 0xFF, 0xFF};
-    static constexpr SDL_Color COLOR_KEY = CYAN;
+    // static constexpr ui::Color CYAN = {0x00, 0xFF, 0xFF, 0xFF}; // REFACTOR: Move to ui::Color
+    // static constexpr ui::Color COLOR_KEY = CYAN; // REFACTOR:: Make this as ui::Color::CYAN;
 };
 
 }

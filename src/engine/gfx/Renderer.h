@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../ui/Color.h"
 #if defined(_WIN32)
     #include <SDL.h>
 #else
@@ -12,8 +13,8 @@ namespace engine::gfx {
 class Window; // Forward declaration
 class Renderer {
 public:
-    Renderer(const Window& window, const SDL_Color& clearColor, const Uint32 flags);
-    void setDrawColor(const SDL_Color& color) const;
+    Renderer(const Window& window, const ui::Color& clearColor, const Uint32 flags);
+    void setDrawColor(const ui::Color& color) const;
     void clear() const;
     void present() const;
     SDL_Renderer* get() const;
@@ -30,7 +31,7 @@ private:
 
     using UniqueRenderer = std::unique_ptr<SDL_Renderer, DestroyRenderer>;
 
-    SDL_Color clearColor_;
+    ui::Color clearColor_;
     UniqueRenderer renderer_;
 };
 

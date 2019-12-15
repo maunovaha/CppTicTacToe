@@ -31,8 +31,8 @@ private:
     UniqueWindow window_;
     std::unique_ptr<Renderer> renderer_;
 
-    static constexpr SDL_Color WHITE = {0xFF, 0xFF, 0xFF, 0xFF};
-    static constexpr SDL_Color CLEAR_COLOR = WHITE;
+    static constexpr ui::Color WHITE = {0xFF, 0xFF, 0xFF, 0xFF}; // REFACTOR: Move to ui::Color
+    static constexpr ui::Color CLEAR_COLOR = WHITE; // REFACTOR: Make this as ui::Color::WHITE;
     static constexpr Uint32 RENDERER_FLAGS = Renderer::ACCELERATED | Renderer::PRESENTVSYNC;
 };
 
