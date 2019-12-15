@@ -25,7 +25,15 @@ void Texture::render(const Renderer& renderer, const math::Point& position, math
         renderQuad.h = clip->height;
     }
 
-    if (SDL_RenderCopy(renderer.get(), texture_.get(), reinterpret_cast<SDL_Rect*>(clip), &renderQuad) != 0) {
+    SDL_Rect* clipRect = nullptr;
+    SDL_Rect clipCopy{};
+
+    if (clip) {
+        clipCopy = *clip;
+        clipRect = &clipCopy;
+    }
+
+    if (SDL_RenderCopy(renderer.get(), texture_.get(), clipRect, &renderQuad) != 0) {
         throw std::runtime_error("Could not render a texture, " + std::string{SDL_GetError()});
     }
 }
