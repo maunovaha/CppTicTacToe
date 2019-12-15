@@ -21,8 +21,8 @@ Surface::Surface(const std::string& imagePath) : surface_{IMG_Load(imagePath.c_s
     // warning at the console window or not.
 
     // Makes all pixels in image transparent which matches the COLOR_KEY.
-    // SDL_SetColorKey(surface_.get(), SDL_TRUE, SDL_MapRGB(surface_->format, COLOR_KEY.getRed(), 
-    //     COLOR_KEY.getGreen(), COLOR_KEY.getBlue()));
+    // SDL_SetColorKey(surface_.get(), SDL_TRUE, SDL_MapRGB(surface_->format, COLOR_KEY.red, 
+    //     COLOR_KEY.green, COLOR_KEY.blue));
 }
 
 Surface::Surface(SDL_Surface* surface) : surface_{surface}
