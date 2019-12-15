@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../math/Rect.h"
 #include "Renderer.h"
 #if defined(_WIN32)
     #include <SDL.h>
@@ -13,7 +14,7 @@ namespace engine::gfx {
 
 class Window {
 public:
-    Window(const std::string& title, const SDL_Rect& rect);
+    Window(const std::string& title, const math::Rect& rect);
     const Renderer& getRenderer() const;
     SDL_Window* get() const;
 

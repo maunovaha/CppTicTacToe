@@ -15,17 +15,17 @@ Texture::Texture(const Renderer& renderer, const Surface& surface)
     height_ = surface.getHeight();
 }
 
-void Texture::render(const Renderer& renderer, const SDL_Point& position, SDL_Rect* clip) const
+void Texture::render(const Renderer& renderer, const SDL_Point& position, math::Rect* clip) const
 {
     SDL_Rect renderQuad{position.x, position.y, width_, height_};
 
-    // Used for rendering only a smaller part of a larger texture, such as Texture atlas.
+    // Used for rendering only a smaller part of a larger texture (e.g. SpriteSheet)
     if (clip) {
-        renderQuad.w = clip->w;
-        renderQuad.h = clip->h;
+        renderQuad.w = clip->width;
+        renderQuad.h = clip->height;
     }
 
-    if (SDL_RenderCopy(renderer.get(), texture_.get(), clip, &renderQuad) != 0) {
+    if (SDL_RenderCopy(renderer.get(), texture_.get(), reinterpret_cast<SDL_Rect*>(clip), &renderQuad) != 0) {
         throw std::runtime_error("Could not render a texture, " + std::string{SDL_GetError()});
     }
 }

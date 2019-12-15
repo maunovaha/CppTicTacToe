@@ -10,7 +10,7 @@ void Sprite::render(const gfx::Renderer& renderer) const
 int Sprite::getWidth() const
 {
     if (clip_) {
-        return clip_->w;
+        return clip_->width;
     }
 
     return texture_.getWidth();
@@ -19,7 +19,7 @@ int Sprite::getWidth() const
 int Sprite::getHeight() const
 {
     if (clip_) {
-        return clip_->h;
+        return clip_->height;
     }
 
     return texture_.getHeight();

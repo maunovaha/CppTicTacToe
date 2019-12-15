@@ -3,8 +3,8 @@
 
 namespace engine::gfx {
 
-Window::Window(const std::string& title, const SDL_Rect& rect)
-    : window_{SDL_CreateWindow(title.c_str(), rect.x, rect.y, rect.w, rect.h, SDL_WINDOW_SHOWN)}
+Window::Window(const std::string& title, const math::Rect& rect)
+    : window_{SDL_CreateWindow(title.c_str(), rect.x, rect.y, rect.width, rect.height, SDL_WINDOW_SHOWN)}
 {
     if (!window_) {
         throw std::runtime_error("Could not create window, " + std::string{SDL_GetError()});

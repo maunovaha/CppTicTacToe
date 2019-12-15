@@ -1,11 +1,27 @@
 #pragma once
 
+#if defined(_WIN32)
+    #include <SDL.h>
+#else
+    #include <SDL2/SDL.h>
+#endif
+
 namespace engine::math {
 
-class Rect : public SDL_Rect { // REFACTOR: Do not inherit, use composition
+class Rect {
 public:
-    Rect(const int x, const int y, const int w, const int h)
-        : SDL_Rect{x, y, w, h} {}
+    constexpr Rect(const int x, const int y, const int width, const int height)
+        : x{x}, y{y}, width{width}, height{height} {}
+
+    constexpr operator SDL_Rect() const
+    {
+        return {x, y, width, height};
+    }
+
+    int x = 0;
+    int y = 0;
+    int width = 0;
+    int height = 0;
 };
 
 }
