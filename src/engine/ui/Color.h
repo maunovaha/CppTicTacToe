@@ -10,15 +10,35 @@ namespace engine::ui {
 
 class Color {
 public:
-    constexpr Color(const uint8_t red, 
-                    const uint8_t green, 
-                    const uint8_t blue, 
-                    const uint8_t alpha = 0xFF)
+    constexpr Color(const Uint8 red,
+                    const Uint8 green,
+                    const Uint8 blue,
+                    const Uint8 alpha = 0xFF)
         : color_{red, green, blue, alpha} {}
 
     constexpr operator SDL_Color() const
     {
         return color_;
+    }
+
+    constexpr Uint8 getRed() const
+    {
+        return color_.r;
+    }
+
+    constexpr Uint8 getGreen() const
+    {
+        return color_.g;
+    }
+
+    constexpr Uint8 getBlue() const
+    {
+        return color_.b;
+    }
+
+    constexpr Uint8 getAlpha() const
+    {
+        return color_.a;
     }
 private:
     SDL_Color color_;
