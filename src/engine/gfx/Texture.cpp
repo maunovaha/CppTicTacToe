@@ -15,7 +15,7 @@ Texture::Texture(const Renderer& renderer, const Surface& surface)
     height_ = surface.getHeight();
 }
 
-void Texture::render(const Renderer& renderer, const SDL_Point& position, math::Rect* clip) const
+void Texture::render(const Renderer& renderer, const math::Point& position, math::Rect* clip) const
 {
     SDL_Rect renderQuad{position.x, position.y, width_, height_};
 

@@ -3,6 +3,7 @@
 #include "Renderer.h"
 #include "Surface.h"
 #include "../math/Rect.h"
+#include "../math/Point.h"
 #if defined(_WIN32)
     #include <SDL.h>
 #else
@@ -18,7 +19,7 @@ public:
     Texture(const Renderer& renderer, const Surface& surface);
     Texture(const Renderer& renderer, const std::string& imagePath)
         : Texture{renderer, Surface{imagePath}} {}
-    void render(const Renderer& renderer, const SDL_Point& position, math::Rect* clip = nullptr) const;
+    void render(const Renderer& renderer, const math::Point& position, math::Rect* clip = nullptr) const;
     int getWidth() const;
     int getHeight() const;
     SDL_Texture* get() const;
