@@ -1,29 +1,30 @@
 #pragma once
 
-#include "../GameObject.h"
 #include "Font.h"
-#include "../../sdl2wrap/Texture.h"
+#include "../scene/GameObject.h"
+#include "../gfx/Texture.h"
 #include <string>
+#include <memory>
 
 namespace engine::ui {
 
-class Text : public GameObject {
+class Text : public scene::GameObject {
 public:
-    Text(const sdl2wrap::Renderer& renderer,
-          std::shared_ptr<Font> font,
-          const std::string& text, 
-          const SDL_Color& color,
-          const int x = 0, 
-          const int y = 0)
-        : GameObject{x, y}
+    Text(const std::string& text,
+        std::shared_ptr<Font> font,
+        const Color& color,
+        const int x,
+        const int y,
+        const gfx::Renderer& renderer)
+        : scene::GameObject{x, y}
         , font_{std::move(font)}
-        , texture_{renderer, font_->renderBlended(text, color)} {}
-    void render(const sdl2wrap::Renderer& renderer) const override;
+        , text_{renderer, font_->renderBlended(text, color)} {}
+    void render(const gfx::Renderer& renderer) const override;
     int getWidth() const;
     int getHeight() const;
 private:
     std::shared_ptr<Font> font_;
-    sdl2wrap::Texture texture_;
+    gfx::Texture text_;
 };
 
 }

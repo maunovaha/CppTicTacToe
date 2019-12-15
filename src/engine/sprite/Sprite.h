@@ -13,8 +13,8 @@ public:
     Sprite(const gfx::Renderer& renderer,
            gfx::TextureCache& textureCache,
            const gfx::TexturePath& texturePath,
-           const int x = 0,
-           const int y = 0,
+           const int x,
+           const int y,
            std::shared_ptr<math::Rect> clip = nullptr)
         : scene::GameObject{x, y}
         , clip_{std::move(clip)}
