@@ -1,10 +1,10 @@
 #include "SpriteSheet.h"
 
-namespace engine::_2d {
+namespace engine::sprite {
 
-SpriteSheet::SpriteSheet(const sdl2wrap::Renderer& renderer,
-                         TextureCache& textureCache,
-                         const TexturePath& texturePath,
+SpriteSheet::SpriteSheet(const gfx::Renderer& renderer,
+                         gfx::TextureCache& textureCache,
+                         const gfx::TexturePath& texturePath,
                          const SpriteSheetConfig& spriteSheetConfig)
 {
     for (const auto& spriteConfig : spriteSheetConfig) {

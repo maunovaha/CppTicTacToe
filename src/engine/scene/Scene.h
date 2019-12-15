@@ -1,8 +1,8 @@
 #pragma once
 
 #include "GameObject.h"
-#include "../Window.h"
-#include "../TextureCache.h"
+#include "../gfx/Window.h"
+#include "../gfx/TextureCache.h"
 #include <vector>
 #include <memory>
 
@@ -11,9 +11,9 @@ namespace engine::scene {
 class Scene {
 public:
     virtual ~Scene() = default;
-    virtual void create(const Window& window, TextureCache& textureCache) = 0;
+    virtual void create(const gfx::Window& window, gfx::TextureCache& textureCache) = 0;
     virtual void update() = 0;
-    void render(const Window& window) const;
+    void render(const gfx::Window& window) const;
 protected:
     void addChild(std::shared_ptr<GameObject> gameObject);
 private:

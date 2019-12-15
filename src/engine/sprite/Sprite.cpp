@@ -1,8 +1,8 @@
 #include "Sprite.h"
 
-namespace engine::_2d {
+namespace engine::sprite {
 
-void Sprite::render(const sdl2wrap::Renderer& renderer) const
+void Sprite::render(const gfx::Renderer& renderer) const
 {
     texture_.render(renderer, {x_, y_}, clip_.get());
 }

@@ -6,7 +6,7 @@
     #include <SDL2/SDL.h>
 #endif
 
-namespace sdl2wrap {
+namespace engine::core::sdl {
 
 class SDL {
 public:

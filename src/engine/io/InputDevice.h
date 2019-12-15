@@ -1,6 +1,5 @@
 #pragma once
 
-// REFACTOR: Do not include SDL directly here
 #if defined(_WIN32)
     #include <SDL.h>
 #else

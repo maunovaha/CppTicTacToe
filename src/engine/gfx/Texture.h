@@ -10,7 +10,7 @@
 #include <string>
 #include <memory>
 
-namespace sdl2wrap {
+namespace engine::gfx {
 
 class Texture {
 public:

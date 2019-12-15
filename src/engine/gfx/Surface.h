@@ -8,7 +8,7 @@
 #include <string>
 #include <memory>
 
-namespace sdl2wrap {
+namespace engine::gfx {
 
 class Surface {
 public:

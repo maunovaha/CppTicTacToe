@@ -8,7 +8,7 @@
     #include <SDL2/SDL_ttf.h>
 #endif
 
-namespace sdl2wrap {
+namespace engine::core::sdl {
 
 class SDLTTF {
 public:

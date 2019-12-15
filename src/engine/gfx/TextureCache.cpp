@@ -1,16 +1,14 @@
 #include "TextureCache.h"
-#include <iostream>
 
-namespace engine {
+namespace engine::gfx {
 
-const sdl2wrap::Texture& TextureCache::load(const sdl2wrap::Renderer& renderer,
-                                            const TexturePath& texturePath)
+const Texture& TextureCache::load(const Renderer& renderer, const TexturePath& texturePath)
 {
     if (isCached(texturePath)) {
         return *(textureMap_.at(texturePath));
     }
 
-    UniqueTexture texture = std::make_unique<sdl2wrap::Texture>(renderer, texturePath);
+    UniqueTexture texture = std::make_unique<Texture>(renderer, texturePath);
     return *(textureMap_.emplace(texturePath, std::move(texture)).first->second);
 }
 

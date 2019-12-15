@@ -1,7 +1,7 @@
 #include "Texture.h"
 #include <stdexcept>
 
-namespace sdl2wrap {
+namespace engine::gfx {
 
 Texture::Texture(const Renderer& renderer, const Surface& surface)
 {

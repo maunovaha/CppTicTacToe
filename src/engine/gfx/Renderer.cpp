@@ -1,8 +1,9 @@
 #include "Renderer.h"
+#include "Window.h"
 #include <stdexcept>
 #include <string>
 
-namespace sdl2wrap {
+namespace engine::gfx {
 
 Renderer::Renderer(const Window& window, const SDL_Color& clearColor, const Uint32 flags) 
     : clearColor_{clearColor}

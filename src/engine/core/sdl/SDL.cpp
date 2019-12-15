@@ -2,7 +2,7 @@
 #include <stdexcept>
 #include <string>
 
-namespace sdl2wrap {
+namespace engine::core::sdl {
 
 SDL::SDL(const Uint32 flags)
 {

@@ -3,7 +3,7 @@
 
 namespace engine::scene {
 
-void Director::play(std::unique_ptr<Scene> scene, const Window& window, TextureCache& textureCache)
+void Director::play(std::unique_ptr<Scene> scene, const gfx::Window& window, gfx::TextureCache& textureCache)
 {
     currentScene_ = std::move(scene);
     currentScene_->create(window, textureCache);
@@ -18,7 +18,7 @@ void Director::update()
     currentScene_->update();
 }
 
-void Director::render(const Window& window) const
+void Director::render(const gfx::Window& window) const
 {
     if (!isPlaying()) {
         return;

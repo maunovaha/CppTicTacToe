@@ -1,6 +1,5 @@
 #include "Mouse.h"
 #include <cassert>
-// #include <iostream>
 
 namespace engine::io {
 

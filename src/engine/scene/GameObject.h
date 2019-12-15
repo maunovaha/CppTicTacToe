@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../sdl2wrap/Renderer.h"
+#include "../gfx/Renderer.h"
 
 namespace engine::scene {
 
 class GameObject {
 public:
     virtual ~GameObject() = default;
-    virtual void render(const sdl2wrap::Renderer& renderer) const = 0;
+    virtual void render(const gfx::Renderer& renderer) const = 0;
 
     constexpr void setPosition(const int x, const int y)
     {

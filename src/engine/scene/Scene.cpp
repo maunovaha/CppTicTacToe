@@ -3,7 +3,7 @@
 
 namespace engine::scene {
 
-void Scene::render(const Window& window) const
+void Scene::render(const gfx::Window& window) const
 {
     for (const auto& gameObject : gameObjects_) {
         gameObject->render(window.getRenderer());

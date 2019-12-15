@@ -1,7 +1,7 @@
 #include "Application.h"
-#include "io/Input.h"
+#include "../io/Input.h"
 
-namespace engine {
+namespace engine::core {
 
 void Application::run(std::unique_ptr<scene::Scene> startingScene)
 {
@@ -46,9 +46,9 @@ void Application::update()
 
 void Application::render() const
 {
-    window_.clear();
+    window_.getRenderer().clear();
     director_.render(window_);
-    window_.present();
+    window_.getRenderer().present();
 }
 
 }

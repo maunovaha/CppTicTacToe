@@ -7,7 +7,7 @@
 #include <stdexcept>
 #include <cassert>
 
-namespace sdl2wrap {
+namespace engine::gfx {
 
 Surface::Surface(const std::string& imagePath) : surface_{IMG_Load(imagePath.c_str())}
 {

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Window.h"
 #if defined(_WIN32)
     #include <SDL.h>
 #else
@@ -8,8 +7,9 @@
 #endif
 #include <memory>
 
-namespace sdl2wrap {
+namespace engine::gfx {
 
+class Window; // Forward declaration
 class Renderer {
 public:
     Renderer(const Window& window, const SDL_Color& clearColor, const Uint32 flags);
