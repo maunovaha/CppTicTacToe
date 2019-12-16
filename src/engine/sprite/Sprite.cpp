@@ -7,22 +7,18 @@ void Sprite::render(const gfx::Renderer& renderer) const
     texture_.render(renderer, {x_, y_}, clip_.get());
 }
 
-int Sprite::getWidth() const
+math::Rect Sprite::getBounds() const
 {
     if (clip_) {
-        return clip_->width;
+        return {x_, y_, clip_->width, clip_->height};
     }
-
-    return texture_.getWidth();
+    return {x_, y_, texture_.getWidth(), texture_.getHeight()};
 }
 
-int Sprite::getHeight() const
+math::Point Sprite::getCenterPoint() const
 {
-    if (clip_) {
-        return clip_->height;
-    }
-
-    return texture_.getHeight();
+    const math::Rect bounds = getBounds();
+    return {bounds.width / 2, bounds.height / 2};
 }
 
 }

@@ -25,6 +25,7 @@ void Application::loop()
 
 bool Application::processInput() const
 {
+    // REFACTOR: Consider declaring input as member variable
     io::Input::get().resetInputDevices();
 
     SDL_Event event;
@@ -33,6 +34,7 @@ bool Application::processInput() const
         if (event.type == SDL_QUIT) {
             return true;
         }
+        // REFACTOR: Consider declaring input as member variable
         io::Input::get().updateInputDevices(event);
     }
 

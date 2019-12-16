@@ -20,8 +20,8 @@ public:
         , font_{std::move(font)}
         , text_{renderer, font_->renderBlended(text, color)} {}
     void render(const gfx::Renderer& renderer) const override;
-    int getWidth() const;
-    int getHeight() const;
+    math::Rect getBounds() const;
+    math::Point getCenterPoint() const;
 private:
     std::shared_ptr<Font> font_;
     gfx::Texture text_;

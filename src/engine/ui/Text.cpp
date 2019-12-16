@@ -7,14 +7,15 @@ void Text::render(const gfx::Renderer& renderer) const
     text_.render(renderer, {x_, y_});
 }
 
-int Text::getWidth() const
+math::Rect Text::getBounds() const
 {
-    return text_.getWidth();
+    return {x_, y_, text_.getWidth(), text_.getHeight()};
 }
 
-int Text::getHeight() const
+math::Point Text::getCenterPoint() const
 {
-    return text_.getHeight();
+    const math::Rect bounds = getBounds();
+    return {bounds.width / 2, bounds.height / 2};
 }
 
 }

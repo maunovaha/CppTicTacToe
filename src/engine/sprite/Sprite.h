@@ -3,7 +3,6 @@
 #include "../scene/GameObject.h"
 #include "../gfx/TextureCache.h"
 #include "../gfx/Texture.h"
-#include "../math/Rect.h"
 #include <string>
 
 namespace engine::sprite {
@@ -20,8 +19,8 @@ public:
         , clip_{std::move(clip)}
         , texture_{textureCache.load(renderer, texturePath)} {}
     void render(const gfx::Renderer& renderer) const override;
-    int getWidth() const;
-    int getHeight() const;
+    math::Rect getBounds() const;
+    math::Point getCenterPoint() const;
 private:
     std::shared_ptr<math::Rect> clip_;
     const gfx::Texture& texture_;

@@ -1,6 +1,7 @@
 #include "MainMenuScene.h"
 #include "../../engine/sprite/SpriteSheet.h"
 #include "../../engine/ui/Text.h"
+#include "../../engine/ui/Button.h"
 
 namespace game::mainmenu {
 
@@ -15,7 +16,8 @@ void MainMenuScene::create(const gfx::Window& window, gfx::TextureCache& texture
         {
             {"background", std::make_shared<sprite::SpriteClip>(0, 0, 360, 360)},
             {"x",          std::make_shared<sprite::SpriteClip>(360, 0, 120, 120)},
-            {"o",          std::make_shared<sprite::SpriteClip>(360, 120, 120, 120)}
+            {"o",          std::make_shared<sprite::SpriteClip>(360, 120, 120, 120)},
+            {"button",     std::make_shared<sprite::SpriteClip>(360, 245, 178, 65)}
         }
     };
 
@@ -31,13 +33,24 @@ void MainMenuScene::create(const gfx::Window& window, gfx::TextureCache& texture
     o->setPosition(170, 170);
     addChild(o);
 
-    const std::shared_ptr<ui::Font> font = std::make_shared<ui::Font>(
-        "assets/fonts/PermanentMarker-Regular.ttf", 44);
-
-    const std::shared_ptr<ui::Text> text = std::make_shared<ui::Text>("Hello World", font,
-        ui::Color{0x00, 0x00, 0x00, 0xFF}, 0, 0, window.getRenderer());
-
+    const std::shared_ptr<ui::Font> titleFont = std::make_shared<ui::Font>(
+        "assets/fonts/PermanentMarker-Regular.ttf", 44
+    );
+    const std::shared_ptr<ui::Text> text = std::make_shared<ui::Text>(
+        "Hello World", titleFont, ui::Color{0x00, 0x00, 0x00, 0xFF}, 0, 0, window.getRenderer()
+    );
     addChild(text);
+
+    const std::shared_ptr<ui::Font> buttonFont = std::make_shared<ui::Font>(
+        "assets/fonts/LilitaOne-Regular.ttf", 24
+    );
+    const std::shared_ptr<ui::Button> testButton = std::make_shared<ui::Button>(
+        "PLAY AGAIN", buttonFont, ui::Color{0x00, 0x00, 0x00, 0xFF},
+        spriteSheet.getSprite("button"), 
+        0, 0,
+        window.getRenderer()
+    );
+    addChild(testButton);
 }
 
 void MainMenuScene::update()

@@ -235,6 +235,7 @@
     <ClInclude Include="include\SDL2\SDL_video.h" />
     <ClInclude Include="include\SDL2\SDL_vulkan.h" />
     <ClInclude Include="src\engine\math\Point.h" />
+    <ClInclude Include="src\engine\ui\Button.h" />
     <ClInclude Include="src\engine\ui\Color.h" />
     <ClInclude Include="src\engine\io\Input.h" />
     <ClInclude Include="src\engine\io\InputDevice.h" />
@@ -267,6 +268,7 @@
     <ClCompile Include="src\engine\sprite\SpriteSheet.cpp" />
     <ClCompile Include="src\engine\gfx\TextureCache.cpp" />
     <ClCompile Include="src\engine\gfx\Window.cpp" />
+    <ClCompile Include="src\engine\ui\Button.cpp" />
     <ClCompile Include="src\engine\ui\Font.cpp" />
     <ClCompile Include="src\engine\ui\Text.cpp" />
     <ClCompile Include="src\game\AppDelegate.cpp" />
