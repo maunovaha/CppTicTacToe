@@ -32,10 +32,9 @@ void Button::onUpdate()
         return;
     }
 
-    const math::Rect buttonBounds = background_->getBounds();
     const math::Point mouseClickPosition = io::Input::getMouse().getPosition();
 
-    if (buttonBounds.contains(mouseClickPosition)) {
+    if (getBounds().contains(mouseClickPosition)) {
         onClickListener_();
     }
 }
@@ -67,7 +66,7 @@ int Button::getHeight() const
 
 math::Rect Button::getBounds() const
 {
-    return background_->getBounds();
+    return {x, y, getWidth(), getHeight()};
 }
 
 math::Point Button::getCenterPoint() const
