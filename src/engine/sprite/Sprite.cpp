@@ -2,23 +2,37 @@
 
 namespace engine::sprite {
 
-void Sprite::onRender(const gfx::Renderer& renderer) const
+void Sprite::onRender(const gfx::Renderer& renderer, const math::Point& parentPosition) const
 {
-    texture_.render(renderer, {x_, y_}, clip_.get());
+    texture_.render(renderer, {parentPosition.x + x, parentPosition.y + y}, clip_.get());
+}
+
+int Sprite::getWidth() const
+{
+    if (clip_) {
+        return clip_->width;
+    }
+
+    return texture_.getWidth();
+}
+
+int Sprite::getHeight() const
+{
+    if (clip_) {
+        return clip_->height;
+    }
+
+    return texture_.getHeight();
 }
 
 math::Rect Sprite::getBounds() const
 {
-    if (clip_) {
-        return {x_, y_, clip_->width, clip_->height};
-    }
-    return {x_, y_, texture_.getWidth(), texture_.getHeight()};
+    return {x, y, getWidth(), getHeight()};
 }
 
 math::Point Sprite::getCenterPoint() const
 {
-    const math::Rect bounds = getBounds();
-    return {bounds.width / 2, bounds.height / 2};
+    return {getWidth() / 2, getHeight() / 2};
 }
 
 }

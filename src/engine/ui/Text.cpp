@@ -2,20 +2,29 @@
 
 namespace engine::ui {
 
-void Text::onRender(const gfx::Renderer& renderer) const
+void Text::onRender(const gfx::Renderer& renderer, const math::Point& parentPosition) const
 {
-    text_.render(renderer, {x_, y_});
+    text_.render(renderer, {parentPosition.x + x, parentPosition.y + y});
+}
+
+int Text::getWidth() const
+{
+    return text_.getWidth();
+}
+
+int Text::getHeight() const
+{
+    return text_.getHeight();
 }
 
 math::Rect Text::getBounds() const
 {
-    return {x_, y_, text_.getWidth(), text_.getHeight()};
+    return {x, y, getWidth(), getHeight()};
 }
 
 math::Point Text::getCenterPoint() const
 {
-    const math::Rect bounds = getBounds();
-    return {bounds.width / 2, bounds.height / 2};
+    return {getWidth() / 2, getHeight() / 2};
 }
 
 }
