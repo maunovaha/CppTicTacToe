@@ -13,6 +13,7 @@ namespace engine::core {
 class Application {
 protected:
     Application(const std::string& title, 
+                const ui::Color& backgroundColor,
                 const int width, 
                 const int height, 
                 const int x = gfx::Window::CENTERED, 
@@ -20,7 +21,7 @@ protected:
         : sdl_{sdl::SDL::VIDEO}
         , sdlImage_{sdl::SDLImage::PNG}
         , sdlTTF_{}
-        , window_{title, {x, y, width, height}}
+        , window_{title, backgroundColor, {x, y, width, height}}
         , textureCache_{} 
         , director_{} {}
     void run(std::unique_ptr<scene::Scene> startingScene);

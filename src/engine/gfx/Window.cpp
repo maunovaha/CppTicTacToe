@@ -3,7 +3,7 @@
 
 namespace engine::gfx {
 
-Window::Window(const std::string& title, const math::Rect& rect)
+Window::Window(const std::string& title, const ui::Color& backgroundColor, const math::Rect& rect)
     : window_{SDL_CreateWindow(title.c_str(), rect.x, rect.y, rect.width, rect.height, SDL_WINDOW_SHOWN)}
     , bounds_{rect}
 {
@@ -11,7 +11,7 @@ Window::Window(const std::string& title, const math::Rect& rect)
         throw std::runtime_error("Could not create window, " + std::string{SDL_GetError()});
     }
 
-    renderer_ = std::make_unique<Renderer>(*this, CLEAR_COLOR, RENDERER_FLAGS);
+    renderer_ = std::make_unique<Renderer>(*this, backgroundColor, RENDERER_FLAGS);
 }
 
 const Renderer& Window::getRenderer() const

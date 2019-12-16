@@ -14,7 +14,7 @@ namespace engine::gfx {
 
 class Window {
 public:
-    Window(const std::string& title, const math::Rect& rect);
+    Window(const std::string& title, const ui::Color& backgroundColor, const math::Rect& rect);
     const Renderer& getRenderer() const;
     int getWidth() const;
     int getHeight() const;
