@@ -19,7 +19,9 @@ public:
         : scene::GameObject{x, y}
         , font_{std::move(font)}
         , text_{renderer, font_->renderBlended(text, color)} {}
-    void onRender(const gfx::Renderer& renderer) const override;
+    void onRender(const gfx::Renderer& renderer, const math::Point& parentPosition) const override;
+    int getWidth() const;
+    int getHeight() const;
     math::Rect getBounds() const;
     math::Point getCenterPoint() const;
 private:

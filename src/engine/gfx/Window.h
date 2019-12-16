@@ -16,6 +16,10 @@ class Window {
 public:
     Window(const std::string& title, const math::Rect& rect);
     const Renderer& getRenderer() const;
+    int getWidth() const;
+    int getHeight() const;
+    const math::Rect& getBounds() const;
+    math::Point getCenterPoint() const;
     SDL_Window* get() const;
 
     static constexpr Uint32 CENTERED = SDL_WINDOWPOS_CENTERED;
@@ -31,6 +35,7 @@ private:
 
     UniqueWindow window_;
     std::unique_ptr<Renderer> renderer_;
+    math::Rect bounds_;
 
     static constexpr ui::Color WHITE = {0xFF, 0xFF, 0xFF, 0xFF}; // REFACTOR: Move to ui::Color
     static constexpr ui::Color CLEAR_COLOR = WHITE; // REFACTOR: Make this as ui::Color::WHITE;

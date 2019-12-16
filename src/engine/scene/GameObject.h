@@ -1,25 +1,26 @@
 #pragma once
 
 #include "../gfx/Renderer.h"
+#include "../math/Point.h"
 
 namespace engine::scene {
 
 class GameObject {
 public:
     virtual ~GameObject() = default;
-    virtual void onRender(const gfx::Renderer& renderer) const = 0;
+    virtual void onRender(const gfx::Renderer& renderer, const math::Point& parentPosition) const = 0;
     virtual void onUpdate() {}
 
     constexpr void setPosition(const int x, const int y)
     {
-        x_ = x;
-        y_ = y;
+        this->x = x;
+        this->y = y;
     }
-protected:
-    GameObject(const int x, const int y) : x_{x}, y_{y} {}
 
-    int x_ = 0;
-    int y_ = 0;
+    int x = 0;
+    int y = 0;
+protected:
+    GameObject(const int x, const int y) : x{x}, y{y} {}
 };
 
 }

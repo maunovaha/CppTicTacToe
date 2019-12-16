@@ -6,7 +6,7 @@ namespace engine::scene {
 void Scene::render(const gfx::Window& window) const
 {
     for (const auto& gameObject : gameObjects_) {
-        gameObject->onRender(window.getRenderer());
+        gameObject->onRender(window.getRenderer(), {0, 0});
     }
 }
 
