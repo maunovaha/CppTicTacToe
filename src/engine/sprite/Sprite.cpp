@@ -2,7 +2,7 @@
 
 namespace engine::sprite {
 
-void Sprite::render(const gfx::Renderer& renderer) const
+void Sprite::onRender(const gfx::Renderer& renderer) const
 {
     texture_.render(renderer, {x_, y_}, clip_.get());
 }

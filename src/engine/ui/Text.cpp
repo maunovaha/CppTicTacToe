@@ -2,7 +2,7 @@
 
 namespace engine::ui {
 
-void Text::render(const gfx::Renderer& renderer) const
+void Text::onRender(const gfx::Renderer& renderer) const
 {
     text_.render(renderer, {x_, y_});
 }

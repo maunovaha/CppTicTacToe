@@ -2,6 +2,7 @@
 
 #include "InputDevice.h"
 #include "KeyCode.h"
+#include "../math/Point.h"
 #include <unordered_map>
 
 namespace engine::io {
@@ -10,6 +11,7 @@ class Mouse : public InputDevice {
 public:
     int getX() const;
     int getY() const;
+    math::Point getPosition() const;
     bool isButtonPressed(const KeyCode buttonKeyCode) const;
     bool isButtonReleased(const KeyCode buttonKeyCode) const;
     void handleInput(const SDL_Event& event) override;

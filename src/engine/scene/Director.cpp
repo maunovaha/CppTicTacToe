@@ -6,7 +6,7 @@ namespace engine::scene {
 void Director::play(std::unique_ptr<Scene> scene, const gfx::Window& window, gfx::TextureCache& textureCache)
 {
     currentScene_ = std::move(scene);
-    currentScene_->create(window, textureCache);
+    currentScene_->onCreate(window, textureCache);
 }
 
 void Director::update()
@@ -15,7 +15,7 @@ void Director::update()
         return;
     }
 
-    currentScene_->update();
+    currentScene_->preUpdate();
 }
 
 void Director::render(const gfx::Window& window) const

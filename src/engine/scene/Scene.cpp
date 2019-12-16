@@ -6,7 +6,16 @@ namespace engine::scene {
 void Scene::render(const gfx::Window& window) const
 {
     for (const auto& gameObject : gameObjects_) {
-        gameObject->render(window.getRenderer());
+        gameObject->onRender(window.getRenderer());
+    }
+}
+
+void Scene::preUpdate()
+{
+    onUpdate();
+
+    for (const auto& gameObject : gameObjects_) {
+        gameObject->onUpdate();
     }
 }
 

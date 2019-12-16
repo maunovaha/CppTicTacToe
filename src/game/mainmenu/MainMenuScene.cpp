@@ -3,11 +3,14 @@
 #include "../../engine/ui/Text.h"
 #include "../../engine/ui/Button.h"
 
+/////////// TEMP
+#include <iostream>
+
 namespace game::mainmenu {
 
 using namespace engine;
 
-void MainMenuScene::create(const gfx::Window& window, gfx::TextureCache& textureCache)
+void MainMenuScene::onCreate(const gfx::Window& window, gfx::TextureCache& textureCache)
 {
     const sprite::SpriteSheet spriteSheet = {
         window.getRenderer(),
@@ -47,13 +50,18 @@ void MainMenuScene::create(const gfx::Window& window, gfx::TextureCache& texture
     const std::shared_ptr<ui::Button> testButton = std::make_shared<ui::Button>(
         "PLAY AGAIN", buttonFont, ui::Color{0x00, 0x00, 0x00, 0xFF},
         spriteSheet.getSprite("button"), 
-        0, 0,
+        100, 100,
         window.getRenderer()
     );
+
+    testButton->registerOnClickListener([]() -> void {
+        std::cout << "Button clicked!\n";
+    });
+
     addChild(testButton);
 }
 
-void MainMenuScene::update()
+void MainMenuScene::onUpdate()
 {
 }
 

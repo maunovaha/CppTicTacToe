@@ -13,6 +13,11 @@ int Mouse::getY() const
     return y_;
 }
 
+math::Point Mouse::getPosition() const
+{
+    return {x_, y_};
+}
+
 bool Mouse::isButtonPressed(const KeyCode buttonKeyCode) const
 {
     if (!isKnownButton(buttonKeyCode)) {

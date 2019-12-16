@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Point.h"
 #if defined(_WIN32)
     #include <SDL.h>
 #else
@@ -16,6 +17,12 @@ public:
     constexpr operator SDL_Rect() const
     {
         return {x, y, width, height};
+    }
+
+    constexpr bool contains(const math::Point& point) const
+    {
+        return point.x >= x && point.x <= (x + width) &&
+               point.y >= y && point.y <= (y + height);
     }
 
     int x = 0;

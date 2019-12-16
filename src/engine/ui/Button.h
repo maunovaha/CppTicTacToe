@@ -1,8 +1,11 @@
 #pragma once
 
-#include "../sprite/Sprite.h"
 #include "Text.h"
+#include "../sprite/Sprite.h"
+#include "../io/Input.h"
 #include <string>
+#include <functional>
+#include <cassert>
 
 namespace engine::ui {
 
@@ -30,14 +33,35 @@ public:
         text_->setPosition(textX, textY);
     }
 
-    void render(const gfx::Renderer& renderer) const override
+    void onUpdate() override
     {
-        background_->render(renderer);
-        text_->render(renderer);
+        if (!onClickListener_ || !io::Input::getMouse().isButtonPressed(io::KeyCode::MouseLeft)) {
+            return;
+        }
+
+        const math::Rect buttonBounds = background_->getBounds();
+        const math::Point mouseClickPosition = io::Input::getMouse().getPosition();
+
+        if (buttonBounds.contains(mouseClickPosition)) {
+            onClickListener_();
+        }
+    }
+
+    void onRender(const gfx::Renderer& renderer) const override
+    {
+        background_->onRender(renderer);
+        text_->onRender(renderer);
+    }
+
+    void registerOnClickListener(std::function<void()> onClickListener)
+    {
+        assert(!onClickListener_);
+        onClickListener_ = std::move(onClickListener);
     }
 private:
     std::shared_ptr<sprite::Sprite> background_;
     std::unique_ptr<ui::Text> text_;
+    std::function<void()> onClickListener_;
 };
 
 }

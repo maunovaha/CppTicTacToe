@@ -7,7 +7,8 @@ namespace engine::scene {
 class GameObject {
 public:
     virtual ~GameObject() = default;
-    virtual void render(const gfx::Renderer& renderer) const = 0;
+    virtual void onRender(const gfx::Renderer& renderer) const = 0;
+    virtual void onUpdate() {}
 
     constexpr void setPosition(const int x, const int y)
     {
