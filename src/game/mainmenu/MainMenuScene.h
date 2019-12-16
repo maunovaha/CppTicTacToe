@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../engine/Scene.h"
+#include "../../engine/scene/Scene.h"
 
 namespace game::mainmenu {
 
-class MainMenuScene: public engine::Scene {
+class MainMenuScene: public engine::scene::Scene {
 public:
-    void create(const engine::Window& window, engine::TextureCache& textureCache) override;
-    void update() override;
+    void onCreate(const engine::gfx::Window& window, engine::gfx::TextureCache& textureCache) override;
+    void onUpdate() override;
 };
 
 }

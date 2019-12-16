@@ -243,80 +243,86 @@
     <ClInclude Include="include\SDL2\SDL_vulkan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\engine\Director.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\engine\GameObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\engine\Scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\game\AppDelegate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\game\mainmenu\MainMenuScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2wrap\Renderer.h">
+    <ClInclude Include="src\engine\io\KeyCode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2wrap\SDL.h">
+    <ClInclude Include="src\engine\io\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2wrap\SDLImage.h">
+    <ClInclude Include="src\engine\io\Mouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2wrap\Surface.h">
+    <ClInclude Include="src\engine\io\InputDevice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2wrap\Texture.h">
+    <ClInclude Include="src\engine\ui\Color.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2wrap\Window.h">
+    <ClInclude Include="src\engine\scene\Director.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\Window.h">
+    <ClInclude Include="src\engine\scene\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\Sprite.h">
+    <ClInclude Include="src\engine\scene\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\TextureCache.h">
+    <ClInclude Include="src\engine\core\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\SpriteSheet.h">
+    <ClInclude Include="src\engine\core\sdl\SDL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2wrap\Rect.h">
+    <ClInclude Include="src\engine\core\sdl\SDLImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2wrap\SDLTTF.h">
+    <ClInclude Include="src\engine\core\sdl\SDLTTF.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sdl2wrap\Font.h">
+    <ClInclude Include="src\engine\sprite\Sprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\Label.h">
+    <ClInclude Include="src\engine\sprite\SpriteSheet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\Font.h">
+    <ClInclude Include="src\engine\math\Rect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\Surface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\TextureCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\ui\Font.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\ui\Text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\math\Point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\ui\Button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\engine\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\engine\Director.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\engine\Scene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -326,46 +332,58 @@
     <ClCompile Include="src\game\mainmenu\MainMenuScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sdl2wrap\Renderer.cpp">
+    <ClCompile Include="src\engine\io\Mouse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sdl2wrap\SDL.cpp">
+    <ClCompile Include="src\engine\io\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sdl2wrap\SDLImage.cpp">
+    <ClCompile Include="src\engine\scene\Director.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sdl2wrap\Surface.cpp">
+    <ClCompile Include="src\engine\scene\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sdl2wrap\Texture.cpp">
+    <ClCompile Include="src\engine\core\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sdl2wrap\Window.cpp">
+    <ClCompile Include="src\engine\core\sdl\SDL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\Window.cpp">
+    <ClCompile Include="src\engine\core\sdl\SDLImage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\Sprite.cpp">
+    <ClCompile Include="src\engine\core\sdl\SDLTTF.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\TextureCache.cpp">
+    <ClCompile Include="src\engine\sprite\Sprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\SpriteSheet.cpp">
+    <ClCompile Include="src\engine\sprite\SpriteSheet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sdl2wrap\SDLTTF.cpp">
+    <ClCompile Include="src\engine\gfx\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sdl2wrap\Font.cpp">
+    <ClCompile Include="src\engine\gfx\Surface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\Label.cpp">
+    <ClCompile Include="src\engine\gfx\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\Font.cpp">
+    <ClCompile Include="src\engine\gfx\TextureCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\gfx\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\ui\Font.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\ui\Text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\ui\Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
