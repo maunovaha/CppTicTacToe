@@ -1,6 +1,5 @@
 #include "Button.h"
 #include "../io/Input.h"
-#include <cassert>
 
 namespace engine::ui {
 
@@ -46,12 +45,6 @@ void Button::onRender(const gfx::Renderer& renderer, const math::Point& parentPo
     // Passing in Button position is required in order to render elements relatively to parent
      background_->onRender(renderer, position);
      text_->onRender(renderer, position);
-}
-
-void Button::registerOnClickListener(std::function<void()> onClickListener)
-{
-    assert(!onClickListener_);
-    onClickListener_ = std::move(onClickListener);
 }
 
 int Button::getWidth() const
