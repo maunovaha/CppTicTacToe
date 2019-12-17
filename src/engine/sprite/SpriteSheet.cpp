@@ -4,12 +4,13 @@ namespace engine::sprite {
 
 SpriteSheet::SpriteSheet(const gfx::Renderer& renderer,
                          gfx::TextureCache& textureCache,
-                         const gfx::TexturePath& texturePath,
-                         const SpriteSheetConfig& spriteSheetConfig)
+                         const std::string& imagePath,
+                         const Config& config)
 {
-    for (const auto& spriteConfig : spriteSheetConfig) {
-        SharedSprite sprite = std::make_shared<Sprite>(renderer, textureCache, texturePath,
-            0, 0, spriteConfig.second);
+    for (const auto& spriteConfig : config) {
+        SharedSprite sprite = std::make_shared<Sprite>(
+            renderer, textureCache, imagePath, 0, 0, spriteConfig.second
+        );
         spriteSheetData_.emplace(spriteConfig.first, std::move(sprite));
     }
 }

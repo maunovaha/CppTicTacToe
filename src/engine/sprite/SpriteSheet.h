@@ -7,17 +7,16 @@
 
 namespace engine::sprite {
 
-using SpriteName        = std::string;
-using SpriteClip        = math::Rect;
-using SharedSpriteClip  = std::shared_ptr<SpriteClip>;
-using SpriteSheetConfig = std::unordered_map<SpriteName, SharedSpriteClip>;
-
 class SpriteSheet {
 public:
+    using SpriteName = std::string;
+    using SpriteClip = std::shared_ptr<math::Rect>;
+    using Config     = std::unordered_map<SpriteName, SpriteClip>;
+
     SpriteSheet(const gfx::Renderer& renderer,
                 gfx::TextureCache& textureCache,
-                const gfx::TexturePath& texturePath,
-                const SpriteSheetConfig& spriteSheetConfig);
+                const std::string& imagePath,
+                const Config& config);
     std::shared_ptr<Sprite> getSprite(const SpriteName& spriteName) const;
 private:
     bool isLoaded(const SpriteName& spriteName) const;
