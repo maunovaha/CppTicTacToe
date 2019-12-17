@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Font.h"
+#include "../core/AppContext.h"
 #include "../scene/GameObject.h"
 #include "../gfx/Texture.h"
 #include <string>
@@ -14,12 +15,11 @@ public:
         std::shared_ptr<Font> font,
         const Color& color,
         const int x,
-        const int y,
-        const gfx::Renderer& renderer)
+        const int y)
         : scene::GameObject{x, y}
         , font_{std::move(font)}
-        , text_{renderer, font_->renderBlended(text, color)} {}
-    void onRender(const gfx::Renderer& renderer, const math::Point& parentPosition) const override;
+        , text_{core::AppContext::getRenderer(), font_->renderBlended(text, color)} {}
+    void onRender(const math::Point& parentPosition) const override;
     int getWidth() const;
     int getHeight() const;
     math::Rect getBounds() const;

@@ -21,6 +21,11 @@ public:
         return {red, green, blue, alpha};
     }
 
+    static inline Color black()
+    {
+        return {0x00, 0x00, 0x00};
+    }
+
     Uint8 red   = 0x00;
     Uint8 green = 0x00;
     Uint8 blue  = 0x00;

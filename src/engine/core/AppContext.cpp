@@ -3,7 +3,7 @@
 
 namespace engine::core {
 
-void AppContext::configure(const Application& app)
+void AppContext::configure(Application& app)
 {
     instance_ = std::make_unique<AppContext>(app);
 }
@@ -18,7 +18,7 @@ const gfx::Renderer& AppContext::getRenderer()
     return get().app_.window_.getRenderer();
 }
 
-const gfx::TextureCache& AppContext::getTextureCache()
+gfx::TextureCache& AppContext::getTextureCache()
 {
     return get().app_.textureCache_;
 }

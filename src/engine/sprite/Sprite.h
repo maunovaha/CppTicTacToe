@@ -1,24 +1,21 @@
 #pragma once
 
 #include "../scene/GameObject.h"
-#include "../gfx/TextureCache.h"
-#include "../gfx/Texture.h"
+#include "../core/AppContext.h"
 #include <string>
 
 namespace engine::sprite {
 
 class Sprite : public scene::GameObject {
 public:
-    Sprite(const gfx::Renderer& renderer,
-           gfx::TextureCache& textureCache,
-           const gfx::TexturePath& texturePath,
+    Sprite(const std::string& imagePath,
            const int x,
            const int y,
            std::shared_ptr<math::Rect> clip = nullptr)
         : scene::GameObject{x, y}
         , clip_{std::move(clip)}
-        , texture_{textureCache.load(renderer, texturePath)} {}
-    void onRender(const gfx::Renderer& renderer, const math::Point& parentPosition) const override;
+        , texture_{core::AppContext::getTextureCache().load(imagePath)} {}
+    void onRender(const math::Point& parentPosition) const override;
     int getWidth() const;
     int getHeight() const;
     math::Rect getBounds() const;

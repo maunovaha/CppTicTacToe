@@ -2,9 +2,9 @@
 
 namespace engine::ui {
 
-void Text::onRender(const gfx::Renderer& renderer, const math::Point& parentPosition) const
+void Text::onRender(const math::Point& parentPosition) const
 {
-    text_.render(renderer, {parentPosition.x + x, parentPosition.y + y});
+    text_.render(core::AppContext::getRenderer(), {parentPosition.x + x, parentPosition.y + y});
 }
 
 int Text::getWidth() const

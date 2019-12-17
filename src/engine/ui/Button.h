@@ -15,10 +15,9 @@ public:
            const Color& color,
            std::shared_ptr<sprite::Sprite> background,
            const int x,
-           const int y,
-           const gfx::Renderer& renderer);
+           const int y);
     void onUpdate() override;
-    void onRender(const gfx::Renderer& renderer, const math::Point& parentPosition) const override;
+    void onRender(const math::Point& parentPosition) const override;
     int getWidth() const;
     int getHeight() const;
     math::Rect getBounds() const;

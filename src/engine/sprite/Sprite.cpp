@@ -2,9 +2,9 @@
 
 namespace engine::sprite {
 
-void Sprite::onRender(const gfx::Renderer& renderer, const math::Point& parentPosition) const
+void Sprite::onRender(const math::Point& parentPosition) const
 {
-    texture_.render(renderer, {parentPosition.x + x, parentPosition.y + y}, clip_.get());
+    texture_.render(core::AppContext::getRenderer(), {parentPosition.x + x, parentPosition.y + y}, clip_.get());
 }
 
 int Sprite::getWidth() const
