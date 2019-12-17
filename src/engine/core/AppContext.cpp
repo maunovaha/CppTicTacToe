@@ -28,7 +28,7 @@ const io::Input& AppContext::getInput()
     return get().app_.input_;
 }
 
-const scene::Director& AppContext::getDirector()
+scene::Director& AppContext::getDirector()
 {
     return get().app_.director_;
 }

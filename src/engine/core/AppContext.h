@@ -20,7 +20,7 @@ public:
     static const gfx::Renderer& getRenderer();
     static gfx::TextureCache& getTextureCache();
     static const io::Input& getInput();
-    static const scene::Director& getDirector();
+    static scene::Director& getDirector();
 private:
     static const AppContext& get();
 

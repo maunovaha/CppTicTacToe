@@ -1,4 +1,5 @@
 #include "MainMenuScene.h"
+#include "../gameplay/GameplayScene.h"
 #include "../../engine/ui/Text.h"
 #include "../../engine/ui/Button.h"
 
@@ -20,9 +21,6 @@ void MainMenuScene::loadSpriteSheet()
 {
     spriteSheet_ = std::make_unique<SpriteSheet>(
         "assets/textures/SpriteSheet.png", SpriteSheet::Config{
-            {"grid",   std::make_shared<SpriteSheet::SpriteClip>(0, 0, 360, 360)},
-            {"x",      std::make_shared<SpriteSheet::SpriteClip>(360, 0, 120, 120)},
-            {"o",      std::make_shared<SpriteSheet::SpriteClip>(360, 120, 120, 120)},
             {"button", std::make_shared<SpriteSheet::SpriteClip>(360, 245, 178, 65)}
         }
     );
@@ -63,7 +61,7 @@ void MainMenuScene::createStartButton()
     const int startButtonX = AppContext::getWindow().getCenterPoint().x - startButton->getCenterPoint().x;
     startButton->setPosition(startButtonX, startButtonY);
     startButton->registerOnClickListener([]() {
-        // TODO: Change scene
+        AppContext::getDirector().play(std::make_unique<gameplay::GameplayScene>());
     });
 
     addChild(startButton);
