@@ -1,11 +1,27 @@
 #include "Application.h"
-#include "../io/Input.h"
 
 namespace engine::core {
 
+Application::Application(const std::string& title,
+                         const ui::Color& backgroundColor,
+                         const int width,
+                         const int height,
+                         const int x,
+                         const int y)
+    : sdl_{sdl::SDL::VIDEO}
+    , sdlImage_{sdl::SDLImage::PNG}
+    , sdlTTF_{}
+    , window_{title, backgroundColor, {x, y, width, height}}
+    , textureCache_{}
+    , input_{}
+    , director_{}
+{
+    AppContext::configure(*this);
+}
+
 void Application::run(std::unique_ptr<scene::Scene> startingScene)
 {
-    director_.play(std::move(startingScene), window_, textureCache_);
+    director_.play(std::move(startingScene));
     loop();
 }
 
@@ -45,9 +61,7 @@ void Application::update()
 
 void Application::render() const
 {
-    window_.getRenderer().clear();
-    director_.render(window_);
-    window_.getRenderer().present();
+    director_.render();
 }
 
 }

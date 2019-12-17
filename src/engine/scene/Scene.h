@@ -11,7 +11,7 @@ namespace engine::scene {
 class Scene {
 public:
     virtual ~Scene() = default;
-    virtual void onCreate(const gfx::Window& window, gfx::TextureCache& textureCache) = 0;
+    virtual void onCreate() = 0;
     virtual void onUpdate() = 0;
     void preUpdate();
     void render(const gfx::Window& window) const;

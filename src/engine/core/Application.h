@@ -1,5 +1,6 @@
 #pragma once
 
+#include "AppContext.h"
 #include "../scene/Director.h"
 #include "../gfx/TextureCache.h"
 #include "../gfx/Window.h"
@@ -18,15 +19,10 @@ protected:
                 const int width, 
                 const int height, 
                 const int x = gfx::Window::CENTERED, 
-                const int y = gfx::Window::CENTERED)
-        : sdl_{sdl::SDL::VIDEO}
-        , sdlImage_{sdl::SDLImage::PNG}
-        , sdlTTF_{}
-        , window_{title, backgroundColor, {x, y, width, height}}
-        , textureCache_{} 
-        , input_{}
-        , director_{} {}
+                const int y = gfx::Window::CENTERED);
     void run(std::unique_ptr<scene::Scene> startingScene);
+
+    friend class AppContext;
 private:
     void loop();
     bool processInput();
