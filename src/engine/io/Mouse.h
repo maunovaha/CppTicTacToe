@@ -24,7 +24,7 @@ private:
     int x_ = 0;
     int y_ = 0;
 
-    static inline std::unordered_map<KeyCode, ButtonState> buttons_ = {
+    std::unordered_map<KeyCode, ButtonState> buttons_ = {
         {KeyCode::MouseLeft, ButtonState::Idle}
     };
 };

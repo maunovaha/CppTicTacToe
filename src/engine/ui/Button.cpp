@@ -27,15 +27,15 @@ Button::Button(std::string text,
 
 void Button::onUpdate()
 {
-    if (!onClickListener_ || !io::Input::getMouse().isButtonPressed(io::KeyCode::MouseLeft)) {
-        return;
-    }
+    //if (!onClickListener_ || !io::Input::getMouse().isButtonPressed(io::KeyCode::MouseLeft)) {
+    //    return;
+    //}
 
-    const math::Point mouseClickPosition = io::Input::getMouse().getPosition();
+    //const math::Point mouseClickPosition = io::Input::getMouse().getPosition();
 
-    if (getBounds().contains(mouseClickPosition)) {
-        onClickListener_();
-    }
+    //if (getBounds().contains(mouseClickPosition)) {
+    //    onClickListener_();
+    //}
 }
 
 void Button::onRender(const gfx::Renderer& renderer, const math::Point& parentPosition) const

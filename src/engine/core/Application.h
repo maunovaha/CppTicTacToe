@@ -3,6 +3,7 @@
 #include "../scene/Director.h"
 #include "../gfx/TextureCache.h"
 #include "../gfx/Window.h"
+#include "../io/Input.h"
 #include "sdl/SDL.h"
 #include "sdl/SDLImage.h"
 #include "sdl/SDLTTF.h"
@@ -23,13 +24,14 @@ protected:
         , sdlTTF_{}
         , window_{title, backgroundColor, {x, y, width, height}}
         , textureCache_{} 
+        , input_{}
         , director_{} {}
     void run(std::unique_ptr<scene::Scene> startingScene);
 private:
     void loop();
+    bool processInput();
     void update();
     void render() const;
-    bool processInput() const;
 
     sdl::SDL sdl_;
     sdl::SDLImage sdlImage_;
@@ -38,6 +40,7 @@ private:
     gfx::Window window_;
     gfx::TextureCache textureCache_;
 
+    io::Input input_;
     scene::Director director_;
 };
 

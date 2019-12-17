@@ -2,33 +2,27 @@
 
 namespace engine::io {
 
-Input& Input::get()
-{
-    static Input instance;
-    return instance;
-}
-
-const Mouse& Input::getMouse()
+const Mouse& Input::getMouse() const
 {
     return mouse_;
 }
 
-bool Input::isButtonPressed(const KeyCode buttonKeyCode)
+bool Input::isButtonPressed(const KeyCode buttonKeyCode) const
 {
     return mouse_.isButtonPressed(buttonKeyCode);
 }
 
-bool Input::isButtonReleased(const KeyCode buttonKeyCode)
+bool Input::isButtonReleased(const KeyCode buttonKeyCode) const
 {
     return mouse_.isButtonReleased(buttonKeyCode);
 }
 
-void Input::updateInputDevices(const SDL_Event& event)
+void Input::update(const SDL_Event& event)
 {
     mouse_.handleInput(event);
 }
 
-void Input::resetInputDevices()
+void Input::reset()
 {
     mouse_.reset();
 }
