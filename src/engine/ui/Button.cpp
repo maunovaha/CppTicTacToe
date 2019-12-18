@@ -1,6 +1,4 @@
 #include "Button.h"
-#include "../io/Input.h"
-#include <cassert>
 
 namespace engine::ui {
 
@@ -9,11 +7,10 @@ Button::Button(std::string text,
                const Color& color,
                std::shared_ptr<sprite::Sprite> background,
                const int x,
-               const int y,
-               const gfx::Renderer& renderer)
+               const int y)
     : GameObject{x, y}
     , background_{std::move(background)}
-    , text_{std::make_unique<ui::Text>(std::move(text), std::move(font), color, 0, 0, renderer)}
+    , text_{std::make_unique<ui::Text>(std::move(text), std::move(font), color, 0, 0)}
 {
     background_->setPosition(x, y);
     // REFACTOR: The magic number is used atm. because the button graphic contains a shadow
@@ -24,35 +21,28 @@ Button::Button(std::string text,
     const int textY = y + backgroundCenterPoint.y - textCenterPoint.y - buttonShadowHeight;
     const int textX = x + backgroundCenterPoint.x - textCenterPoint.x;
     text_->setPosition(textX, textY);
- }
+}
 
 void Button::onUpdate()
 {
-    if (!onClickListener_ || !io::Input::getMouse().isButtonPressed(io::KeyCode::MouseLeft)) {
+    if (!onClickListener_ || !core::AppContext::getInput().isButtonPressed(io::KeyCode::MouseLeft)) {
         return;
     }
 
-    const math::Rect buttonBounds = background_->getBounds();
-    const math::Point mouseClickPosition = io::Input::getMouse().getPosition();
+    const math::Point mouseClickPosition = core::AppContext::getInput().getMouse().getPosition();
 
-    if (buttonBounds.contains(mouseClickPosition)) {
+    if (getBounds().contains(mouseClickPosition)) {
         onClickListener_();
     }
 }
 
-void Button::onRender(const gfx::Renderer& renderer, const math::Point& parentPosition) const
+void Button::onRender(const math::Point& parentPosition) const
 {
     const math::Point position{x, y};
     
     // Passing in Button position is required in order to render elements relatively to parent
-     background_->onRender(renderer, position);
-     text_->onRender(renderer, position);
-}
-
-void Button::registerOnClickListener(std::function<void()> onClickListener)
-{
-    assert(!onClickListener_);
-    onClickListener_ = std::move(onClickListener);
+    background_->onRender(position);
+    text_->onRender(position);
 }
 
 int Button::getWidth() const
@@ -67,7 +57,7 @@ int Button::getHeight() const
 
 math::Rect Button::getBounds() const
 {
-    return background_->getBounds();
+    return {x, y, getWidth(), getHeight()};
 }
 
 math::Point Button::getCenterPoint() const

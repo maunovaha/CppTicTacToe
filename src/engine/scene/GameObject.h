@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../gfx/Renderer.h"
 #include "../math/Point.h"
 
 namespace engine::scene {
@@ -8,8 +7,8 @@ namespace engine::scene {
 class GameObject {
 public:
     virtual ~GameObject() = default;
-    virtual void onRender(const gfx::Renderer& renderer, const math::Point& parentPosition) const = 0;
     virtual void onUpdate() {}
+    virtual void onRender(const math::Point& parentPosition) const = 0;
 
     constexpr void setPosition(const int x, const int y)
     {

@@ -7,16 +7,14 @@
 
 namespace engine::gfx {
 
-using TexturePath = std::string;
-
 class TextureCache {
 public:
-    const Texture& load(const Renderer& renderer, const TexturePath& texturePath);
+    const Texture& load(const std::string& texturePath);
 private:
-    bool isCached(const TexturePath& texturePath) const;
+    bool isCached(const std::string& texturePath) const;
 
     using UniqueTexture = std::unique_ptr<Texture>;
-    using TextureMap = std::unordered_map<TexturePath, UniqueTexture>;
+    using TextureMap    = std::unordered_map<std::string, UniqueTexture>;
 
     TextureMap textureMap_;
 };

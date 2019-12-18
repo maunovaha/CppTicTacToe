@@ -1,12 +1,13 @@
 #include "Scene.h"
 #include <utility>
+#include "../Core/AppContext.h"
 
 namespace engine::scene {
 
-void Scene::render(const gfx::Window& window) const
+void Scene::render() const
 {
     for (const auto& gameObject : gameObjects_) {
-        gameObject->onRender(window.getRenderer(), {0, 0});
+        gameObject->onRender({0, 0});
     }
 }
 

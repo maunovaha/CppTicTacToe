@@ -1,16 +1,16 @@
 #include "SpriteSheet.h"
+#include <stdexcept>
 
 namespace engine::sprite {
 
-SpriteSheet::SpriteSheet(const gfx::Renderer& renderer,
-                         gfx::TextureCache& textureCache,
-                         const gfx::TexturePath& texturePath,
-                         const SpriteSheetConfig& spriteSheetConfig)
+SpriteSheet::SpriteSheet(const std::string& imagePath, const Config& config)
 {
-    for (const auto& spriteConfig : spriteSheetConfig) {
-        SharedSprite sprite = std::make_shared<Sprite>(renderer, textureCache, texturePath,
-            0, 0, spriteConfig.second);
-        spriteSheetData_.emplace(spriteConfig.first, std::move(sprite));
+    for (const auto& spriteConfig : config) {
+        const SpriteName& spriteName = spriteConfig.first;
+        const SharedSpriteClip& spriteClip = spriteConfig.second;
+
+        auto sprite = std::make_shared<Sprite>(imagePath, 0, 0, spriteClip);
+        spriteSheetData_.emplace(spriteName, std::move(sprite));
     }
 }
 

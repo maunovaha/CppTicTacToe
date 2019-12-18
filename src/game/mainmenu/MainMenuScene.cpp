@@ -1,91 +1,70 @@
 #include "MainMenuScene.h"
+#include "../gameplay/GameplayScene.h"
 #include "../../engine/ui/Text.h"
 #include "../../engine/ui/Button.h"
 
 namespace game::mainmenu {
 
-using namespace engine;
+using namespace engine::core;
+using namespace engine::sprite;
+using namespace engine::ui;
 
-void MainMenuScene::onCreate(const gfx::Window& window, gfx::TextureCache& textureCache)
+void MainMenuScene::onCreate()
 {
-    loadSpriteSheet(window, textureCache);
-    createTitleText(window);
-    createSubtitleText(window);
-    createStartButton(window);
+    createSpriteSheet();
+    createTitleText();
+    createSubtitleText();
+    createStartButton();
 }
 
-void MainMenuScene::loadSpriteSheet(const gfx::Window& window, gfx::TextureCache& textureCache)
+void MainMenuScene::createSpriteSheet()
 {
-    spriteSheet_ = std::make_unique<sprite::SpriteSheet>(
-        window.getRenderer(), textureCache, "assets/textures/SpriteSheet.png", sprite::SpriteSheetConfig{
-            {"grid",   std::make_shared<sprite::SpriteClip>(0, 0, 360, 360)},
-            {"x",      std::make_shared<sprite::SpriteClip>(360, 0, 120, 120)},
-            {"o",      std::make_shared<sprite::SpriteClip>(360, 120, 120, 120)},
-            {"button", std::make_shared<sprite::SpriteClip>(360, 245, 178, 65)}
+    spriteSheet_ = std::make_unique<SpriteSheet>(
+        "assets/textures/SpriteSheet.png", SpriteSheet::Config{
+            {"Button", std::make_shared<SpriteSheet::SpriteClip>(360, 245, 178, 65)}
         }
     );
 }
 
-void MainMenuScene::createTitleText(const gfx::Window& window)
+void MainMenuScene::createTitleText()
 {
-    const std::string titleFontPath = "assets/fonts/PermanentMarker-Regular.ttf";
-    const int titleFontSize = 44;
-    const auto titleFont = std::make_shared<ui::Font>(titleFontPath, titleFontSize);
-
-    const std::string titleTextDescription = "Tic-tac-toe";
-    const ui::Color titleTextColor = {0x00, 0x00, 0x00};
-    auto titleText = std::make_shared<ui::Text>(
-        titleTextDescription, titleFont, titleTextColor, 0, 0, window.getRenderer()
-    );
-    titleText->x = window.getCenterPoint().x - titleText->getCenterPoint().x;
-
-    const int titleTextPadding = 40;
-    titleText->y = titleTextPadding;
+    const auto titleFont = std::make_shared<Font>("assets/fonts/PermanentMarker-Regular.ttf", 44);
+    auto titleText = std::make_shared<Text>("Tic-Tac-Toe", titleFont, Color::black(), 0, 0);
+    const int titleTextPaddingTop = 40;
+    const int titleTextY = titleTextPaddingTop;
+    const int titleTextX = AppContext::getWindow().getCenterPoint().x - titleText->getCenterPoint().x;
+    titleText->setPosition(titleTextX, titleTextY);
 
     addChild(titleText);
 }
 
-void MainMenuScene::createSubtitleText(const gfx::Window& window)
+void MainMenuScene::createSubtitleText()
 {
-    const std::string subtitleFontPath = "assets/fonts/PermanentMarker-Regular.ttf";
-    const int subtitleFontSize = 24;
-    const auto subtitleFont = std::make_shared<ui::Font>(subtitleFontPath, subtitleFontSize);
-
-    const std::string subtitleTextDescription = "Game by @maunovaha";
-    const ui::Color subtitleTextColor = {0x00, 0x00, 0x00};
-    auto subtitleText = std::make_shared<ui::Text>(
-        subtitleTextDescription, subtitleFont, subtitleTextColor, 0, 0, window.getRenderer()
-    );
-    subtitleText->x = window.getCenterPoint().x - subtitleText->getCenterPoint().x;
-
-    const int titleTextPadding = 100;
-    subtitleText->y = titleTextPadding;
+    const auto subtitleFont = std::make_shared<Font>("assets/fonts/PermanentMarker-Regular.ttf", 24);
+    auto subtitleText = std::make_shared<Text>("Game by @maunovaha", subtitleFont, Color::black(), 0, 0);
+    const int subtitleTextPaddingTop = 100;
+    const int subtitleTextY = subtitleTextPaddingTop;
+    const int subtitleTextX = AppContext::getWindow().getCenterPoint().x - subtitleText->getCenterPoint().x;
+    subtitleText->setPosition(subtitleTextX, subtitleTextY);
 
     addChild(subtitleText);
 }
 
-void MainMenuScene::createStartButton(const gfx::Window& window)
+void MainMenuScene::createStartButton()
 {
-    const std::string startButtonFontPath = "assets/fonts/LilitaOne-Regular.ttf";
-    const int startButtonFontSize = 24;
-    const auto startButtonFont = std::make_shared<ui::Font>(startButtonFontPath, startButtonFontSize);
-
-    const std::string startButtonText = "LET'S PLAY";
-    const ui::Color startButtonTextColor = {0x00, 0x00, 0x00};
-    const auto startButtonBg = spriteSheet_->getSprite("button");
-    auto startButton = std::make_shared<ui::Button>(
-        startButtonText, startButtonFont, startButtonTextColor, startButtonBg, 0, 0, window.getRenderer()
+    const auto startButtonFont = std::make_shared<Font>("assets/fonts/LilitaOne-Regular.ttf", 24);
+    auto startButton = std::make_shared<Button>(
+        "LET'S PLAY", startButtonFont, Color::black(), spriteSheet_->getSprite("Button"), 0, 0
     );
-    startButton->x = window.getCenterPoint().x - startButton->getCenterPoint().x;
-
-    const int startButtonPadding = 40;
-    startButton->y = window.getHeight() - startButton->getHeight() - startButtonPadding;
+    const int startButtonPaddingBottom = 40;
+    const int startButtonY = AppContext::getWindow().getHeight() - startButton->getHeight() - startButtonPaddingBottom;
+    const int startButtonX = AppContext::getWindow().getCenterPoint().x - startButton->getCenterPoint().x;
+    startButton->setPosition(startButtonX, startButtonY);
+    startButton->registerOnClickListener([]() {
+        AppContext::getDirector().play(std::make_unique<gameplay::GameplayScene>());
+    });
 
     addChild(startButton);
-}
-
-void MainMenuScene::onUpdate()
-{
 }
 
 }
