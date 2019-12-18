@@ -10,8 +10,7 @@ class Scene {
 public:
     virtual ~Scene() = default;
     virtual void onCreate() = 0;
-    virtual void onUpdate() = 0;
-    void preUpdate();
+    void update();
     void render() const;
 protected:
     void addChild(std::shared_ptr<GameObject> gameObject);

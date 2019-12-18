@@ -8,7 +8,6 @@ namespace game::mainmenu {
 class MainMenuScene: public engine::scene::Scene {
 public:
     void onCreate() override;
-    void onUpdate() override {}
 private:
     void createSpriteSheet();
     void createTitleText();

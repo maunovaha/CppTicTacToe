@@ -9,7 +9,6 @@ namespace game::gameplay {
 class GameplayScene: public engine::scene::Scene {
 public:
     void onCreate() override;
-    void onUpdate() override;
 private:
     void createSpriteSheet();
     void createGrid();

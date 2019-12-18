@@ -9,10 +9,8 @@ void Scene::render() const
     }
 }
 
-void Scene::preUpdate()
+void Scene::update()
 {
-    onUpdate();
-
     for (const auto& gameObject : gameObjects_) {
         gameObject->onUpdate();
     }

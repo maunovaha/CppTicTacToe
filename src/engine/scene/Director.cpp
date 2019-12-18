@@ -15,7 +15,7 @@ void Director::update()
         return;
     }
 
-    currentScene_->preUpdate();
+    currentScene_->update();
 }
 
 void Director::render() const

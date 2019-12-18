@@ -26,12 +26,7 @@ void GameplayScene::createSpriteSheet()
 void GameplayScene::createGrid()
 {
     grid_ = std::make_shared<Grid>(spriteSheet_->getSprite("Grid"), 50, 50);
-
     addChild(grid_);
-}
-
-void GameplayScene::onUpdate()
-{
 }
 
 }
