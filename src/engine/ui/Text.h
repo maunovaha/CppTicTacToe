@@ -19,7 +19,7 @@ public:
         : scene::GameObject{x, y}
         , font_{std::move(font)}
         , text_{core::AppContext::getRenderer(), font_->renderBlended(text, color)} {}
-    void onRender(const math::Point& parentPosition) const override;
+    void onRender() const override;
     int getWidth() const;
     int getHeight() const;
     math::Rect getBounds() const;

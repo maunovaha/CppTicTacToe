@@ -2,9 +2,17 @@
 
 namespace engine::ui {
 
-void Text::onRender(const math::Point& parentPosition) const
+void Text::onRender() const
 {
-    text_.render(core::AppContext::getRenderer(), {parentPosition.x + x, parentPosition.y + y});
+    int relativeX = x;
+    int relativeY = y;
+
+    if (parent) {
+        relativeX += parent->x;
+        relativeY += parent->y;
+    }
+
+    text_.render(core::AppContext::getRenderer(), {relativeX, relativeY});
 }
 
 int Text::getWidth() const

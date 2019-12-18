@@ -15,7 +15,7 @@ Surface::Surface(const std::string& imagePath) : surface_{IMG_Load(imagePath.c_s
         throw std::runtime_error("Could not create surface, " + std::string{IMG_GetError()});
     }
 
-    // NOTE: Color keying is not used atm, because image saved as transparent .png seems to work
+    // Note: Color keying is not used atm, because image saved as transparent .png seems to work
     // automatically. Hence, color keying were not really accurate when tested with couple of
     // images; Further investigation needed, whether it's because of the given sRGB profile
     // warning at the console window or not.

@@ -10,10 +10,11 @@ Button::Button(std::string text,
                const int y)
     : GameObject{x, y}
     , background_{std::move(background)}
-    , text_{std::make_unique<ui::Text>(std::move(text), std::move(font), color, 0, 0)}
+    , text_{std::make_shared<ui::Text>(std::move(text), std::move(font), color, 0, 0)}
 {
     background_->setPosition(x, y);
-    // REFACTOR: The magic number is used atm. because the button graphic contains a shadow
+    background_->parent = this;
+    // Refactor: The magic number is used atm. because the button graphic contains a shadow
     // underneath. Ofc. This should be removed later on.
     const int buttonShadowHeight = 2;
     const math::Point backgroundCenterPoint = background_->getCenterPoint();
@@ -21,6 +22,7 @@ Button::Button(std::string text,
     const int textY = y + backgroundCenterPoint.y - textCenterPoint.y - buttonShadowHeight;
     const int textX = x + backgroundCenterPoint.x - textCenterPoint.x;
     text_->setPosition(textX, textY);
+    text_->parent = this;
 }
 
 void Button::onUpdate()
@@ -36,13 +38,10 @@ void Button::onUpdate()
     }
 }
 
-void Button::onRender(const math::Point& parentPosition) const
+void Button::onRender() const
 {
-    const math::Point position{x, y};
-    
-    // Passing in Button position is required in order to render elements relatively to parent
-    background_->onRender(position);
-    text_->onRender(position);
+    background_->onRender();
+    text_->onRender();
 }
 
 int Button::getWidth() const

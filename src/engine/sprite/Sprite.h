@@ -15,7 +15,7 @@ public:
         : scene::GameObject{x, y}
         , clip_{std::move(clip)}
         , texture_{core::AppContext::getTextureCache().load(imagePath)} {}
-    void onRender(const math::Point& parentPosition) const override;
+    void onRender() const override;
     int getWidth() const;
     int getHeight() const;
     math::Rect getBounds() const;

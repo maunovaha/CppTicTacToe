@@ -17,7 +17,7 @@ public:
            const int x,
            const int y);
     void onUpdate() override;
-    void onRender(const math::Point& parentPosition) const override;
+    void onRender() const override;
     int getWidth() const;
     int getHeight() const;
     math::Rect getBounds() const;
@@ -31,7 +31,7 @@ public:
     }
 private:
     std::shared_ptr<sprite::Sprite> background_;
-    std::unique_ptr<ui::Text> text_;
+    std::shared_ptr<ui::Text> text_;
     std::function<void()> onClickListener_;
 };
 
