@@ -41,8 +41,8 @@ void Button::onRender(const math::Point& parentPosition) const
     const math::Point position{x, y};
     
     // Passing in Button position is required in order to render elements relatively to parent
-     background_->onRender(position);
-     text_->onRender(position);
+    background_->onRender(position);
+    text_->onRender(position);
 }
 
 int Button::getWidth() const

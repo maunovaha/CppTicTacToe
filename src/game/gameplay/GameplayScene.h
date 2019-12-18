@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Grid.h"
 #include "../../engine/scene/Scene.h"
 #include "../../engine/sprite/SpriteSheet.h"
 
@@ -10,9 +11,11 @@ public:
     void onCreate() override;
     void onUpdate() override;
 private:
-    void loadSpriteSheet();
+    void createSpriteSheet();
+    void createGrid();
 
     std::unique_ptr<engine::sprite::SpriteSheet> spriteSheet_;
+    std::shared_ptr<Grid> grid_;
 };
 
 }

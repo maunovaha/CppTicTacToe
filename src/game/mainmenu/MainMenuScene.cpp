@@ -11,17 +11,17 @@ using namespace engine::ui;
 
 void MainMenuScene::onCreate()
 {
-    loadSpriteSheet();
+    createSpriteSheet();
     createTitleText();
     createSubtitleText();
     createStartButton();
 }
 
-void MainMenuScene::loadSpriteSheet()
+void MainMenuScene::createSpriteSheet()
 {
     spriteSheet_ = std::make_unique<SpriteSheet>(
         "assets/textures/SpriteSheet.png", SpriteSheet::Config{
-            {"button", std::make_shared<SpriteSheet::SpriteClip>(360, 245, 178, 65)}
+            {"Button", std::make_shared<SpriteSheet::SpriteClip>(360, 245, 178, 65)}
         }
     );
 }
@@ -54,7 +54,7 @@ void MainMenuScene::createStartButton()
 {
     const auto startButtonFont = std::make_shared<Font>("assets/fonts/LilitaOne-Regular.ttf", 24);
     auto startButton = std::make_shared<Button>(
-        "LET'S PLAY", startButtonFont, Color::black(), spriteSheet_->getSprite("button"), 0, 0
+        "LET'S PLAY", startButtonFont, Color::black(), spriteSheet_->getSprite("Button"), 0, 0
     );
     const int startButtonPaddingBottom = 40;
     const int startButtonY = AppContext::getWindow().getHeight() - startButton->getHeight() - startButtonPaddingBottom;

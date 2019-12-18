@@ -10,7 +10,7 @@ public:
     void onCreate() override;
     void onUpdate() override {}
 private:
-    void loadSpriteSheet();
+    void createSpriteSheet();
     void createTitleText();
     void createSubtitleText();
     void createStartButton();

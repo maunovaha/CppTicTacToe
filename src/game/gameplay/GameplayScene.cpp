@@ -8,18 +8,26 @@ using namespace engine::ui;
 
 void GameplayScene::onCreate()
 {
-    loadSpriteSheet();
+    createSpriteSheet();
+    createGrid();
 }
 
-void GameplayScene::loadSpriteSheet()
+void GameplayScene::createSpriteSheet()
 {
     spriteSheet_ = std::make_unique<SpriteSheet>(
         "assets/textures/SpriteSheet.png", SpriteSheet::Config{
-            {"grid", std::make_shared<SpriteSheet::SpriteClip>(0, 0, 360, 360)},
-            {"x",    std::make_shared<SpriteSheet::SpriteClip>(360, 0, 120, 120)},
-            {"o",    std::make_shared<SpriteSheet::SpriteClip>(360, 120, 120, 120)}
+            {"Grid", std::make_shared<SpriteSheet::SpriteClip>(0, 0, 360, 360)},
+            {"X",    std::make_shared<SpriteSheet::SpriteClip>(360, 0, 120, 120)},
+            {"O",    std::make_shared<SpriteSheet::SpriteClip>(360, 120, 120, 120)}
         }
     );
+}
+
+void GameplayScene::createGrid()
+{
+    grid_ = std::make_shared<Grid>(spriteSheet_->getSprite("Grid"), 50, 50);
+
+    addChild(grid_);
 }
 
 void GameplayScene::onUpdate()

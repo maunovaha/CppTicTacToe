@@ -254,6 +254,8 @@
     <ClInclude Include="src\engine\scene\GameObject.h" />
     <ClInclude Include="src\engine\scene\Scene.h" />
     <ClInclude Include="src\game\gameplay\GameplayScene.h" />
+    <ClInclude Include="src\game\gameplay\Grid.h" />
+    <ClInclude Include="src\game\gameplay\GridSlot.h" />
     <ClInclude Include="src\game\mainmenu\MainMenuScene.h" />
     <ClInclude Include="src\engine\math\Rect.h" />
     <ClInclude Include="src\engine\core\sdl\SDL.h" />
@@ -279,6 +281,8 @@
     <ClCompile Include="src\engine\scene\Director.cpp" />
     <ClCompile Include="src\engine\scene\Scene.cpp" />
     <ClCompile Include="src\game\gameplay\GameplayScene.cpp" />
+    <ClCompile Include="src\game\gameplay\Grid.cpp" />
+    <ClCompile Include="src\game\gameplay\GridSlot.cpp" />
     <ClCompile Include="src\game\mainmenu\MainMenuScene.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\engine\core\sdl\SDL.cpp" />
