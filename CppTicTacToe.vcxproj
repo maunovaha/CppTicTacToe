@@ -235,6 +235,7 @@
     <ClInclude Include="include\SDL2\SDL_video.h" />
     <ClInclude Include="include\SDL2\SDL_vulkan.h" />
     <ClInclude Include="src\engine\core\AppContext.h" />
+    <ClInclude Include="src\engine\core\Component.h" />
     <ClInclude Include="src\engine\math\Point.h" />
     <ClInclude Include="src\engine\ui\Color.h" />
     <ClInclude Include="src\engine\io\Input.h" />
@@ -259,10 +260,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\engine\core\AppContext.cpp" />
+    <ClCompile Include="src\engine\core\Component.cpp" />
     <ClCompile Include="src\engine\io\Input.cpp" />
     <ClCompile Include="src\engine\io\Mouse.cpp" />
     <ClCompile Include="src\engine\core\TextureCache.cpp" />
     <ClCompile Include="src\engine\core\Window.cpp" />
+    <ClCompile Include="src\engine\scene\GameObject.cpp" />
     <ClCompile Include="src\game\AppDelegate.cpp" />
     <ClCompile Include="src\engine\core\Application.cpp" />
     <ClCompile Include="src\engine\scene\Director.cpp" />
