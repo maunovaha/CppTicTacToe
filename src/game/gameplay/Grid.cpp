@@ -16,9 +16,9 @@ void Grid::onUpdate()
 {
 }
 
-void Grid::onRender(const Point& parentPosition) const
+void Grid::onRender() const
 {
-    background_->onRender({x, y});
+    background_->onRender();
 }
 
 }

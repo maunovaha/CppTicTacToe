@@ -11,7 +11,7 @@ class Grid : public engine::scene::GameObject {
 public:
     Grid(std::shared_ptr<engine::sprite::Sprite> background, const int x, const int y);
     void onUpdate() override;
-    void onRender(const engine::math::Point& parentPosition) const override;
+    void onRender() const override;
 private:
     using Grid2dRow = std::vector<GridSlot>;
     using Grid2d    = std::vector<Grid2dRow>;
