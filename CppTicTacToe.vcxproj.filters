@@ -365,9 +365,6 @@
     <ClCompile Include="src\engine\scene\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\core\Component.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\engine\scene\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

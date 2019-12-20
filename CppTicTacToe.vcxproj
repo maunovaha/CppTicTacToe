@@ -260,7 +260,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\engine\core\AppContext.cpp" />
-    <ClCompile Include="src\engine\core\Component.cpp" />
     <ClCompile Include="src\engine\io\Input.cpp" />
     <ClCompile Include="src\engine\io\Mouse.cpp" />
     <ClCompile Include="src\engine\core\TextureCache.cpp" />
