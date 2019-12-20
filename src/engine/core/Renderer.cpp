@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include <string>
 
-namespace engine::gfx {
+namespace engine::core {
 
 Renderer::Renderer(const Window& window, const ui::Color& clearColor, const Uint32 flags) 
     : clearColor_{clearColor}

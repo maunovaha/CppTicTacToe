@@ -8,7 +8,7 @@
 #endif
 #include <memory>
 
-namespace engine::gfx {
+namespace engine::core {
 
 class Window; // Forward declaration
 class Renderer {

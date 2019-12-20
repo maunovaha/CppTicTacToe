@@ -1,7 +1,7 @@
 #include "Window.h"
 #include <stdexcept>
 
-namespace engine::gfx {
+namespace engine::core {
 
 Window::Window(const std::string& title, const ui::Color& backgroundColor, const math::Rect& rect)
     : window_{SDL_CreateWindow(title.c_str(), rect.x, rect.y, rect.width, rect.height, SDL_WINDOW_SHOWN)}

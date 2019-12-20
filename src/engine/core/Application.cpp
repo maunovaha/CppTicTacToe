@@ -61,7 +61,7 @@ void Application::update()
 
 void Application::render() const
 {
-    const gfx::Renderer& renderer = window_.getRenderer();
+    const Renderer& renderer = window_.getRenderer();
 
     renderer.clear();
     director_.render();

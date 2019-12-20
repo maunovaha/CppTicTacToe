@@ -241,8 +241,8 @@
     <ClInclude Include="src\engine\io\InputDevice.h" />
     <ClInclude Include="src\engine\io\KeyCode.h" />
     <ClInclude Include="src\engine\io\Mouse.h" />
-    <ClInclude Include="src\engine\gfx\TextureCache.h" />
-    <ClInclude Include="src\engine\gfx\Window.h" />
+    <ClInclude Include="src\engine\core\TextureCache.h" />
+    <ClInclude Include="src\engine\core\Window.h" />
     <ClInclude Include="src\game\AppDelegate.h" />
     <ClInclude Include="src\engine\core\Application.h" />
     <ClInclude Include="src\engine\scene\Director.h" />
@@ -252,17 +252,17 @@
     <ClInclude Include="src\engine\math\Rect.h" />
     <ClInclude Include="src\engine\core\sdl\SDL.h" />
     <ClInclude Include="src\engine\core\sdl\SDLImage.h" />
-    <ClInclude Include="src\engine\gfx\Renderer.h" />
+    <ClInclude Include="src\engine\core\Renderer.h" />
     <ClInclude Include="src\engine\core\sdl\SDLTTF.h" />
-    <ClInclude Include="src\engine\gfx\Surface.h" />
-    <ClInclude Include="src\engine\gfx\Texture.h" />
+    <ClInclude Include="src\engine\core\Surface.h" />
+    <ClInclude Include="src\engine\core\Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\engine\core\AppContext.cpp" />
     <ClCompile Include="src\engine\io\Input.cpp" />
     <ClCompile Include="src\engine\io\Mouse.cpp" />
-    <ClCompile Include="src\engine\gfx\TextureCache.cpp" />
-    <ClCompile Include="src\engine\gfx\Window.cpp" />
+    <ClCompile Include="src\engine\core\TextureCache.cpp" />
+    <ClCompile Include="src\engine\core\Window.cpp" />
     <ClCompile Include="src\game\AppDelegate.cpp" />
     <ClCompile Include="src\engine\core\Application.cpp" />
     <ClCompile Include="src\engine\scene\Director.cpp" />
@@ -271,10 +271,10 @@
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\engine\core\sdl\SDL.cpp" />
     <ClCompile Include="src\engine\core\sdl\SDLImage.cpp" />
-    <ClCompile Include="src\engine\gfx\Renderer.cpp" />
+    <ClCompile Include="src\engine\core\Renderer.cpp" />
     <ClCompile Include="src\engine\core\sdl\SDLTTF.cpp" />
-    <ClCompile Include="src\engine\gfx\Surface.cpp" />
-    <ClCompile Include="src\engine\gfx\Texture.cpp" />
+    <ClCompile Include="src\engine\core\Surface.cpp" />
+    <ClCompile Include="src\engine\core\Texture.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
