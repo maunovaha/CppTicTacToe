@@ -244,6 +244,7 @@
     <ClInclude Include="src\engine\io\Mouse.h" />
     <ClInclude Include="src\engine\core\TextureCache.h" />
     <ClInclude Include="src\engine\core\Window.h" />
+    <ClInclude Include="src\engine\world\Transform.h" />
     <ClInclude Include="src\game\AppDelegate.h" />
     <ClInclude Include="src\engine\core\Application.h" />
     <ClInclude Include="src\engine\scene\Director.h" />

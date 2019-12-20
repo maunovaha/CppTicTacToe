@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../core/Component.h"
+#include "../math/Point.h"
 #include <memory>
 #include <unordered_map>
 #include <string>
@@ -16,18 +17,10 @@ public:
     core::Component* getComponent(const std::string& componentName) const;
     bool hasComponent(const std::string& componentName) const;
 
-    constexpr void setPosition(const int x, const int y)
-    {
-        this->x = x;
-        this->y = y;
-    }
-
-    int x = 0;
-    int y = 0;
     GameObject* parent = nullptr;
 protected:
     // Ensures that all game objects are created via inheritance, e.g. "Player : public GameObject"
-    GameObject(const int x, const int y) : x{x}, y{y} {}
+    GameObject(const math::Point& position);
 
     using ComponentKey   = std::string;
     using ComponentValue = std::unique_ptr<core::Component>;
