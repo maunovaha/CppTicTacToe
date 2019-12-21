@@ -50,7 +50,7 @@ public:
     GameObject* parent = nullptr;
 protected:
     // Ensures that all game objects are created via inheritance, e.g. "Player : public GameObject"
-    GameObject(const math::Point& position);
+    GameObject() = default;
 
     using ComponentKey   = std::type_index;
     using ComponentValue = std::unique_ptr<core::Component>;
