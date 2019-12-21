@@ -14,8 +14,8 @@ namespace engine::scene {
 class GameObject {
 public:
     virtual ~GameObject() = default;
-    virtual void onUpdate() {}
-    virtual void onRender() const {}
+    virtual void onUpdate();
+    virtual void onRender() const;
 
     template<typename T>
     T& addComponent(std::unique_ptr<T> component)
@@ -27,7 +27,15 @@ public:
             return getComponent<T>();
         }
         else {
-            component->gameObject = this; // All components should know their GameObject
+            // All components attached to a GameObject needs to know their "host". The reason is
+            // that the gameObject pointer is used when components are communicating between
+            // each other.
+            // 
+            // For instance, in order to render ui::Image on the screen, the ui::Image component
+            // needs to get access ui::RectTransform component to know the proper position
+            // for the rendered image.
+            component->gameObject = this;
+
             return static_cast<T&>(
                 *components_.emplace(toComponentKey<T>(), std::move(component)).first->second
             );
