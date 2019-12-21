@@ -7,7 +7,7 @@ namespace engine::world {
 
 class Transform : public core::Component {
 public:
-    Transform(const math::Point& position) : core::Component{"Transform"}, position{position} {}
+    Transform(const math::Point& position) : position{position} {}
 
     math::Point position;
 };
