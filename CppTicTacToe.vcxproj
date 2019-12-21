@@ -244,6 +244,10 @@
     <ClInclude Include="src\engine\io\Mouse.h" />
     <ClInclude Include="src\engine\core\TextureCache.h" />
     <ClInclude Include="src\engine\core\Window.h" />
+    <ClInclude Include="src\engine\ui\Font.h" />
+    <ClInclude Include="src\engine\ui\Image.h" />
+    <ClInclude Include="src\engine\ui\RectTransform.h" />
+    <ClInclude Include="src\engine\ui\Text.h" />
     <ClInclude Include="src\engine\world\Transform.h" />
     <ClInclude Include="src\game\AppDelegate.h" />
     <ClInclude Include="src\engine\core\Application.h" />
@@ -266,6 +270,8 @@
     <ClCompile Include="src\engine\core\TextureCache.cpp" />
     <ClCompile Include="src\engine\core\Window.cpp" />
     <ClCompile Include="src\engine\scene\GameObject.cpp" />
+    <ClCompile Include="src\engine\ui\Font.cpp" />
+    <ClCompile Include="src\engine\ui\Image.cpp" />
     <ClCompile Include="src\game\AppDelegate.cpp" />
     <ClCompile Include="src\engine\core\Application.cpp" />
     <ClCompile Include="src\engine\scene\Director.cpp" />

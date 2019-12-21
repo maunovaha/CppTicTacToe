@@ -1,7 +1,5 @@
 #pragma once
 
-#include <string>
-
 namespace engine::scene {
 
 class GameObject; // Forward declaration
