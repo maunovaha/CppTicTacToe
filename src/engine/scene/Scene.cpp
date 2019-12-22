@@ -1,24 +1,29 @@
 #include "Scene.h"
+#include "../world/Transform.h"
+#include "../math/Point.h"
 
 namespace engine::scene {
 
-void Scene::render() const
+Scene::Scene()
 {
-    for (const auto& gameObject : gameObjects_) {
-        gameObject->onRender();
-    }
+    // Every scene has a "root" game object by default; This makes calling render/update easier.
+    root_ = std::make_unique<GameObject>();
+    root_->addComponent(std::make_unique<world::Transform>(math::Point{0, 0}));
 }
 
 void Scene::update()
 {
-    for (const auto& gameObject : gameObjects_) {
-        gameObject->onUpdate();
-    }
+    root_->onUpdate();
 }
 
-void Scene::addChild(std::shared_ptr<GameObject> gameObject)
+void Scene::render() const
 {
-    gameObjects_.emplace_back(std::move(gameObject));
+    root_->onRender();
 }
 
+void Scene::addChild(std::unique_ptr<GameObject> child)
+{
+    root_->addChild(std::move(child));
 }
+
+} 

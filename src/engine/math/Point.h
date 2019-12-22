@@ -17,6 +17,16 @@ public:
         return {x, y};
     }
 
+    constexpr Point operator +(const Point& other) const
+    {
+        return {x + other.x, y + other.y};
+    }
+
+    constexpr Point operator +=(const Point& other) const
+    {
+        return other + *this;
+    }
+
     int x = 0;
     int y = 0;
 };

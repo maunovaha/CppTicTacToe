@@ -1,7 +1,6 @@
 #pragma once
 
 #include "GameObject.h"
-#include <vector>
 #include <memory>
 
 namespace engine::scene {
@@ -13,9 +12,10 @@ public:
     void update();
     void render() const;
 protected:
-    void addChild(std::shared_ptr<GameObject> gameObject);
+    Scene(); // Scenes are created via inheritance (also, "onCreate() = 0;" guarantees that).
+    void addChild(std::unique_ptr<GameObject> child);
 private:
-    std::vector<std::shared_ptr<GameObject>> gameObjects_;
+    std::unique_ptr<GameObject> root_;
 };
 
 }

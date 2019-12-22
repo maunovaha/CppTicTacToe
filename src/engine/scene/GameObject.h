@@ -8,6 +8,13 @@
 #include <typeindex>
 #include <cassert>
 #include <iostream>
+#include <vector>
+
+namespace engine::world {
+
+class Transform; // Forward declaration
+
+}
 
 namespace engine::scene {
 
@@ -16,6 +23,11 @@ public:
     virtual ~GameObject() = default;
     virtual void onUpdate();
     virtual void onRender() const;
+    world::Transform& getTransform() const;
+    void setParent(GameObject& parent);
+    GameObject* getParent() const;
+    void addChild(std::unique_ptr<GameObject> child);
+    // TODO: GameObject* getChild(const int index) const; ?
 
     template<typename T>
     T& addComponent(std::unique_ptr<T> component)
@@ -54,11 +66,8 @@ public:
     {
         return components_.find(toComponentKey<T>()) != components_.end();
     }
-
-    GameObject* parent = nullptr;
 protected:
-    // Ensures that all game objects are created via inheritance, e.g. "Player : public GameObject"
-    GameObject() = default;
+    std::vector<std::unique_ptr<GameObject>> children_;
 
     using ComponentKey   = std::type_index;
     using ComponentValue = std::unique_ptr<core::Component>;
@@ -71,6 +80,8 @@ private:
     {
         return ComponentKey(typeid(T));
     }
+
+    GameObject* parent_ = nullptr;
 };
 
 }
