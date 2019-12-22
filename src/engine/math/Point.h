@@ -22,9 +22,12 @@ public:
         return {x + other.x, y + other.y};
     }
 
-    constexpr Point operator +=(const Point& other) const
+    constexpr Point& operator +=(const Point& other)
     {
-        return other + *this;
+        this->x += other.x;
+        this->y += other.y;
+
+        return *this;
     }
 
     int x = 0;
