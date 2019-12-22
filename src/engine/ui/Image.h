@@ -10,12 +10,18 @@
 
 namespace engine::ui {
 
-class Image: public core::Component {
+class Image : public core::Component {
 public:
     Image(const core::Surface& surface)
-        : texture_{core::AppContext::getRenderer(), surface} {}
+        : texture_{core::AppContext::getRenderer(), surface}
+    {
+        // Requires rect transform
+    }
     Image(const std::string& path, std::shared_ptr<math::Rect> clip = nullptr)
-        : texture_{core::AppContext::getRenderer(), path}, clip_{std::move(clip)} {}
+        : texture_{core::AppContext::getRenderer(), path}, clip_{std::move(clip)}
+    {
+        // Requires rect transform
+    }
     void onRender() const override;
 private:
     core::Texture texture_;

@@ -45,9 +45,9 @@ world::Transform& GameObject::getTransform() const
 
 void GameObject::addChild(std::unique_ptr<GameObject> child)
 {
-    // TODO: assert(child != this);
-    // TODO: if child has parent already.. then what?
+    // TODO: assert(child != this || child.getParent()); ?
 
+    child.get()->setParent(*this);
     children_.emplace_back(std::move(child));
 }
 

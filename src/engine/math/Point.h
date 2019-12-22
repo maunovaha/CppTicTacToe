@@ -24,8 +24,8 @@ public:
 
     constexpr Point& operator +=(const Point& other)
     {
-        this->x += other.x;
-        this->y += other.y;
+        x += other.x;
+        y += other.y;
 
         return *this;
     }

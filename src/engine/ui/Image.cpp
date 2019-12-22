@@ -2,6 +2,8 @@
 #include "RectTransform.h"
 #include <cassert>
 
+// #include <iostream>
+
 namespace engine::ui {
 
 void Image::onRender() const

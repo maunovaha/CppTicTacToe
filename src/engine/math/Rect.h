@@ -25,6 +25,11 @@ public:
                point.y >= y && point.y <= (y + height);
     }
 
+    constexpr math::Point getCenter() const
+    {
+        return {width / 2, height / 2};
+    }
+
     int x = 0;
     int y = 0;
     int width = 0;
