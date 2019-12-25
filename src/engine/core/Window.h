@@ -17,6 +17,8 @@ class Window {
 public:
     Window(const std::string& title, const ui::Color& backgroundColor, const math::Rect& rect);
     const Renderer& getRenderer() const;
+    int getWidth() const;
+    int getHeight() const;
     math::Point getSize() const;
     math::Point getCenter() const;
     SDL_Window* get() const;

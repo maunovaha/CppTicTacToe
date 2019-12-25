@@ -12,7 +12,10 @@ public:
     void update();
     void render() const;
 protected:
-    Scene(); // Scenes are created via inheritance (also, "onCreate() = 0;" guarantees that).
+    // Scenes are created via inheritance (also, "onCreate() = 0;" guarantees that).
+    // In addition, every scene has a "root" game object by default; This makes calling 
+    // render/update easier.
+    Scene() : root_{std::make_unique<GameObject>()} {}
     void addChild(std::unique_ptr<GameObject> child);
 private:
     std::unique_ptr<GameObject> root_;

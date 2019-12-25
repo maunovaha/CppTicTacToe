@@ -13,9 +13,19 @@ Window::Window(const std::string& title, const ui::Color& backgroundColor, const
     renderer_ = std::make_unique<Renderer>(*this, backgroundColor, RENDERER_FLAGS);
 }
 
+int Window::getWidth() const
+{
+    return getSize().x;
+}
+
+int Window::getHeight() const
+{
+    return getSize().y;
+}
+
 math::Point Window::getSize() const
 {
-    int width = 0;
+    int width  = 0;
     int height = 0;
 
     SDL_GetWindowSize(window_.get(), &width, &height);
