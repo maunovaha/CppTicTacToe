@@ -12,28 +12,26 @@ using namespace engine;
 
 void MainMenuScene::onCreate()
 {
-    createTitleText("Tic-tac-toe", "PermanentMarker-Regular.ttf", 44, ui::Color::black());
+    createText("Tic-tac-toe", "PermanentMarker-Regular.ttf", 44, 40);
+    createText("Game by @maunovaha", "PermanentMarker-Regular.ttf", 24, 100);
 }
 
-void MainMenuScene::createTitleText(const std::string& text, 
-                                    const std::string& font, 
-                                    const int size, 
-                                    const ui::Color& color)
+void MainMenuScene::createText(const std::string& text, 
+                               const std::string& font, 
+                               const int size, 
+                               const int yPosition,
+                               const ui::Color& color)
 {
-    std::unique_ptr<Text> titleText = std::make_unique<Text>(text, font, size, math::Point{50, 50}, color);
-
-    const ui::Text& titleTextUI = titleText->getComponent<ui::Text>();
-    const math::Point titleTextCenterPoint = titleTextUI.getCenter();
+    std::unique_ptr<Text> textObj = std::make_unique<Text>(text, font, size, math::Point{0, 0}, color);
+    const ui::Text& textComp = textObj->getComponent<ui::Text>();
+    const math::Point textCenterPoint = textComp.getCenter();
     const math::Point windowCenterPoint = core::AppContext::getWindow().getCenter();
-    const int titleTextX = windowCenterPoint.x - titleTextCenterPoint.x;
+    const int xPosition = windowCenterPoint.x - textCenterPoint.x;
 
-    const int titleTextPaddingTop = 40;
-    const int titleTextY = titleTextPaddingTop;
+    world::Transform& textTransformComp = textObj->getComponent<world::Transform>();
+    textTransformComp.localPosition = math::Point{xPosition, yPosition};
 
-    world::Transform& titleTextTransform = titleText->getComponent<world::Transform>();
-    titleTextTransform.localPosition = math::Point{titleTextX, titleTextY};
-
-    addChild(std::move(titleText));
+    addChild(std::move(textObj));
 }
 
 }
