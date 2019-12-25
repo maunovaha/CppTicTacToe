@@ -262,6 +262,7 @@
     <ClInclude Include="src\engine\core\sdl\SDLTTF.h" />
     <ClInclude Include="src\engine\core\Surface.h" />
     <ClInclude Include="src\engine\core\Texture.h" />
+    <ClInclude Include="src\game\mainmenu\Text.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\engine\core\AppContext.cpp" />
@@ -277,6 +278,7 @@
     <ClCompile Include="src\engine\scene\Director.cpp" />
     <ClCompile Include="src\engine\scene\Scene.cpp" />
     <ClCompile Include="src\game\mainmenu\MainMenuScene.cpp" />
+    <ClCompile Include="src\game\mainmenu\Text.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\engine\core\sdl\SDL.cpp" />
     <ClCompile Include="src\engine\core\sdl\SDLImage.cpp" />

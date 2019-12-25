@@ -1,13 +1,13 @@
 #include "GameObject.h"
-#include "../ui/RectTransform.h"
-
-namespace engine::ui {
-
-class RectTransform; // Forward declaration
-
-}
+#include "../world/Transform.h"
 
 namespace engine::scene {
+
+GameObject::GameObject(const math::Point& localPosition)
+{
+    // Every GameObject has Transform component by default (mimics Unity).
+    addComponent(std::make_unique<world::Transform>(localPosition));
+}
 
 void GameObject::onUpdate()
 {
@@ -31,23 +31,11 @@ void GameObject::onRender() const
     }
 }
 
-// Note: This is somewhat hacky way to get attached Transform component
-// when we dont know whether Transform or RectTransform is added.
-world::Transform& GameObject::getTransform() const
-{
-    if (hasComponent<ui::RectTransform>()) {
-        return getComponent<ui::RectTransform>();
-    }
-    else {
-        return getComponent<world::Transform>();
-    }
-}
-
 void GameObject::addChild(std::unique_ptr<GameObject> child)
 {
-    // TODO: assert(child != this);
-    // TODO: if child has parent already.. then what?
+    // TODO: assert(child != this || child.getParent()); ?
 
+    child.get()->setParent(*this);
     children_.emplace_back(std::move(child));
 }
 

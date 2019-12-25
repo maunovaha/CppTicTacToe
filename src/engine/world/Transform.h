@@ -17,7 +17,8 @@ public:
         const scene::GameObject* parent = gameObject->getParent();
 
         if (parent) {
-            worldPosition += parent->getTransform().getWorldPosition();
+            const Transform& transform = parent->getComponent<Transform>();
+            worldPosition += transform.getWorldPosition();
         }
 
         return worldPosition;
