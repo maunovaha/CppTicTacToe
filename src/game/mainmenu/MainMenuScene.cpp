@@ -1,7 +1,8 @@
 #include "MainMenuScene.h"
 #include "Text.h"
+#include "../../engine/world/Transform.h"
+#include "../../engine/ui/Text.h"
 #include "../../engine/math/Point.h"
-#include "../../engine/ui/RectTransform.h"
 #include "../../engine/core/AppContext.h"
 #include <memory>
 
@@ -19,18 +20,18 @@ void MainMenuScene::createTitleText(const std::string& text,
                                     const int size, 
                                     const ui::Color& color)
 {
-    auto titleText = std::make_unique<Text>(text, font, size, math::Point{0, 0}, color);
+    std::unique_ptr<Text> titleText = std::make_unique<Text>(text, font, size, math::Point{50, 50}, color);
 
-    ui::RectTransform& tilteTextTransform = titleText->getComponent<ui::RectTransform>();
-
+    const ui::Text& titleTextUI = titleText->getComponent<ui::Text>();
+    const math::Point titleTextCenterPoint = titleTextUI.getCenter();
     const math::Point windowCenterPoint = core::AppContext::getWindow().getCenter();
-    const math::Point titleTextCenterPoint = tilteTextTransform.getCenter();
     const int titleTextX = windowCenterPoint.x - titleTextCenterPoint.x;
 
     const int titleTextPaddingTop = 40;
     const int titleTextY = titleTextPaddingTop;
 
-    tilteTextTransform.localPosition = math::Point{titleTextX, titleTextY};
+    world::Transform& titleTextTransform = titleText->getComponent<world::Transform>();
+    titleTextTransform.localPosition = math::Point{titleTextX, titleTextY};
 
     addChild(std::move(titleText));
 }

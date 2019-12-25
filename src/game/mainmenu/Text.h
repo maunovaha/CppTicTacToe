@@ -6,7 +6,7 @@
 
 namespace game::mainmenu {
 
-class Text: public engine::scene::GameObject {
+class Text : public engine::scene::GameObject {
 public:
     Text(const std::string& text,
          const std::string& fontName,

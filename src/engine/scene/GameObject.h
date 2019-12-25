@@ -10,20 +10,14 @@
 #include <iostream>
 #include <vector>
 
-namespace engine::world {
-
-class Transform; // Forward declaration
-
-}
-
 namespace engine::scene {
 
 class GameObject {
 public:
+    GameObject(const math::Point& localPosition = {0, 0});
     virtual ~GameObject() = default;
     virtual void onUpdate();
     virtual void onRender() const;
-    world::Transform& getTransform() const;
     void setParent(GameObject& parent);
     GameObject* getParent() const;
     void addChild(std::unique_ptr<GameObject> child);
@@ -44,7 +38,7 @@ public:
             // each other.
             // 
             // For instance, in order to render ui::Image on the screen, the ui::Image component
-            // needs to get access ui::RectTransform component to know the proper position
+            // needs to get access world::Transform component to know the proper position
             // for the rendered image.
             component->gameObject = this;
 
