@@ -1,6 +1,7 @@
 #include "MainMenuScene.h"
 #include "Text.h"
 #include "Button.h"
+#include "../gameplay/GameplayScene.h"
 #include "../../engine/world/Transform.h"
 #include "../../engine/ui/Text.h"
 #include "../../engine/ui/Button.h"
@@ -54,7 +55,7 @@ void MainMenuScene::createStartButton(const std::string& text,
     world::Transform& buttonTransformComp = buttonObj->getComponent<world::Transform>();
     buttonTransformComp.localPosition = math::Point{xPosition, yPosition};
     buttonComp.registerOnClickListener([]() {
-        // AppContext::getDirector().play(std::make_unique<gameplay::GameplayScene>());
+        core::AppContext::getDirector().play(std::make_unique<gameplay::GameplayScene>());
     });
 
     addChild(std::move(buttonObj));
