@@ -21,7 +21,7 @@ Application::Application(const std::string& title,
 
 void Application::run(std::unique_ptr<scene::Scene> startingScene)
 {
-    director_.play(std::move(startingScene));
+    director_.start(std::move(startingScene));
     loop();
 }
 
