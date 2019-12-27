@@ -1,24 +1,16 @@
 #include "Grid.h"
+#include "../../engine/ui/Image.h"
+#include <memory>
 
 namespace game::gameplay {
 
-using namespace engine::sprite;
-using namespace engine::scene;
-using namespace engine::math;
+using namespace engine;
 
-Grid::Grid(std::shared_ptr<Sprite> background, const int x, const int y) 
-    : GameObject{x, y}
-    , background_{std::move(background)}
+Grid::Grid(const math::Point& position) : scene::GameObject{position}
 {
-}
-
-void Grid::onUpdate()
-{
-}
-
-void Grid::onRender() const
-{
-    background_->onRender();
+    const std::string spriteSheetPath = "assets/textures/SpriteSheet.png";
+    std::unique_ptr<math::Rect> backgroundClip = std::make_unique<math::Rect>(0, 0, 360, 360);
+    addComponent(std::make_unique<ui::Image>(spriteSheetPath, std::move(backgroundClip)));
 }
 
 }

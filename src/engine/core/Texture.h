@@ -12,7 +12,7 @@
 #include <string>
 #include <memory>
 
-namespace engine::gfx {
+namespace engine::core {
 
 class Texture {
 public:

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Color.h"
-#include "../gfx/Surface.h"
+#include "../core/Surface.h"
 #if defined(_WIN32)
     #include <SDL.h>
     #include <SDL_ttf.h>
@@ -16,8 +16,8 @@ namespace engine::ui {
 
 class Font {
 public:
-    Font(const std::string& filePath, const int size);
-    gfx::Surface renderBlended(const std::string& text, const Color& color) const;
+    Font(const std::string& path, const int size);
+    core::Surface renderBlended(const std::string& text, const Color& color) const;
     TTF_Font* get() const;
 private:
     struct DestroyFont {

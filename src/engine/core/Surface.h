@@ -9,7 +9,7 @@
 #include <string>
 #include <memory>
 
-namespace engine::gfx {
+namespace engine::core {
 
 class Surface {
 public:

@@ -1,32 +1,21 @@
 #include "GameplayScene.h"
+#include "Grid.h"
+#include <memory>
 
 namespace game::gameplay {
 
-using namespace engine::core;
-using namespace engine::sprite;
-using namespace engine::ui;
+using namespace engine;
 
 void GameplayScene::onCreate()
 {
-    createSpriteSheet();
-    createGrid();
+    createGrid(math::Point{50, 50});
 }
 
-void GameplayScene::createSpriteSheet()
+void GameplayScene::createGrid(const math::Point& position)
 {
-    spriteSheet_ = std::make_unique<SpriteSheet>(
-        "assets/textures/SpriteSheet.png", SpriteSheet::Config{
-            {"Grid", std::make_shared<SpriteSheet::SpriteClip>(0, 0, 360, 360)},
-            {"X",    std::make_shared<SpriteSheet::SpriteClip>(360, 0, 120, 120)},
-            {"O",    std::make_shared<SpriteSheet::SpriteClip>(360, 120, 120, 120)}
-        }
-    );
-}
+    std::unique_ptr<Grid> gridObj = std::make_unique<Grid>(position);
 
-void GameplayScene::createGrid()
-{
-    grid_ = std::make_shared<Grid>(spriteSheet_->getSprite("Grid"), 50, 50);
-    addChild(grid_);
+    addChild(std::move(gridObj));
 }
 
 }

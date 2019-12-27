@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../math/Rect.h"
+#include "../math/Point.h"
 #include "Renderer.h"
 #if defined(_WIN32)
     #include <SDL.h>
@@ -10,7 +11,7 @@
 #include <string>
 #include <memory>
 
-namespace engine::gfx {
+namespace engine::core {
 
 class Window {
 public:
@@ -18,8 +19,8 @@ public:
     const Renderer& getRenderer() const;
     int getWidth() const;
     int getHeight() const;
-    const math::Rect& getBounds() const;
-    math::Point getCenterPoint() const;
+    math::Point getSize() const;
+    math::Point getCenter() const;
     SDL_Window* get() const;
 
     static constexpr Uint32 CENTERED = SDL_WINDOWPOS_CENTERED;
@@ -35,7 +36,6 @@ private:
 
     UniqueWindow window_;
     std::unique_ptr<Renderer> renderer_;
-    math::Rect bounds_;
 
     static constexpr ui::Color WHITE = {0xFF, 0xFF, 0xFF, 0xFF}; // REFACTOR: Move to ui::Color
     static constexpr ui::Color CLEAR_COLOR = WHITE; // REFACTOR: Make this as ui::Color::WHITE;

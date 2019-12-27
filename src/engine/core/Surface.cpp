@@ -7,7 +7,7 @@
 #include <stdexcept>
 #include <cassert>
 
-namespace engine::gfx {
+namespace engine::core {
 
 Surface::Surface(const std::string& imagePath) : surface_{IMG_Load(imagePath.c_str())}
 {

@@ -2,8 +2,8 @@
 
 #include "Application.h"
 #include "../scene/Director.h"
-#include "../gfx/TextureCache.h"
-#include "../gfx/Window.h"
+#include "TextureCache.h"
+#include "Window.h"
 #include "../io/Input.h"
 #include <memory>
 
@@ -16,9 +16,9 @@ public:
     AppContext(const AppContext&) = delete;
     void operator=(const AppContext&) = delete;
     static void configure(Application& app);
-    static const gfx::Window& getWindow();
-    static const gfx::Renderer& getRenderer();
-    static gfx::TextureCache& getTextureCache();
+    static const Window& getWindow();
+    static const Renderer& getRenderer();
+    static TextureCache& getTextureCache();
     static const io::Input& getInput();
     static scene::Director& getDirector();
 private:

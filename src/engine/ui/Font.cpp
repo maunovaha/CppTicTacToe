@@ -12,7 +12,7 @@ Font::Font(const std::string& filePath, const int size)
     }
 }
 
-gfx::Surface Font::renderBlended(const std::string& text, const Color& color) const
+core::Surface Font::renderBlended(const std::string& text, const Color& color) const
 {
     SDL_Surface* surface = TTF_RenderText_Blended(font_.get(), text.c_str(), color);
 

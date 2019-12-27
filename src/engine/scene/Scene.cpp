@@ -2,23 +2,19 @@
 
 namespace engine::scene {
 
-void Scene::render() const
-{
-    for (const auto& gameObject : gameObjects_) {
-        gameObject->onRender();
-    }
-}
-
 void Scene::update()
 {
-    for (const auto& gameObject : gameObjects_) {
-        gameObject->onUpdate();
-    }
+    root_->onUpdate();
 }
 
-void Scene::addChild(std::shared_ptr<GameObject> gameObject)
+void Scene::render() const
 {
-    gameObjects_.emplace_back(std::move(gameObject));
+    root_->onRender();
 }
 
+void Scene::addChild(std::unique_ptr<GameObject> child)
+{
+    root_->addChild(std::move(child));
 }
+
+} 

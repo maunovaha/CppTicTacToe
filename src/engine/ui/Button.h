@@ -1,27 +1,21 @@
 #pragma once
 
+#include "Font.h"
+#include "Color.h"
+#include "Image.h"
 #include "Text.h"
-#include "../sprite/Sprite.h"
 #include <string>
 #include <functional>
 #include <cassert>
 
 namespace engine::ui {
 
-class Button : public scene::GameObject {
+class Button : public Image {
 public:
-    Button(std::string text,
-           std::shared_ptr<Font> font,
-           const Color& color,
-           std::shared_ptr<sprite::Sprite> background,
-           const int x,
-           const int y);
+    Button(const std::string& path, 
+           std::unique_ptr<math::Rect> clip = std::unique_ptr<math::Rect>{nullptr});
     void onUpdate() override;
     void onRender() const override;
-    int getWidth() const;
-    int getHeight() const;
-    math::Rect getBounds() const;
-    math::Point getCenterPoint() const;
 
     template <class ClickListener>
     void registerOnClickListener(ClickListener onClickListener)
@@ -30,8 +24,6 @@ public:
         onClickListener_ = std::move(onClickListener);
     }
 private:
-    std::shared_ptr<sprite::Sprite> background_;
-    std::shared_ptr<ui::Text> text_;
     std::function<void()> onClickListener_;
 };
 
