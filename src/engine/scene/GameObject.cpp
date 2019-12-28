@@ -9,6 +9,12 @@ GameObject::GameObject(const math::Point& localPosition)
     addComponent(std::make_unique<world::Transform>(localPosition));
 }
 
+GameObject::GameObject(const std::string& tag, const math::Point& localPosition) 
+    : GameObject{localPosition}
+{
+    storeWithTag(tag);
+}
+
 void GameObject::onUpdate()
 {
     for (const auto& component : components_) {
@@ -31,14 +37,6 @@ void GameObject::onRender() const
     }
 }
 
-void GameObject::addChild(std::unique_ptr<GameObject> child)
-{
-    // TODO: assert(child != this || child.getParent()); ?
-
-    child.get()->setParent(*this);
-    children_.emplace_back(std::move(child));
-}
-
 void GameObject::setParent(GameObject& parent)
 {
     parent_ = &parent;
@@ -47,6 +45,36 @@ void GameObject::setParent(GameObject& parent)
 GameObject* GameObject::getParent() const
 {
     return parent_;
+}
+
+void GameObject::addChild(std::unique_ptr<GameObject> child)
+{
+    // TODO: assert(child != this || child.getParent()); ?
+
+    child.get()->setParent(*this);
+    children_.emplace_back(std::move(child));
+}
+
+GameObject* GameObject::getChild(const unsigned int index) const
+{
+    try {
+        return children_.at(index).get();
+    }
+    catch (const std::out_of_range& _) {
+        return nullptr;
+    }
+}
+
+void GameObject::storeWithTag(const std::string& tag)
+{
+    assert(!isTagged(tag));
+
+    taggedGameObjects_.emplace(tag, this);
+}
+
+bool GameObject::isTagged(const std::string& tag)
+{
+    return taggedGameObjects_.find(tag) != taggedGameObjects_.end();
 }
 
 }

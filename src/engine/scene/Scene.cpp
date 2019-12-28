@@ -17,4 +17,9 @@ void Scene::addChild(std::unique_ptr<GameObject> child)
     root_->addChild(std::move(child));
 }
 
+GameObject* Scene::getChild(const unsigned int index) const
+{
+    return root_->getChild(index);
+}
+
 } 

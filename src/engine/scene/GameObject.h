@@ -9,19 +9,34 @@
 #include <cassert>
 #include <iostream>
 #include <vector>
+#include <stdexcept>
 
 namespace engine::scene {
 
 class GameObject {
 public:
     GameObject(const math::Point& localPosition = {0, 0});
+    GameObject(const std::string& tag, const math::Point& localPosition = {0, 0});
     virtual ~GameObject() = default;
     virtual void onUpdate();
     virtual void onRender() const;
     void setParent(GameObject& parent);
     GameObject* getParent() const;
     void addChild(std::unique_ptr<GameObject> child);
-    // TODO: GameObject* getChild(const int index) const; ?
+    GameObject* getChild(const unsigned int index) const;
+    void storeWithTag(const std::string& tag);
+
+    template<typename T>
+    static T* findWithTag(const std::string& tag)
+    {
+        try {
+            GameObject* taggedGameObject = taggedGameObjects_.at(tag);
+            return static_cast<T*>(taggedGameObject);
+        }
+        catch (const std::out_of_range& _) {
+            return nullptr;
+        }
+    }
 
     template<typename T>
     T& addComponent(std::unique_ptr<T> component)
@@ -66,14 +81,19 @@ protected:
     using ComponentKey   = std::type_index;
     using ComponentValue = std::unique_ptr<core::Component>;
     using ComponentMap   = std::unordered_map<ComponentKey, ComponentValue>;
-
     ComponentMap components_;
 private:
+    static bool isTagged(const std::string& tag);
+
     template<typename T>
     ComponentKey toComponentKey() const
     {
         return ComponentKey(typeid(T));
     }
+
+    using GameObjectTag = std::string;
+    using GameObjectMap = std::unordered_map<GameObjectTag, GameObject*>;
+    inline static GameObjectMap taggedGameObjects_;
 
     GameObject* parent_ = nullptr;
 };

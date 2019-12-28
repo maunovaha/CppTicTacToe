@@ -18,6 +18,7 @@ protected:
     // render/update easier.
     Scene() : root_{std::make_unique<GameObject>()} {}
     void addChild(std::unique_ptr<GameObject> child);
+    GameObject* getChild(const unsigned int index) const;
 private:
     std::unique_ptr<GameObject> root_;
 };
