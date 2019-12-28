@@ -5,8 +5,8 @@ This repository contains source code for a classic Tic-tac-toe game which is imp
 ## How to compile and run
 
 ```
-make all
-./bin/tic_tac_toe
+make main
+./bin/CppTicTacToe
 ```
 
 ## License

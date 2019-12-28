@@ -1,7 +1,7 @@
 #include "TextureCache.h"
 #include "../core/AppContext.h"
 
-namespace engine::gfx {
+namespace engine::core {
 
 const Texture& TextureCache::load(const std::string& texturePath)
 {

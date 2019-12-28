@@ -1,7 +1,7 @@
 #include "Texture.h"
 #include <stdexcept>
 
-namespace engine::gfx {
+namespace engine::core {
 
 Texture::Texture(const Renderer& renderer, const Surface& surface)
 {

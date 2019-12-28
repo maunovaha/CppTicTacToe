@@ -1,21 +1,19 @@
 #pragma once
 
-#include "Grid.h"
+#include "Player.h"
 #include "../../engine/scene/Scene.h"
-#include "../../engine/sprite/SpriteSheet.h"
+#include "../../engine/math/Point.h"
+#include <vector>
 
 namespace game::gameplay {
 
-class GameplayScene: public engine::scene::Scene {
+class GameplayScene : public engine::scene::Scene {
 public:
     void onCreate() override;
-    void onUpdate() override;
 private:
-    void createSpriteSheet();
-    void createGrid();
-
-    std::unique_ptr<engine::sprite::SpriteSheet> spriteSheet_;
-    std::shared_ptr<Grid> grid_;
+    void createGrid(const engine::math::Point& position, const int size);
+    std::vector<Player> createPlayers();
+    void createGameLogic(std::vector<Player> players);
 };
 
 }

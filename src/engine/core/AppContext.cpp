@@ -8,17 +8,17 @@ void AppContext::configure(Application& app)
     instance_ = std::make_unique<AppContext>(app);
 }
 
-const gfx::Window& AppContext::getWindow()
+const Window& AppContext::getWindow()
 {
     return get().app_.window_;
 }
 
-const gfx::Renderer& AppContext::getRenderer()
+const Renderer& AppContext::getRenderer()
 {
     return get().app_.window_.getRenderer();
 }
 
-gfx::TextureCache& AppContext::getTextureCache()
+TextureCache& AppContext::getTextureCache()
 {
     return get().app_.textureCache_;
 }

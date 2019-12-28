@@ -21,7 +21,7 @@ Application::Application(const std::string& title,
 
 void Application::run(std::unique_ptr<scene::Scene> startingScene)
 {
-    director_.play(std::move(startingScene));
+    director_.start(std::move(startingScene));
     loop();
 }
 
@@ -61,7 +61,7 @@ void Application::update()
 
 void Application::render() const
 {
-    const gfx::Renderer& renderer = window_.getRenderer();
+    const Renderer& renderer = window_.getRenderer();
 
     renderer.clear();
     director_.render();

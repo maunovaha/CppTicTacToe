@@ -1,28 +1,25 @@
 #include "Scene.h"
-#include <utility>
-#include "../Core/AppContext.h"
 
 namespace engine::scene {
 
+void Scene::update()
+{
+    root_->onUpdate();
+}
+
 void Scene::render() const
 {
-    for (const auto& gameObject : gameObjects_) {
-        gameObject->onRender({0, 0});
-    }
+    root_->onRender();
 }
 
-void Scene::preUpdate()
+void Scene::addChild(std::unique_ptr<GameObject> child)
 {
-    onUpdate();
-
-    for (const auto& gameObject : gameObjects_) {
-        gameObject->onUpdate();
-    }
+    root_->addChild(std::move(child));
 }
 
-void Scene::addChild(std::shared_ptr<GameObject> gameObject)
+GameObject* Scene::getChild(const unsigned int index) const
 {
-    gameObjects_.emplace_back(std::move(gameObject));
+    return root_->getChild(index);
 }
 
-}
+} 

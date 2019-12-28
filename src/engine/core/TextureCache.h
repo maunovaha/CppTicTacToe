@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include <string>
 
-namespace engine::gfx {
+namespace engine::core {
 
 class TextureCache {
 public:

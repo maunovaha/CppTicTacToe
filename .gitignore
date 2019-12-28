@@ -1,15 +1,12 @@
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 
-# Makefile executable
-bin/tic_tac_toe
-
-# Visual studio executable(s)
-bin/Win32
-bin/intermediates
+# Build and executables
+build
+bin/*
 
 # User-specific files
 *.user
 
-# macOS temporary files
+# macOS temp files
 .DS_Store

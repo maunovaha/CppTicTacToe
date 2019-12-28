@@ -264,15 +264,6 @@
     <ClInclude Include="src\engine\ui\Color.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\scene\Director.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\engine\scene\GameObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\engine\scene\Scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\engine\core\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -285,28 +276,46 @@
     <ClInclude Include="src\engine\core\sdl\SDLTTF.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\sprite\Sprite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\engine\sprite\SpriteSheet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\engine\math\Rect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\gfx\Renderer.h">
+    <ClInclude Include="src\engine\math\Point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\gfx\Surface.h">
+    <ClInclude Include="src\engine\core\AppContext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\gfx\Texture.h">
+    <ClInclude Include="src\engine\core\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\gfx\TextureCache.h">
+    <ClInclude Include="src\engine\core\Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\gfx\Window.h">
+    <ClInclude Include="src\engine\core\Surface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\TextureCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\scene\Director.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\scene\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\scene\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\world\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\ui\RectTransform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\engine\ui\Font.h">
@@ -315,22 +324,10 @@
     <ClInclude Include="src\engine\ui\Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\math\Point.h">
+    <ClInclude Include="src\engine\ui\Image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\ui\Button.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\gameplay\GameplayScene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\engine\core\AppContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\gameplay\Grid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\gameplay\GridSlot.h">
+    <ClInclude Include="src\game\mainmenu\Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -350,12 +347,6 @@
     <ClCompile Include="src\engine\io\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\scene\Director.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\engine\scene\Scene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\engine\core\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -368,46 +359,40 @@
     <ClCompile Include="src\engine\core\sdl\SDLTTF.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\sprite\Sprite.cpp">
+    <ClCompile Include="src\engine\core\AppContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\sprite\SpriteSheet.cpp">
+    <ClCompile Include="src\engine\core\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\gfx\Renderer.cpp">
+    <ClCompile Include="src\engine\core\Surface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\gfx\Surface.cpp">
+    <ClCompile Include="src\engine\core\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\gfx\Texture.cpp">
+    <ClCompile Include="src\engine\core\TextureCache.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\gfx\TextureCache.cpp">
+    <ClCompile Include="src\engine\core\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\gfx\Window.cpp">
+    <ClCompile Include="src\engine\scene\Director.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\scene\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\engine\ui\Font.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\ui\Text.cpp">
+    <ClCompile Include="src\engine\scene\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\ui\Button.cpp">
+    <ClCompile Include="src\engine\ui\Image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\gameplay\GameplayScene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\engine\core\AppContext.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\gameplay\Grid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\gameplay\GridSlot.cpp">
+    <ClCompile Include="src\game\mainmenu\Text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

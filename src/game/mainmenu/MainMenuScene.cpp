@@ -1,70 +1,64 @@
 #include "MainMenuScene.h"
+#include "Text.h"
+#include "Button.h"
 #include "../gameplay/GameplayScene.h"
+#include "../../engine/world/Transform.h"
 #include "../../engine/ui/Text.h"
 #include "../../engine/ui/Button.h"
+#include "../../engine/math/Point.h"
+#include "../../engine/core/AppContext.h"
+#include <memory>
 
 namespace game::mainmenu {
 
-using namespace engine::core;
-using namespace engine::sprite;
-using namespace engine::ui;
+using namespace engine;
 
 void MainMenuScene::onCreate()
 {
-    createSpriteSheet();
-    createTitleText();
-    createSubtitleText();
-    createStartButton();
+    createText("Tic-tac-toe", "PermanentMarker-Regular.ttf", 44, 40);
+    createText("Game by @maunovaha", "PermanentMarker-Regular.ttf", 24, 100);
+    createStartButton("LET'S PLAY", "LilitaOne-Regular.ttf", 24, 40);
 }
 
-void MainMenuScene::createSpriteSheet()
+void MainMenuScene::createText(const std::string& text, 
+                               const std::string& font, 
+                               const int size, 
+                               const int yPosition,
+                               const ui::Color& color)
 {
-    spriteSheet_ = std::make_unique<SpriteSheet>(
-        "assets/textures/SpriteSheet.png", SpriteSheet::Config{
-            {"Button", std::make_shared<SpriteSheet::SpriteClip>(360, 245, 178, 65)}
-        }
-    );
+    std::unique_ptr<Text> textObj = std::make_unique<Text>(text, font, size, math::Point{0, 0}, color);
+    const ui::Text& textComp = textObj->getComponent<ui::Text>();
+    const math::Point textCenterPoint = textComp.getCenter();
+    const math::Point windowCenterPoint = core::AppContext::getWindow().getCenter();
+    const int xPosition = windowCenterPoint.x - textCenterPoint.x;
+
+    world::Transform& textTransformComp = textObj->getComponent<world::Transform>();
+    textTransformComp.localPosition = math::Point{xPosition, yPosition};
+
+    addChild(std::move(textObj));
 }
 
-void MainMenuScene::createTitleText()
+void MainMenuScene::createStartButton(const std::string& text, 
+                                      const std::string& font, 
+                                      const int size,
+                                      const int paddingBottom,
+                                      const ui::Color& color)
 {
-    const auto titleFont = std::make_shared<Font>("assets/fonts/PermanentMarker-Regular.ttf", 44);
-    auto titleText = std::make_shared<Text>("Tic-Tac-Toe", titleFont, Color::black(), 0, 0);
-    const int titleTextPaddingTop = 40;
-    const int titleTextY = titleTextPaddingTop;
-    const int titleTextX = AppContext::getWindow().getCenterPoint().x - titleText->getCenterPoint().x;
-    titleText->setPosition(titleTextX, titleTextY);
+    std::unique_ptr<Button> buttonObj = std::make_unique<Button>(text, font, size, math::Point{0, 0}, color);
+    ui::Button& buttonComp = buttonObj->getComponent<ui::Button>();
+    const math::Point buttonCenterPoint = buttonComp.getCenter();
 
-    addChild(titleText);
-}
+    const math::Point windowCenterPoint = core::AppContext::getWindow().getCenter();
+    const int xPosition = windowCenterPoint.x - buttonCenterPoint.x;
+    const int yPosition = core::AppContext::getWindow().getHeight() - buttonComp.getHeight() - paddingBottom;
 
-void MainMenuScene::createSubtitleText()
-{
-    const auto subtitleFont = std::make_shared<Font>("assets/fonts/PermanentMarker-Regular.ttf", 24);
-    auto subtitleText = std::make_shared<Text>("Game by @maunovaha", subtitleFont, Color::black(), 0, 0);
-    const int subtitleTextPaddingTop = 100;
-    const int subtitleTextY = subtitleTextPaddingTop;
-    const int subtitleTextX = AppContext::getWindow().getCenterPoint().x - subtitleText->getCenterPoint().x;
-    subtitleText->setPosition(subtitleTextX, subtitleTextY);
-
-    addChild(subtitleText);
-}
-
-void MainMenuScene::createStartButton()
-{
-    const auto startButtonFont = std::make_shared<Font>("assets/fonts/LilitaOne-Regular.ttf", 24);
-    auto startButton = std::make_shared<Button>(
-        "LET'S PLAY", startButtonFont, Color::black(), spriteSheet_->getSprite("Button"), 0, 0
-    );
-    const int startButtonPaddingBottom = 40;
-    const int startButtonY = AppContext::getWindow().getHeight() - startButton->getHeight() - startButtonPaddingBottom;
-    const int startButtonX = AppContext::getWindow().getCenterPoint().x - startButton->getCenterPoint().x;
-    startButton->setPosition(startButtonX, startButtonY);
-    startButton->registerOnClickListener([]() {
-        AppContext::getDirector().play(std::make_unique<gameplay::GameplayScene>());
+    world::Transform& buttonTransformComp = buttonObj->getComponent<world::Transform>();
+    buttonTransformComp.localPosition = math::Point{xPosition, yPosition};
+    buttonComp.registerOnClickListener([]() {
+        core::AppContext::getDirector().play(std::make_unique<gameplay::GameplayScene>());
     });
 
-    addChild(startButton);
+    addChild(std::move(buttonObj));
 }
 
 }

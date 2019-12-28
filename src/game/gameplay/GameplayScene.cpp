@@ -1,37 +1,34 @@
 #include "GameplayScene.h"
+#include "Grid.h"
+#include "ChipType.h"
+#include "GameLogic.h"
+#include <memory>
 
 namespace game::gameplay {
 
-using namespace engine::core;
-using namespace engine::sprite;
-using namespace engine::ui;
+using namespace engine;
 
 void GameplayScene::onCreate()
 {
-    createSpriteSheet();
-    createGrid();
+    createGrid(math::Point{50, 50}, 3);
+    createGameLogic(createPlayers());
 }
 
-void GameplayScene::createSpriteSheet()
+void GameplayScene::createGrid(const math::Point& position, const int size)
 {
-    spriteSheet_ = std::make_unique<SpriteSheet>(
-        "assets/textures/SpriteSheet.png", SpriteSheet::Config{
-            {"Grid", std::make_shared<SpriteSheet::SpriteClip>(0, 0, 360, 360)},
-            {"X",    std::make_shared<SpriteSheet::SpriteClip>(360, 0, 120, 120)},
-            {"O",    std::make_shared<SpriteSheet::SpriteClip>(360, 120, 120, 120)}
-        }
-    );
+    addChild(std::make_unique<Grid>(position, size));
 }
 
-void GameplayScene::createGrid()
+std::vector<Player> GameplayScene::createPlayers()
 {
-    grid_ = std::make_shared<Grid>(spriteSheet_->getSprite("Grid"), 50, 50);
-
-    addChild(grid_);
+    return {
+        Player{ChipType::X}, Player{ChipType::O}
+    };
 }
 
-void GameplayScene::onUpdate()
+void GameplayScene::createGameLogic(std::vector<Player> players)
 {
+    addChild(std::make_unique<GameLogic>(std::move(players)));
 }
 
 }
