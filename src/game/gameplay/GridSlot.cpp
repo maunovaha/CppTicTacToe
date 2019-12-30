@@ -22,22 +22,10 @@ GridSlot::GridSlot(const math::Point& position) : scene::GameObject{position}
     addComponent(std::move(button));
 }
 
-void GridSlot::onClick()
+Chip* GridSlot::getChip() const
 {
-    if (isFree()) {
-        GameLogic* gameLogic = findWithTag<GameLogic>("GameLogic");
-        assert(gameLogic); // Programmer error, someone forgot to tag "GameLogic"
-
-        placeChip(gameLogic->getCurrentPlayer().getChipType());
-        gameLogic->changePlayerTurn();
-    }
-}
-
-void GridSlot::placeChip(const ChipType chipType)
-{
-    assert(isFree());
-
-    addChild(std::make_unique<Chip>(chipType));
+    static constexpr unsigned int CHIP_INDEX = 0;
+    return static_cast<Chip*>(getChild(CHIP_INDEX));
 }
 
 bool GridSlot::isFree() const
@@ -45,11 +33,24 @@ bool GridSlot::isFree() const
     return static_cast<bool>(!getChip());
 }
 
-Chip* GridSlot::getChip() const
+void GridSlot::onClick()
 {
-    static constexpr unsigned int CHIP_INDEX = 0;
+    if (isFree()) {
+        GameLogic* gameLogic = findWithTag<GameLogic>("GameLogic");
+        assert(gameLogic); // Programmer error, someone forgot to tag "GameLogic"
 
-    return static_cast<Chip*>(getChild(CHIP_INDEX));
+        placeChip(gameLogic->getCurrentPlayer().getChipType());
+
+        // This class should not be responsible of commanding "GameLogic", but in this simple
+        // game it doesnt really matter.
+        gameLogic->checkGameStatus(reinterpret_cast<Grid*>(getParent()));
+    }
+}
+
+void GridSlot::placeChip(const ChipType chipType)
+{
+    assert(isFree());
+    addChild(std::make_unique<Chip>(chipType));
 }
 
 }

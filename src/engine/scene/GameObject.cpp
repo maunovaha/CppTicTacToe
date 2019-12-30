@@ -65,7 +65,12 @@ GameObject* GameObject::getChild(const unsigned int index) const
 
 bool GameObject::hasChildAt(const unsigned int index) const
 {
-    return index <= (children_.size() - 1);
+    return (index + 1) <= children_.size();
+}
+
+int GameObject::getChildCount() const
+{
+    return children_.size();
 }
 
 void GameObject::storeWithTag(const std::string& tag)

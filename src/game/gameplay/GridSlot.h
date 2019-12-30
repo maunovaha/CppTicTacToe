@@ -10,11 +10,11 @@ namespace game::gameplay {
 class GridSlot : public engine::scene::GameObject {
 public:
     GridSlot(const engine::math::Point& position);
+    Chip* getChip() const;
+    bool isFree() const;
 private:
     void onClick();
     void placeChip(const ChipType chipType);
-    bool isFree() const;
-    Chip* getChip() const;
 };
 
 }
