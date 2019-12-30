@@ -57,18 +57,20 @@ void GameObject::addChild(std::unique_ptr<GameObject> child)
 
 GameObject* GameObject::getChild(const unsigned int index) const
 {
-    try {
+    if (hasChildAt(index)) {
         return children_.at(index).get();
     }
-    catch (const std::out_of_range& _) {
-        return nullptr;
-    }
+    return nullptr;
+}
+
+bool GameObject::hasChildAt(const unsigned int index) const
+{
+    return index <= (children_.size() - 1);
 }
 
 void GameObject::storeWithTag(const std::string& tag)
 {
     assert(!isTagged(tag));
-
     taggedGameObjects_.emplace(tag, this);
 }
 

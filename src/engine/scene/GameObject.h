@@ -9,7 +9,6 @@
 #include <cassert>
 #include <iostream>
 #include <vector>
-#include <stdexcept>
 
 namespace engine::scene {
 
@@ -24,18 +23,16 @@ public:
     GameObject* getParent() const;
     void addChild(std::unique_ptr<GameObject> child);
     GameObject* getChild(const unsigned int index) const;
+    bool hasChildAt(const unsigned int index) const;
     void storeWithTag(const std::string& tag);
 
     template<typename T>
     static T* findWithTag(const std::string& tag)
     {
-        try {
-            GameObject* taggedGameObject = taggedGameObjects_.at(tag);
-            return static_cast<T*>(taggedGameObject);
+        if (isTagged(tag)) {
+            return static_cast<T*>(taggedGameObjects_.at(tag));
         }
-        catch (const std::out_of_range& _) {
-            return nullptr;
-        }
+        return nullptr;
     }
 
     template<typename T>
