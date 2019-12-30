@@ -24,6 +24,7 @@ public:
     void addChild(std::unique_ptr<GameObject> child);
     GameObject* getChild(const unsigned int index) const;
     bool hasChildAt(const unsigned int index) const;
+    int getChildCount() const;
     void storeWithTag(const std::string& tag);
 
     template<typename T>

@@ -68,6 +68,11 @@ bool GameObject::hasChildAt(const unsigned int index) const
     return (index + 1) <= children_.size();
 }
 
+int GameObject::getChildCount() const
+{
+    return children_.size();
+}
+
 void GameObject::storeWithTag(const std::string& tag)
 {
     assert(!isTagged(tag));

@@ -1,4 +1,9 @@
 #include "GameLogic.h"
+#include "Grid.h"
+#include <cassert>
+
+// 
+#include <iostream>
 
 namespace game::gameplay {
 
@@ -9,6 +14,32 @@ const Player& GameLogic::getCurrentPlayer() const
     return players_.at(currentPlayerIndex_);
 }
 
+void GameLogic::checkGameStatus(Grid* grid)
+{
+    assert(grid);
+
+    if (isWinningPattern(grid->toBinary(getCurrentPlayer().getChipType()))) {
+        std::cout << "------------------------------------\n";
+        std::cout << "Game over!\n" << getCurrentPlayer().getName() << " wins!\n";
+    }
+    else if (grid->isFull()) {
+        std::cout << "Draw!\n";
+    }
+    else {
+        changePlayerTurn();
+    }
+}
+
+bool GameLogic::isWinningPattern(const uint16_t pattern)
+{
+    for (const auto& winningPattern : WINNING_PATTERNS) {
+        if ((pattern & winningPattern) == winningPattern) {
+            return true;
+        }
+    }
+    return false;
+}
+
 void GameLogic::changePlayerTurn()
 {
     ++currentPlayerIndex_;
@@ -16,15 +47,6 @@ void GameLogic::changePlayerTurn()
     if (currentPlayerIndex_ >= players_.size()) {
         currentPlayerIndex_ = 0;
     }
-
-    // This might be stupid, but since this method is called whenever new chip
-    // is placed on the grid, we might as well call checking of game status here as well.
-    checkGameStatus();
-}
-
-void GameLogic::checkGameStatus()
-{
-    // TODO: Check win/lose/draw ..
 }
 
 }

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Application.h"
 #include "../scene/Director.h"
 #include "TextureCache.h"
 #include "Window.h"
