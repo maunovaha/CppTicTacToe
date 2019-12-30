@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Player.h"
+#include "../shared/Player.h"
 #include "../../engine/scene/Scene.h"
 #include "../../engine/math/Point.h"
 #include <vector>
@@ -12,8 +12,8 @@ public:
     void onCreate() override;
 private:
     void createGrid(const engine::math::Point& position, const int size);
-    std::vector<Player> createPlayers();
-    void createGameLogic(std::vector<Player> players);
+    std::vector<shared::Player> createPlayers();
+    void createGameLogic(std::vector<shared::Player> players);
 };
 
 }

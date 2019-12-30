@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Player.h"
+#include "../shared/Player.h"
 #include "../../engine/scene/GameObject.h"
 #include <vector>
 #include <array>
@@ -10,15 +10,15 @@ namespace game::gameplay {
 class Grid; // Forward declaration
 class GameLogic : public engine::scene::GameObject {
 public:
-    GameLogic(std::vector<Player> players) 
+    GameLogic(std::vector<shared::Player> players) 
         : engine::scene::GameObject{"GameLogic"}, players_{std::move(players)} {}
-    const Player& getCurrentPlayer() const;
+    const shared::Player& getCurrentPlayer() const;
     void checkGameStatus(Grid* grid);
 private:
     bool isWinningPattern(const uint16_t pattern);
     void changePlayerTurn();
 
-    std::vector<Player> players_;
+    std::vector<shared::Player> players_;
     unsigned int currentPlayerIndex_ = 0;
 
     // There are 8 different winning combinations when having 3x3 grid. For more information on

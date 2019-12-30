@@ -7,6 +7,7 @@
 namespace game::gameplay {
 
 using namespace engine;
+using namespace shared;
 
 void GameplayScene::onCreate()
 {

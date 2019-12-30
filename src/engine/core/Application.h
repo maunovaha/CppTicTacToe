@@ -25,6 +25,7 @@ protected:
     friend class AppContext;
 private:
     void loop();
+    void quit();
     bool processInput();
     void update();
     void render() const;
@@ -38,6 +39,8 @@ private:
 
     io::Input input_;
     scene::Director director_;
+    
+    bool running_ = false;
 };
 
 }

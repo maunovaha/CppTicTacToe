@@ -4,7 +4,7 @@
 #include "../../engine/ui/Text.h"
 #include <memory>
 
-namespace game::mainmenu {
+namespace game::shared {
 
 using namespace engine;
 

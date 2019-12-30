@@ -25,9 +25,16 @@ void Application::run(std::unique_ptr<scene::Scene> startingScene)
     loop();
 }
 
+void Application::quit()
+{
+    running_ = false;
+}
+
 void Application::loop()
 {
-    for (;;) {
+    running_ = true;
+
+    while (running_) {
         const bool exitRequest = processInput();
 
         if (exitRequest) {

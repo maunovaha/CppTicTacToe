@@ -1,6 +1,6 @@
 #include "MainMenuScene.h"
-#include "Text.h"
-#include "Button.h"
+#include "../shared/Text.h"
+#include "../shared/Button.h"
 #include "../gameplay/GameplayScene.h"
 #include "../../engine/world/Transform.h"
 #include "../../engine/ui/Text.h"
@@ -26,7 +26,7 @@ void MainMenuScene::createText(const std::string& text,
                                const int yPosition,
                                const ui::Color& color)
 {
-    std::unique_ptr<Text> textObj = std::make_unique<Text>(text, font, size, math::Point{0, 0}, color);
+    std::unique_ptr<shared::Text> textObj = std::make_unique<shared::Text>(text, font, size, math::Point{0, 0}, color);
     const ui::Text& textComp = textObj->getComponent<ui::Text>();
     const math::Point textCenterPoint = textComp.getCenter();
     const math::Point windowCenterPoint = core::AppContext::getWindow().getCenter();
@@ -44,7 +44,7 @@ void MainMenuScene::createStartButton(const std::string& text,
                                       const int paddingBottom,
                                       const ui::Color& color)
 {
-    std::unique_ptr<Button> buttonObj = std::make_unique<Button>(text, font, size, math::Point{0, 0}, color);
+    std::unique_ptr<shared::Button> buttonObj = std::make_unique<shared::Button>(text, font, size, math::Point{0, 0}, color);
     ui::Button& buttonComp = buttonObj->getComponent<ui::Button>();
     const math::Point buttonCenterPoint = buttonComp.getCenter();
 

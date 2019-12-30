@@ -255,14 +255,15 @@
     <ClInclude Include="src\engine\scene\Director.h" />
     <ClInclude Include="src\engine\scene\GameObject.h" />
     <ClInclude Include="src\engine\scene\Scene.h" />
+    <ClInclude Include="src\game\gameover\GameOverScene.h" />
     <ClInclude Include="src\game\gameplay\Chip.h" />
     <ClInclude Include="src\game\gameplay\ChipType.h" />
     <ClInclude Include="src\game\gameplay\GameLogic.h" />
     <ClInclude Include="src\game\gameplay\GameplayScene.h" />
     <ClInclude Include="src\game\gameplay\Grid.h" />
     <ClInclude Include="src\game\gameplay\GridSlot.h" />
-    <ClInclude Include="src\game\gameplay\Player.h" />
-    <ClInclude Include="src\game\mainmenu\Button.h" />
+    <ClInclude Include="src\game\shared\Player.h" />
+    <ClInclude Include="src\game\shared\Button.h" />
     <ClInclude Include="src\game\mainmenu\MainMenuScene.h" />
     <ClInclude Include="src\engine\math\Rect.h" />
     <ClInclude Include="src\engine\core\sdl\SDL.h" />
@@ -271,7 +272,7 @@
     <ClInclude Include="src\engine\core\sdl\SDLTTF.h" />
     <ClInclude Include="src\engine\core\Surface.h" />
     <ClInclude Include="src\engine\core\Texture.h" />
-    <ClInclude Include="src\game\mainmenu\Text.h" />
+    <ClInclude Include="src\game\shared\Text.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\engine\core\AppContext.cpp" />
@@ -287,15 +288,16 @@
     <ClCompile Include="src\engine\core\Application.cpp" />
     <ClCompile Include="src\engine\scene\Director.cpp" />
     <ClCompile Include="src\engine\scene\Scene.cpp" />
+    <ClCompile Include="src\game\gameover\GameOverScene.cpp" />
     <ClCompile Include="src\game\gameplay\Chip.cpp" />
     <ClCompile Include="src\game\gameplay\GameLogic.cpp" />
     <ClCompile Include="src\game\gameplay\GameplayScene.cpp" />
     <ClCompile Include="src\game\gameplay\Grid.cpp" />
     <ClCompile Include="src\game\gameplay\GridSlot.cpp" />
-    <ClCompile Include="src\game\gameplay\Player.cpp" />
-    <ClCompile Include="src\game\mainmenu\Button.cpp" />
+    <ClCompile Include="src\game\shared\Player.cpp" />
+    <ClCompile Include="src\game\shared\Button.cpp" />
     <ClCompile Include="src\game\mainmenu\MainMenuScene.cpp" />
-    <ClCompile Include="src\game\mainmenu\Text.cpp" />
+    <ClCompile Include="src\game\shared\Text.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\engine\core\sdl\SDL.cpp" />
     <ClCompile Include="src\engine\core\sdl\SDLImage.cpp" />

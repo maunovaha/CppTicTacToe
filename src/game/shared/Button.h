@@ -4,7 +4,7 @@
 #include "../../engine/math/Point.h"
 #include "../../engine/ui/Color.h"
 
-namespace game::mainmenu {
+namespace game::shared {
 
 class Button : public engine::scene::GameObject {
 public:

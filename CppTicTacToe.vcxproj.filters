@@ -327,9 +327,6 @@
     <ClInclude Include="src\engine\ui\Image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\mainmenu\Text.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\engine\ui\Button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -351,10 +348,16 @@
     <ClInclude Include="src\game\gameplay\GridSlot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\gameplay\Player.h">
+    <ClInclude Include="src\game\gameover\GameOverScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\mainmenu\Button.h">
+    <ClInclude Include="src\game\shared\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\shared\Button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\shared\Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -419,9 +422,6 @@
     <ClCompile Include="src\engine\ui\Image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\mainmenu\Text.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\engine\ui\Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -440,10 +440,16 @@
     <ClCompile Include="src\game\gameplay\GridSlot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\gameplay\Player.cpp">
+    <ClCompile Include="src\game\gameover\GameOverScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\mainmenu\Button.cpp">
+    <ClCompile Include="src\game\shared\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\shared\Button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\shared\Text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

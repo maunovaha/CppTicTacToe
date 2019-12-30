@@ -20,6 +20,7 @@ public:
     static TextureCache& getTextureCache();
     static const io::Input& getInput();
     static scene::Director& getDirector();
+    static void quit();
 private:
     static const AppContext& get();
 

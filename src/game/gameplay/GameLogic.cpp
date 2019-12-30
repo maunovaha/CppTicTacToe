@@ -1,13 +1,15 @@
 #include "GameLogic.h"
 #include "Grid.h"
+#include "ChipType.h"
+#include "../gameover/GameOverScene.h"
+#include "../../engine/core/AppContext.h"
 #include <cassert>
-
-// 
-#include <iostream>
+#include <vector>
 
 namespace game::gameplay {
 
 using namespace engine;
+using namespace shared;
 
 const Player& GameLogic::getCurrentPlayer() const
 {
@@ -18,12 +20,15 @@ void GameLogic::checkGameStatus(Grid* grid)
 {
     assert(grid);
 
-    if (isWinningPattern(grid->toBinary(getCurrentPlayer().getChipType()))) {
-        std::cout << "------------------------------------\n";
-        std::cout << "Game over!\n" << getCurrentPlayer().getName() << " wins!\n";
+    const ChipType& currentPlayerChipType = getCurrentPlayer().getChipType();
+
+    if (isWinningPattern(grid->toBinary(currentPlayerChipType))) {
+        auto winner = std::make_unique<Player>(currentPlayerChipType);
+        auto gameOverScene = std::make_unique<gameover::GameOverScene>(std::move(winner));
+        core::AppContext::getDirector().play(std::move(gameOverScene));
     }
     else if (grid->isFull()) {
-        std::cout << "Draw!\n";
+        core::AppContext::getDirector().play(std::make_unique<gameover::GameOverScene>());
     }
     else {
         changePlayerTurn();

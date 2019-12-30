@@ -1,7 +1,9 @@
 #include "Player.h"
 #include <stdexcept>
 
-namespace game::gameplay {
+namespace game::shared {
+
+using namespace gameplay;
 
 ChipType Player::getChipType() const
 {

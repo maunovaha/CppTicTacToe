@@ -31,6 +31,8 @@ $(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.cpp
 	@mkdir -p $(BUILD_DIR)/engine/world
 	@mkdir -p $(BUILD_DIR)/game/mainmenu
 	@mkdir -p $(BUILD_DIR)/game/gameplay
+	@mkdir -p $(BUILD_DIR)/game/gameover
+	@mkdir -p $(BUILD_DIR)/game/shared
 	$(CXX) $(CXX_FLAGS) $(INCLUDE) -c -o $@ $<
 
 clean:
