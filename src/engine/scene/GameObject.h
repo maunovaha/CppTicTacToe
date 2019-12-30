@@ -26,6 +26,7 @@ public:
     bool hasChildAt(const unsigned int index) const;
     int getChildCount() const;
     void storeWithTag(const std::string& tag);
+    static void removeTaggedGameObjects();
 
     template<typename T>
     static T* findWithTag(const std::string& tag)

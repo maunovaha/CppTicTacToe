@@ -25,12 +25,19 @@ void Application::run(std::unique_ptr<scene::Scene> startingScene)
     loop();
 }
 
+void Application::quit()
+{
+    running_ = false;
+}
+
 void Application::loop()
 {
-    for (;;) {
-        const bool exitRequest = processInput();
+    running_ = true;
 
-        if (exitRequest) {
+    while (running_) {
+        processInput();
+
+        if (!running_) {
             break;
         }
 
@@ -39,19 +46,18 @@ void Application::loop()
     }
 }
 
-bool Application::processInput()
+void Application::processInput()
 {
     input_.reset();
 
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
         if (event.type == SDL_QUIT) {
-            return true;
+            running_ = false;
+            break;
         }
         input_.update(event);
     }
-
-    return false;
 }
 
 void Application::update()

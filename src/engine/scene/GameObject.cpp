@@ -79,6 +79,11 @@ void GameObject::storeWithTag(const std::string& tag)
     taggedGameObjects_.emplace(tag, this);
 }
 
+void GameObject::removeTaggedGameObjects()
+{
+    taggedGameObjects_.clear();
+}
+
 bool GameObject::isTagged(const std::string& tag)
 {
     return taggedGameObjects_.find(tag) != taggedGameObjects_.end();

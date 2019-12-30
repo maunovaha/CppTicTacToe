@@ -6,7 +6,7 @@
 
 namespace game::mainmenu {
 
-class MainMenuScene: public engine::scene::Scene {
+class MainMenuScene : public engine::scene::Scene {
 public:
     void onCreate() override;
 private:

@@ -33,6 +33,11 @@ scene::Director& AppContext::getDirector()
     return get().app_.director_;
 }
 
+void AppContext::quit()
+{
+    return get().app_.quit();
+}
+
 const AppContext& AppContext::get()
 {
     assert(instance_); // Ensures configure() is called before this method

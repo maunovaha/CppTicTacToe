@@ -6,7 +6,7 @@
 #include "../../engine/world/Transform.h"
 #include <memory>
 
-namespace game::mainmenu {
+namespace game::shared {
 
 using namespace engine;
 

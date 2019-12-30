@@ -9,7 +9,7 @@ class Scene {
 public:
     virtual ~Scene() = default;
     virtual void onCreate() = 0;
-    virtual void onExit() {}
+    virtual void onExit();
     void update();
     void render() const;
 protected:
