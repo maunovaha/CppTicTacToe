@@ -36,7 +36,6 @@ void GridSlot::onClick()
 void GridSlot::placeChip(const ChipType chipType)
 {
     assert(isFree());
-
     addChild(std::make_unique<Chip>(chipType));
 }
 
@@ -48,7 +47,6 @@ bool GridSlot::isFree() const
 Chip* GridSlot::getChip() const
 {
     static constexpr unsigned int CHIP_INDEX = 0;
-
     return static_cast<Chip*>(getChild(CHIP_INDEX));
 }
 
