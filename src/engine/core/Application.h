@@ -26,7 +26,7 @@ protected:
 private:
     void loop();
     void quit();
-    bool processInput();
+    void processInput();
     void update();
     void render() const;
 

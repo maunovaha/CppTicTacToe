@@ -35,9 +35,9 @@ void Application::loop()
     running_ = true;
 
     while (running_) {
-        const bool exitRequest = processInput();
+        processInput();
 
-        if (exitRequest) {
+        if (!running_) {
             break;
         }
 
@@ -46,19 +46,18 @@ void Application::loop()
     }
 }
 
-bool Application::processInput()
+void Application::processInput()
 {
     input_.reset();
 
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
         if (event.type == SDL_QUIT) {
-            return true;
+            running_ = false;
+            break;
         }
         input_.update(event);
     }
-
-    return false;
 }
 
 void Application::update()
