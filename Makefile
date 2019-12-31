@@ -23,6 +23,7 @@ main: $(CXX_OBJECTS)
 
 $(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.cpp
 	@echo "*** Building ***"
+	@mkdir -p $(BUILD_DIR)/engine/audio
 	@mkdir -p $(BUILD_DIR)/engine/core/sdl
 	@mkdir -p $(BUILD_DIR)/engine/io
 	@mkdir -p $(BUILD_DIR)/engine/math

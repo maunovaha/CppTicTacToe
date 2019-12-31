@@ -234,6 +234,8 @@
     <ClInclude Include="include\SDL2\SDL_version.h" />
     <ClInclude Include="include\SDL2\SDL_video.h" />
     <ClInclude Include="include\SDL2\SDL_vulkan.h" />
+    <ClInclude Include="src\engine\audio\Song.h" />
+    <ClInclude Include="src\engine\audio\AudioSource.h" />
     <ClInclude Include="src\engine\core\AppContext.h" />
     <ClInclude Include="src\engine\core\Component.h" />
     <ClInclude Include="src\engine\core\sdl\SDLMixer.h" />
@@ -263,6 +265,7 @@
     <ClInclude Include="src\game\gameplay\GameplayScene.h" />
     <ClInclude Include="src\game\gameplay\Grid.h" />
     <ClInclude Include="src\game\gameplay\GridSlot.h" />
+    <ClInclude Include="src\game\shared\MusicPlayer.h" />
     <ClInclude Include="src\game\shared\Player.h" />
     <ClInclude Include="src\game\shared\Button.h" />
     <ClInclude Include="src\game\mainmenu\MainMenuScene.h" />
@@ -276,6 +279,8 @@
     <ClInclude Include="src\game\shared\Text.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\engine\audio\AudioSource.cpp" />
+    <ClCompile Include="src\engine\audio\Song.cpp" />
     <ClCompile Include="src\engine\core\AppContext.cpp" />
     <ClCompile Include="src\engine\core\sdl\SDLMixer.cpp" />
     <ClCompile Include="src\engine\io\Input.cpp" />
@@ -296,6 +301,7 @@
     <ClCompile Include="src\game\gameplay\GameplayScene.cpp" />
     <ClCompile Include="src\game\gameplay\Grid.cpp" />
     <ClCompile Include="src\game\gameplay\GridSlot.cpp" />
+    <ClCompile Include="src\game\shared\MusicPlayer.cpp" />
     <ClCompile Include="src\game\shared\Player.cpp" />
     <ClCompile Include="src\game\shared\Button.cpp" />
     <ClCompile Include="src\game\mainmenu\MainMenuScene.cpp" />

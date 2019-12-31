@@ -1,10 +1,12 @@
 #include "MainMenuScene.h"
 #include "../shared/Text.h"
 #include "../shared/Button.h"
+#include "../shared/MusicPlayer.h"
 #include "../gameplay/GameplayScene.h"
 #include "../../engine/world/Transform.h"
 #include "../../engine/ui/Text.h"
 #include "../../engine/ui/Button.h"
+#include "../../engine/audio/AudioSource.h"
 #include "../../engine/math/Point.h"
 #include "../../engine/core/AppContext.h"
 #include <memory>
@@ -15,9 +17,18 @@ using namespace engine;
 
 void MainMenuScene::onCreate()
 {
+    createMusicPlayer();
     createText("Tic-tac-toe", "PermanentMarker-Regular.ttf", 44, 40);
     createText("Game by @maunovaha", "PermanentMarker-Regular.ttf", 24, 100);
     createStartButton("LET'S PLAY", "LilitaOne-Regular.ttf", 24, 40);
+}
+
+void MainMenuScene::createMusicPlayer()
+{
+    auto musicPlayer = std::make_unique<shared::MusicPlayer>();
+    musicPlayer->getComponent<audio::AudioSource>().play(25);
+
+    addChild(std::move(musicPlayer));
 }
 
 void MainMenuScene::createText(const std::string& text, 

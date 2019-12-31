@@ -10,6 +10,7 @@ class MainMenuScene : public engine::scene::Scene {
 public:
     void onCreate() override;
 private:
+    void createMusicPlayer();
     void createText(const std::string& text,
                     const std::string& font,
                     const int size,
