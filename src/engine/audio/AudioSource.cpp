@@ -8,18 +8,31 @@
 #endif
 #include <cassert>
 
+////
+#include <iostream>
+
 namespace engine::audio {
 
 void AudioSource::play() const
 {
-    static constexpr int REPEAT_MUSIC_SETTING = -1;
-    Mix_PlayMusic(song_->get(), REPEAT_MUSIC_SETTING);
+    if (isPlaying()) {
+        return;
+    }
+
+    static constexpr int REPEAT_MUSIC = -1;
+    Mix_PlayMusic(song_->get(), REPEAT_MUSIC);
 }
 
 void AudioSource::play(const int volume) const
 {
-    setVolume(volume);
     play();
+    setVolume(volume);
+}
+
+bool AudioSource::isPlaying() const
+{
+    static constexpr int MUSIC_PLAYING = 1;
+    return Mix_PlayingMusic() == MUSIC_PLAYING;
 }
 
 void AudioSource::setVolume(const int volume) const

@@ -11,6 +11,8 @@ public:
     AudioSource(std::unique_ptr<Song> song) : song_{std::move(song)} {}
     void play() const;
     void play(const int volume) const;
+    bool isPlaying() const;
+
     void setVolume(const int volume) const;
 private:
     std::unique_ptr<Song> song_;
