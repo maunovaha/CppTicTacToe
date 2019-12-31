@@ -9,7 +9,7 @@ CXX_SOURCES  := $(shell find $(SOURCE_DIR) -type f -name '*.cpp')
 CXX_OBJECTS  := $(patsubst $(SOURCE_DIR)/%,$(BUILD_DIR)/%,$(CXX_SOURCES:.cpp=.o))
 CXX_FLAGS    := -ggdb -std=c++17 -Wall
 
-LIBRARIES    := SDL2 SDL2_image SDL2_ttf
+LIBRARIES    := SDL2 SDL2_image SDL2_ttf SDL2_mixer
 LINKER_FLAGS := $(foreach library,$(LIBRARIES),-l$(library))
 INCLUDE      := -I $(INCLUDE_DIR)
 

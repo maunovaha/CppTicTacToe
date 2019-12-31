@@ -8,9 +8,10 @@ Application::Application(const std::string& title,
                          const int height,
                          const int x,
                          const int y)
-    : sdl_{sdl::SDL::VIDEO}
+    : sdl_{sdl::SDL::VIDEO | sdl::SDL::AUDIO}
     , sdlImage_{sdl::SDLImage::PNG}
     , sdlTTF_{}
+    , sdlMixer_{}
     , window_{title, backgroundColor, {x, y, width, height}}
     , textureCache_{}
     , input_{}

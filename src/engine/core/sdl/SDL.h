@@ -14,6 +14,7 @@ public:
     ~SDL();
 
     static constexpr Uint32 VIDEO = SDL_INIT_VIDEO;
+    static constexpr Uint32 AUDIO = SDL_INIT_AUDIO;
 };
 
 }

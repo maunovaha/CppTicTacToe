@@ -8,6 +8,7 @@
 #include "sdl/SDL.h"
 #include "sdl/SDLImage.h"
 #include "sdl/SDLTTF.h"
+#include "sdl/SDLMixer.h"
 #include <string>
 
 namespace engine::core {
@@ -33,6 +34,7 @@ private:
     sdl::SDL sdl_;
     sdl::SDLImage sdlImage_;
     sdl::SDLTTF sdlTTF_;
+    sdl::SDLMixer sdlMixer_;
 
     Window window_;
     TextureCache textureCache_;
