@@ -14,7 +14,7 @@ This project is still pretty much "under construction" until I finish adding aud
 
 Open the *CppTicTacToe.sln* file in *Microsoft Visual Studio*, and hit *F5* to run it. (Just make sure *x86* is selected for targeting platform).
 
-### macOs
+### macOS
 
 ```
 make main
