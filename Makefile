@@ -1,10 +1,42 @@
-OBJS = src/Main.cpp src/game/Game.cpp src/game/GameStatus.cpp src/game/Grid.cpp src/game/GridSlot.cpp src/game/Chip.cpp src/game/Player.cpp src/util/StringUtil.cpp
+INCLUDE_DIR  := include
+LIBRARY_DIR  := lib
+SOURCE_DIR   := src
+BUILD_DIR    := build
+TARGET_DIR   := bin
 
-CC = g++
+CXX          := g++
+CXX_SOURCES  := $(shell find $(SOURCE_DIR) -type f -name '*.cpp')
+CXX_OBJECTS  := $(patsubst $(SOURCE_DIR)/%,$(BUILD_DIR)/%,$(CXX_SOURCES:.cpp=.o))
+CXX_FLAGS    := -ggdb -std=c++17 -Wall
 
-COMPILER_FLAGS = -std=c++17
+LIBRARIES    := SDL2 SDL2_image SDL2_ttf
+LINKER_FLAGS := $(foreach library,$(LIBRARIES),-l$(library))
+INCLUDE      := -I $(INCLUDE_DIR)
 
-OBJ_NAME = bin/tic_tac_toe
+EXECUTABLE   := CppTicTacToe
+TARGET       := $(TARGET_DIR)/$(EXECUTABLE)
 
-all : $(OBJS)
-		$(CC) $(OBJS) $(COMPILER_FLAGS) -o $(OBJ_NAME)
+main: $(CXX_OBJECTS)
+	@echo "*** Linking ***"
+	@mkdir -p $(TARGET_DIR)
+	$(CXX) $^ -o $(TARGET) $(LINKER_FLAGS)
+
+$(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.cpp
+	@echo "*** Building ***"
+	@mkdir -p $(BUILD_DIR)/engine/core/sdl
+	@mkdir -p $(BUILD_DIR)/engine/io
+	@mkdir -p $(BUILD_DIR)/engine/math
+	@mkdir -p $(BUILD_DIR)/engine/scene
+	@mkdir -p $(BUILD_DIR)/engine/ui
+	@mkdir -p $(BUILD_DIR)/engine/world
+	@mkdir -p $(BUILD_DIR)/game/mainmenu
+	@mkdir -p $(BUILD_DIR)/game/gameplay
+	@mkdir -p $(BUILD_DIR)/game/gameover
+	@mkdir -p $(BUILD_DIR)/game/shared
+	$(CXX) $(CXX_FLAGS) $(INCLUDE) -c -o $@ $<
+
+clean:
+	@echo "*** Cleaning ***"
+	$(RM) -r $(BUILD_DIR) $(TARGET)
+
+.PHONY: clean

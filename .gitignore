@@ -1,5 +1,12 @@
-# Ignore executable
-bin/tic_tac_toe
+# Visual Studio 2015/2017 cache/options directory
+.vs/
 
-# Ignore Mac OS X temporary files
+# Build and executables
+build
+bin/*
+
+# User-specific files
+*.user
+
+# macOS temp files
 .DS_Store
