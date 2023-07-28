@@ -24,11 +24,3 @@ make main
 ## License
 
 This project is released under the [MIT License](LICENSE).
-
-## Contact
-
-If you have any questions regarding this repository, start by reaching me using contact information below.
-
-- [maunovaha.com](http://maunovaha.com)
-- [@maunovaha](https://twitter.com/maunovaha) (twitter)
-- maunovaha[at]gmail.com
